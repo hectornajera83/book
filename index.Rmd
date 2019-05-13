@@ -1,0 +1,13 @@
+
+---
+title: "Multidimensional poverty measurement: A statistical approach with applications"
+author: "Héctor Nájera"
+documentclass: book
+output: html_document
+fignos-cleveref: True
+fignos-plus-name: Fig.
+header-includes: \usepackage{caption}
+bibliography: [References_markdown.bib]
+csl: https://raw.githubusercontent.com/Keniajin/styles/master/apa.csl
+link-citations: yes
+---
