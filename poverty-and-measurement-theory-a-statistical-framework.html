@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 2 Poverty and measurement theory: A statistical framework | Multidimensional poverty measurement: A statistical approach with applications</title>
+  <meta name="description" content="Chapter 2 Poverty and measurement theory: A statistical framework | Multidimensional poverty measurement: A statistical approach with applications" />
+  <meta name="generator" content="bookdown 0.10 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 2 Poverty and measurement theory: A statistical framework | Multidimensional poverty measurement: A statistical approach with applications" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 2 Poverty and measurement theory: A statistical framework | Multidimensional poverty measurement: A statistical approach with applications" />
+  
+  
+  
+
+<meta name="author" content="Héctor Nájera" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="Chapter-1.html">
+<link rel="next" href="measurement-theory-and-principles.html">
+<script src="assets/jquery-2.2.3/jquery.min.js"></script>
+<link href="assets/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i>Intro</a></li>
+<li class="chapter" data-level="1" data-path="Chapter-1.html"><a href="Chapter-1.html"><i class="fa fa-check"></i><b>1</b> Poverty and measurement theory principles</a><ul>
+<li class="chapter" data-level="1.1" data-path="Chapter-1.html"><a href="Chapter-1.html#the-concept-of-poverty"><i class="fa fa-check"></i><b>1.1</b> The Concept of Poverty</a></li>
+<li class="chapter" data-level="1.2" data-path="Chapter-1.html"><a href="Chapter-1.html#Chapter-1-dimensions"><i class="fa fa-check"></i><b>1.2</b> Theoretical dimensions of poverty</a></li>
+<li class="chapter" data-level="1.3" data-path="Chapter-1.html"><a href="Chapter-1.html#the-measurement-of-poverty-and-its-challenges"><i class="fa fa-check"></i><b>1.3</b> The measurement of poverty and its challenges</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="Chapter-1.html"><a href="Chapter-1.html#challeges-in-selection-of-dimensions-contents-cut-offs-and-weights"><i class="fa fa-check"></i><b>1.3.1</b> Challeges in selection of dimensions, contents, cut offs and weights</a></li>
+<li class="chapter" data-level="1.3.2" data-path="Chapter-1.html"><a href="Chapter-1.html#challenges-in-aggregation-and-identification-of-the-poor"><i class="fa fa-check"></i><b>1.3.2</b> Challenges in aggregation and identification of the poor</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="Chapter-1.html"><a href="Chapter-1.html#the-poor-and-the-not-poor-the-poverty-line"><i class="fa fa-check"></i><b>1.4</b> The poor and the not poor: The poverty line</a></li>
+<li class="chapter" data-level="1.5" data-path="Chapter-1.html"><a href="Chapter-1.html#a-brief-on-multidimensional-poverty-measurement"><i class="fa fa-check"></i><b>1.5</b> A brief on multidimensional poverty measurement</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="poverty-and-measurement-theory-a-statistical-framework.html"><a href="poverty-and-measurement-theory-a-statistical-framework.html"><i class="fa fa-check"></i><b>2</b> Poverty and measurement theory: A statistical framework</a><ul>
+<li class="chapter" data-level="2.1" data-path="poverty-and-measurement-theory-a-statistical-framework.html"><a href="poverty-and-measurement-theory-a-statistical-framework.html#workflow-in-poverty-measurement-a-falsifiable-framework"><i class="fa fa-check"></i><b>2.1</b> Workflow in poverty measurement: A falsifiable framework</a></li>
+<li class="chapter" data-level="2.2" data-path="poverty-and-measurement-theory-a-statistical-framework.html"><a href="poverty-and-measurement-theory-a-statistical-framework.html#samplingspace"><i class="fa fa-check"></i><b>2.2</b> Identification of the sampling space</a></li>
+<li class="chapter" data-level="2.3" data-path="poverty-and-measurement-theory-a-statistical-framework.html"><a href="poverty-and-measurement-theory-a-statistical-framework.html#selection-of-dimensions-and-indicators"><i class="fa fa-check"></i><b>2.3</b> Selection of dimensions and indicators</a></li>
+<li class="chapter" data-level="2.4" data-path="poverty-and-measurement-theory-a-statistical-framework.html"><a href="poverty-and-measurement-theory-a-statistical-framework.html#aggregation-and-weighting"><i class="fa fa-check"></i><b>2.4</b> Aggregation and weighting</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="poverty-and-measurement-theory-a-statistical-framework.html"><a href="poverty-and-measurement-theory-a-statistical-framework.html#splitting-the-population-into-meaningful-groups"><i class="fa fa-check"></i><b>2.4.1</b> Splitting the population into meaningful groups</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="poverty-and-measurement-theory-a-statistical-framework.html"><a href="poverty-and-measurement-theory-a-statistical-framework.html#measurement-theory-as-an-statistical-framework"><i class="fa fa-check"></i><b>2.5</b> Measurement theory as an statistical framework</a></li>
+<li class="chapter" data-level="2.6" data-path="poverty-and-measurement-theory-a-statistical-framework.html"><a href="poverty-and-measurement-theory-a-statistical-framework.html#poverty-and-error-in-measurement"><i class="fa fa-check"></i><b>2.6</b> Poverty and error in measurement</a></li>
+<li class="chapter" data-level="2.7" data-path="poverty-and-measurement-theory-a-statistical-framework.html"><a href="poverty-and-measurement-theory-a-statistical-framework.html#measurement-model-for-poverty"><i class="fa fa-check"></i><b>2.7</b> Measurement model for poverty</a></li>
+<li class="chapter" data-level="2.8" data-path="poverty-and-measurement-theory-a-statistical-framework.html"><a href="poverty-and-measurement-theory-a-statistical-framework.html#blueprints-and-poverty-measurement-models"><i class="fa fa-check"></i><b>2.8</b> Blueprints and poverty measurement models</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="measurement-theory-and-principles.html"><a href="measurement-theory-and-principles.html"><i class="fa fa-check"></i><b>3</b> Measurement theory and principles</a><ul>
+<li class="chapter" data-level="3.1" data-path="measurement-theory-and-principles.html"><a href="measurement-theory-and-principles.html#origins-of-measurement-theory"><i class="fa fa-check"></i><b>3.1</b> Origins of measurement theory</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="Chapter-3.html"><a href="Chapter-3.html"><i class="fa fa-check"></i><b>4</b> Reliability in poverty measurement</a><ul>
+<li class="chapter" data-level="4.1" data-path="Chapter-3.html"><a href="Chapter-3.html#intuition-to-the-concept-of-reliability"><i class="fa fa-check"></i><b>4.1</b> Intuition to the concept of reliability</a></li>
+<li class="chapter" data-level="4.2" data-path="Chapter-3.html"><a href="Chapter-3.html#reliability-theory"><i class="fa fa-check"></i><b>4.2</b> Reliability theory</a></li>
+<li class="chapter" data-level="4.3" data-path="Chapter-3.html"><a href="Chapter-3.html#Chapter-3-measuresrel"><i class="fa fa-check"></i><b>4.3</b> Statistical measures of reliability</a></li>
+<li class="chapter" data-level="4.4" data-path="Chapter-3.html"><a href="Chapter-3.html#item-level-reliability-and-weighting"><i class="fa fa-check"></i><b>4.4</b> Item-level reliability and weighting</a></li>
+<li class="chapter" data-level="4.5" data-path="Chapter-3.html"><a href="Chapter-3.html#estimation-of-reliability"><i class="fa fa-check"></i><b>4.5</b> Estimation of Reliability</a><ul>
+<li class="chapter" data-level="4.5.1" data-path="Chapter-3.html"><a href="Chapter-3.html#overall-reliability"><i class="fa fa-check"></i><b>4.5.1</b> Overall reliability</a></li>
+<li class="chapter" data-level="4.5.2" data-path="Chapter-3.html"><a href="Chapter-3.html#Chapter-3-expoverel"><i class="fa fa-check"></i><b>4.5.2</b> Exploratory (non-model based) estimation of overall reliability</a></li>
+<li class="chapter" data-level="4.5.3" data-path="Chapter-3.html"><a href="Chapter-3.html#model-based-estimation-of-overall-reliability"><i class="fa fa-check"></i><b>4.5.3</b> Model-based estimation of overall reliability</a></li>
+<li class="chapter" data-level="4.5.4" data-path="Chapter-3.html"><a href="Chapter-3.html#overall-reliability-and-population-orderings"><i class="fa fa-check"></i><b>4.5.4</b> Overall reliability and population orderings</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>5</b> References</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Multidimensional poverty measurement: A statistical approach with applications</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="poverty-and-measurement-theory-a-statistical-framework" class="section level1">
+<h1><span class="header-section-number">Chapter 2</span> Poverty and measurement theory: A statistical framework</h1>
+<p><strong>Abstract</strong></p>
+<p>This chapter outlines a statistical framework to tackle some of the challenges that involved in multidimensional poverty measurement. Measurement theory is posed as overaching framework for the assessment of some of the key assumptions made in the production of multidimensional poverty scales. The concepts of reliability, validity, measurement invariance and scaling are defined and put into the context of poverty research. Working examples of this concepts are then presented in the following chapters of the book.</p>
+<div id="workflow-in-poverty-measurement-a-falsifiable-framework" class="section level2">
+<h2><span class="header-section-number">2.1</span> Workflow in poverty measurement: A falsifiable framework</h2>
+<p>Chapter 1 outlined some of the tasks involved in the development of multidimensional poverty indices and highlighted the assumptions underlying each stage: dimensions, indicators and thresholds or cut-point selection; weighting of dimensions and indicators; aggregation or production of a score and setting of a poverty line <span class="citation">Alkire (<a href="references.html#ref-Alkire2007" role="doc-biblioref">2007</a>)</span>, <span class="citation">Thorbecke (<a href="references.html#ref-Thorbecke2007" role="doc-biblioref">2007</a>)</span> and <span class="citation">Gordon &amp; Nandy (<a href="references.html#ref-Gordon2012" role="doc-biblioref">2012</a>)</span>.</p>
+<p>Figure <a href="poverty-and-measurement-theory-a-statistical-framework.html#fig:realwf">2.1</a> ilustrates the strategy often followed by researchers to produce a poverty index. Data often precedes the measurement (data ara given). Therefore, researchers have little influence upon the data collection process and thus they are constrained and have to adapt the existent information on deprivation to their poverty definition -or in the worst cases, they have to adapt the definition ot the data-. A series of assumptions are raised with regard the number and type of dimensions, the indicators (including cut offs to identify deprivation) and weighting (see <a href="Chapter-1.html#Chapter-1">Chapter 1</a>. Ideally, these assumptions should be assessed using a framework but in practice researchers avoid this stage or they conduct a series of ad hoc sensitivity analyses. The limitation is that these kind of analyses have no hypothesis and researchers are more likely to confirm their beliefs due to the lack of a clear testable strategy. Confirmation biases, therefore, are more likely to remain and basically researchers jump from their theoretical measure to the aggregation procedure.</p>
+<div class="figure" style="text-align: center"><span id="fig:realwf"></span>
+<img src="real_workflow.png" alt="The workflow researchers often implement in multidimensional poverty measurement." width="1412" />
+<p class="caption">
+Figure 2.1: The workflow researchers often implement in multidimensional poverty measurement.
+</p>
+</div>
+<p>Scientific measurement aims to incorporate a framework to falsify researcher’s assumptions. Figure <a href="poverty-and-measurement-theory-a-statistical-framework.html#fig:idealwf">2.2</a> shows the strategy that researchers could employ to reduce confirmation biases and measurement error. A theory of the concept of poverty should guide the development of a survey questionnarie and data collection. Researchers then could further especify the structure of their poverty measure based on the theory-driven data generation process. Once the theoretical measure is defined, assumptions need to be identified and make explicit so that can be falsified using a sound statistical framework. The results can be used as an input to redefine the measure in an interative process. Once the measure is proven to be robust (using a definition of what a good measure is derived from a measurement framework), researchers could move onto aggregation and the identification of the poor and not poor groups.</p>
+<div class="figure" style="text-align: center"><span id="fig:idealwf"></span>
+<img src="ideal_workflow1.png" alt="Ideal workflow in multidimensional poverty measurement." width="1103" />
+<p class="caption">
+Figure 2.2: Ideal workflow in multidimensional poverty measurement.
+</p>
+</div>
+<p>One possible and useful way to advance in the empirical assessment of poverty indices consist in detecting the assumptions involved in the production of an index and translate them into a falsifiable framework. That is, raising questions about all researcher’s assumptions and propose a method to answer whether researcher’s ideas hold given the data.</p>
+<p>The challenges involved in poverty research can be put in terms of sequential stages following list of problematic or contested issues in poverty measurement. All these issues are part of an effort to approximate the extent and identification of poverty and can be therefore written in terms of a statistical model: a simplified and imperfect description based on observed data. As <span class="citation">McCullagh (<a href="references.html#ref-McCullagh2002" role="doc-biblioref">2002</a>)</span> argues the idea of a statistical model conveys the recognition that the characterization of something is just an approximation. As such, a model to measure poverty is one possible option that can be assessed and improved. Before saying how a poverty measurement model can be examined and improved, is important to present an organised falsifiable framework of the key assumptions in poverty measurement.</p>
+</div>
+<div id="samplingspace" class="section level2">
+<h2><span class="header-section-number">2.2</span> Identification of the sampling space</h2>
+<p>One of the often overlooked features in poverty measurement is that fact that researchers never work with the full set of information. The main reason is that such set is unknown or unavailable. Given a definition of poverty, there are different dimensions, indicators and parameters to produce a working model to approximate poverty. But all these option belong to a space with all possible options. This is a major aspect of poverty measurement and highlights the fact that there is an underlying assumption (based on theory or data) about what subsets would work better to measure poverty.</p>
+<ol style="list-style-type: decimal">
+<li>Sampling space of all possible dimensions <span class="math inline">\(\mathscr J\)</span></li>
+<li>Sampling space of all possible variables <span class="math inline">\(\mathscr X\)</span></li>
+<li>Sampling space of all possible parameters (e.g. weights) <span class="math inline">\(\Theta\)</span></li>
+</ol>
+<p>This is just a statistical model throughout which poverty is identified and can compactly be written as:</p>
+<p><span class="math display">\[\begin{equation}
+\mathscr F = \{\mathscr X, F_{\theta} : \theta \in \Theta\}
+\end{equation}\]</span></p>
+<p>where the variables <span class="math inline">\(x_1,...,x_n\)</span> follow a certain distribution <span class="math inline">\(F_{\theta}\)</span>, which is indexed by a parameter <span class="math inline">\(\theta\)</span> defined in the parameter space <span class="math inline">\(\Theta\)</span>. <span class="math inline">\(\mathscr F\)</span> is a family of all probability distributions on <span class="math inline">\(\mathscr X\)</span>, which is just the set of all possible observed data.</p>
+</div>
+<div id="selection-of-dimensions-and-indicators" class="section level2">
+<h2><span class="header-section-number">2.3</span> Selection of dimensions and indicators</h2>
+<p>Poverty measurement therefore involves sampling from different spaces (array of options). For example, they put forward some dimensions, variables and weights. This is often the first challenge in poverty measurement where researchers select some dimensions <span class="math inline">\(j\)</span> from the sample space <span class="math inline">\(\mathscr J\)</span> and some <span class="math inline">\(x_{ij}\)</span> from the sample space <span class="math inline">\(\mathscr X\)</span>, so that if the scale has 30 indicators <span class="math inline">\(\mathscr X={1,2,...,30}\)</span> where <span class="math inline">\(x_{ij}=1\)</span> when deprived and <span class="math inline">\(x_{ij}=0\)</span> (and <span class="math inline">\(z&gt;0\)</span> for binary variables). For nominal variables, there is a space of possible cut offs <span class="math inline">\(\mathscr Z\)</span> too.</p>
+<p>Selecting dimensions, indicators and thresholds involves making the assumption that the sampling from the different spaces is the best possible one, i.e. the one that leads to a good poverty measure How does a researcher know whether its selection(sampling) is not wrong? This can be broken down into several questions:</p>
+<ul>
+<li>Is the subset of dimenions <span class="math inline">\(j\)</span> from <span class="math inline">\(\mathscr J\)</span> an  characterization of poverty?</li>
+<li>Is the subset of indicators given a cut off <span class="math inline">\((X;z)\)</span> from <span class="math inline">\(\mathscr X\)</span> an  characterization of the dimension <span class="math inline">\(j\)</span> and poverty?</li>
+</ul>
+<p>The word <em>adequate</em> is a loose term as this point as we need a theory or standard to define it. This is covered in the next section but at this point, the focus is on the into traslating the challenges in poverty research into assumptions to build a statistical model (that later can be testable in some way).</p>
+</div>
+<div id="aggregation-and-weighting" class="section level2">
+<h2><span class="header-section-number">2.4</span> Aggregation and weighting</h2>
+<p>The first stage is focuses in indicator and dimension selection and as it will be discussed below, this is where a falsifiable framework is more useful but also absent in poverty research. One way to ilustrate it is with the AF method. The AF method will work fine as long as the components of the formula work fine but there is nothing within it that will ensure that this will be the case. Therefore, once the indicators have been selected, in a second state, researchers aggregate the variables using a linear model selecting some weights <span class="math inline">\(w \in \mathscr W\)</span>, where <span class="math inline">\(w_{ij}=1\)</span> for non-differentially weighted measures and <span class="math inline">\(w_{ij}\ne 1\)</span>.</p>
+<ul>
+<li>Does the weighting scheme lead to the same ranking of the population?</li>
+</ul>
+<div id="splitting-the-population-into-meaningful-groups" class="section level3">
+<h3><span class="header-section-number">2.4.1</span> Splitting the population into meaningful groups</h3>
+<p>Once the model of poverty has been completed <span class="math inline">\(\mathscr F\)</span> a score is produced for each person in the sample. That means that a threshold should be proposed to identify the poor population.</p>
+</div>
+</div>
+<div id="measurement-theory-as-an-statistical-framework" class="section level2">
+<h2><span class="header-section-number">2.5</span> Measurement theory as an statistical framework</h2>
+</div>
+<div id="poverty-and-error-in-measurement" class="section level2">
+<h2><span class="header-section-number">2.6</span> Poverty and error in measurement</h2>
+<p>Poverty, as happens with many other constructs in social sciences, is an idea. It emerges from the theoretical presumption that within a population there is a group of people whose livings standard are below of what a society at a given point in time consider essential and customary to have a decent life. Poverty, in theory, impedes full participation in society, enhances the risk of die younger, interacts with many social risks, etc. But poverty is difficult to pinpoint because it is not directly observable and cannot be described with accuracy by a single variable. Instead, poverty research must rely on imperfect multivariate data to rank the population according to their living standards. To make things more difficult (see previous section), there are many ways in which poverty can be captured or described as researchers rely on different sets of outcomes (different samples from the same space) to characterise one’s living standards (diverse deprivation/needs/achievements). Poverty thus is a latent variable in that several outcomes are utilized to imperfectly describe it<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a>.</p>
+<p>The problem of capturing poverty as a construct is just one of many cases in social sciences where researches face the difficulty of finding a theoretically constructed (unobservable) group (e.g. the depressed, high class, high-achievers in education, happy). How then can we detect a group of people belonging to a construct? <span class="citation">Spearman (<a href="references.html#ref-Spearman1904" role="doc-biblioref">1904</a>)</span> put forward a capital idea: two or more outcomes is an indication that two things may have the same underlying cause. This perfectly fits the theory that deprivations are an observed outcome of poverty. A core assumption in poverty measurement is that a set (<span class="math inline">\(X \in \mathscr X\)</span>) of indicators constitutes the series of relevant manifestations of the idea of poverty. This treatment of poverty as a construct is powerful in that is a theoretical underpinning and rationale for finding and ranking individual differences in living standards (below which one is poor).</p>
+<p>Deprivation indicators are intercorrelated because they share a common cause: poverty. Conceptually, this means that if the effect of poverty is eliminated the intercorrelation of outcome variables would be zero. Measurement theory postulates that the problem of the relevant set of outcome variables to measure poverty can be tackled from the perspective of the <em>common factor model</em> <span class="citation">Thurstone (<a href="references.html#ref-Thurstone1947" role="doc-biblioref">1947</a>)</span>. Such a model formally postulates that the observed outcome is a function of one or more common factors and one unique factor. Each deprivation should vary due to two main sources (1) common variance and (2) unique variance. The first type of variance is the one accounted by for the latent factor- the variance shared with the other outcome measures. The second is the variance accounted by for other factors and by random error (unreliability, measurement error).</p>
+</div>
+<div id="measurement-model-for-poverty" class="section level2">
+<h2><span class="header-section-number">2.7</span> Measurement model for poverty</h2>
+<p>The statistical model proposed in modern measurement theory would be a common factor model where each observed variable (<span class="math inline">\(x_{ij}\)</span>) is a product of a latent dimension (<span class="math inline">\(\eta_j\)</span>) and the higher order factor (<span class="math inline">\(\zeta_h\)</span>) overall poverty. One of the interesting aspects of this formulation is that
+as not everything is due to the latent variable, error theory of a measurement model includes the method effect.</p>
+<p><span class="math display" id="eq:model1">\[\begin{equation}
+\tag{2.1}
+ x_{ij} = \lambda_{ij} \eta_j + \varepsilon_ij  
+\end{equation}\]</span></p>
+<p><span class="math display" id="eq:model2">\[\begin{equation}
+\tag{2.2}
+ \eta_j = \gamma_{j} \zeta  + \xi 
+\end{equation}\]</span></p>
+<p>The <span class="math inline">\(\lambda_{ij}\)</span> and <span class="math inline">\(\gamma_{j}\)</span> are known as factor loadings and they capture the realtionship between the latent variables and the outcome measures, and between the dimensions and the overall latent variable. Of course, it is possible to have more <span class="math inline">\(\zeta\)</span>’s but in poverty research the presumption seems to be that dimensions are nested into one overall latent construct which is poverty (some especial cases will be shown in Section XX where the higher-order model is a third-order factor):</p>
+<p>Poverty → Dimensions → Subdimensions → outcome measures.</p>
+<p>This model specification is one way to statistically capture the way in which multidimensional poverty measurement is conducted in the contemporary literature. Researchers propose a series of dimensions and classify their proposed indicators accordingly. The crucial aspect is that this is just an idea -informed from some theory or data- about how poverty can be better captured under a multdimensional definition. That is, the proposal is just an invalidated model that demands scrutiny. When put in terms of equation <a href="poverty-and-measurement-theory-a-statistical-framework.html#eq:model1">(2.1)</a> and equation <a href="poverty-and-measurement-theory-a-statistical-framework.html#eq:model2">(2.2)</a> researchers move from theoretical especulation toward empirical falsification.</p>
+</div>
+<div id="blueprints-and-poverty-measurement-models" class="section level2">
+<h2><span class="header-section-number">2.8</span> Blueprints and poverty measurement models</h2>
+<p>Models are just blueprints that summarise an explanation of how things can be constructed. Putting theoretical proposals to measure poverty in terms of a diagram helps a lot to visualise and contrast the diverse proposals to measure poverty. The advantaje of measurement theory is that everything can be put in terms of a blueprint. Multidimensional models can be easily presented as a diagram, which is just a graphical representation of a model. Another way to think about this, is to see the different blueprints in poverty measurement are just the different ways in which researcher sample from <span class="math inline">\(\mathscr J\)</span> and <span class="math inline">\(\mathscr X\)</span>. They lead to diverse structures, i.e. models.</p>
+<p>Equation <a href="poverty-and-measurement-theory-a-statistical-framework.html#eq:model1">(2.1)</a> simply tells a model in which one latent construct produces the observed (<span class="math inline">\(x_{ij}\)</span>) outcomes. This model is say to be unidimensional as there is only one factor <span class="math inline">\(\eta_j\)</span> causing the observed indicators. One could think of this model as the null model in poverty measurement where the indicators cannot be clearly clustered into dimensions. This does not mean that the indicators do not measure different aspects of poverty. It might be that the indicators indeed different aspects but that there are no clusters of indicators. In practice, there are few theoretical models proposing such thing. Empirically, however, it might be often a case given that in poverty research data collection rarely follows a theoretical proposal (see <em>add chapter reference</em>). Figure <a href="poverty-and-measurement-theory-a-statistical-framework.html#fig:cfanull">2.3</a> translates <a href="poverty-and-measurement-theory-a-statistical-framework.html#eq:model1">(2.1)</a> into a plot.</p>
+<div class="figure" style="text-align: center"><span id="fig:cfanull"></span>
+<img src="Diagram_CFA_null.png" alt="This is a visual representation of a null unidimensional model." width="1966" />
+<p class="caption">
+Figure 2.3: This is a visual representation of a null unidimensional model.
+</p>
+</div>
+<p>Figure <a href="poverty-and-measurement-theory-a-statistical-framework.html#fig:cfaguio">2.4</a> displays the higher order factor model using the three dimensions proposed by . This structure is roughly what poverty researchers have in mind when thinking about poverty in multidimensional terms. That is, that the indicators can be grouped into some dimensions. In this example, there are 9 outcome variables classified into three dimensions (<span class="math inline">\(\eta_j\)</span>) (Durables, Housing and Economi strain). Then the loadings (<span class="math inline">\(\lambda_{ij}\)</span>) denote the relationship of each outcome with the dimensions in question. Then the arrows from the high-order factor (overall poverty) to each dimension are the factor loadings (<span class="math inline">\(\gamma_{j}\)</span>) that capture the relationship between overall poverty and each dimension. Both (<span class="math inline">\(\lambda_{ij}\)</span>) and (<span class="math inline">\(\gamma_{j}\)</span>) are parameters of the model and denote the streghnt of the association between the latent variable and the outcome variables (See <em></em> for an explanation of how this relates to the topic of reliability and differential weights). The diagram of @(fig:cfaguio) model is an example of a higher-order factor: A three-dimension model with a higher-order factor. The dimensions are durables, housing and economic strain. In this example, there are only three indicators for each dimension. In this model, none of the indicators loads into more than one dimension. Poverty measures often assume that a given indicator is an exclusive outcome of a certain dimension.</p>
+<div class="figure" style="text-align: center"><span id="fig:cfaguio"></span>
+<img src="Diagram_CFA_GuioModel.png" alt="This is a visual representation of @Guio2009's model. Second-order factor." width="3966" />
+<p class="caption">
+Figure 2.4: This is a visual representation of <span class="citation">A Guio et al. (<a href="references.html#ref-Guio2009" role="doc-biblioref">2009</a>)</span>’s model. Second-order factor.
+</p>
+</div>
+<p>Another way to think about the dimensions of poverty comes from <span class="citation">Alkire &amp; Santos (<a href="references.html#ref-Alkire2010" role="doc-biblioref">2010</a>)</span>, which is used to compute OPHI-UNDP’s Multidimensional Poverty Index (MPI). The structure proposes a similar structure to <span class="citation">Guio et al. (<a href="references.html#ref-Guio2009" role="doc-biblioref">2009</a>)</span>’s model: second-order structure. In this case, poverty is thought to have three substantive dimensions: Education, health and iving standards. These are different dimensions from those porposed by <span class="citation">Guio et al. (<a href="references.html#ref-Guio2009" role="doc-biblioref">2009</a>)</span> or by <span class="citation">Townsend (<a href="references.html#ref-Townsend1979" role="doc-biblioref">1979</a>)</span> in figure <a href="poverty-and-measurement-theory-a-statistical-framework.html#fig:cfampi">2.5</a>. The diagram only specifies, at this point, the structure of the measure as the MPI does not have three indicators for each dimension but it helps to see the model the authors put forward to measure global acute poverty.</p>
+<div class="figure" style="text-align: center"><span id="fig:cfampi"></span>
+<img src="Diagram_CFA_mpi.png" alt="This is a visual representation of @Alkire2010's model. Second-order factor" width="1966" />
+<p class="caption">
+Figure 2.5: This is a visual representation of <span class="citation">Alkire &amp; Santos (<a href="references.html#ref-Alkire2010" role="doc-biblioref">2010</a>)</span>’s model. Second-order factor
+</p>
+</div>
+<p><span class="citation">Townsend (<a href="references.html#ref-Townsend1979" role="doc-biblioref">1979</a>)</span>’s model is one of the first multidimensional models in the world. His proposal has more nested dimensions compared with figures <a href="poverty-and-measurement-theory-a-statistical-framework.html#fig:cfaguio">2.4</a> and <a href="poverty-and-measurement-theory-a-statistical-framework.html#fig:cfampi">2.5</a>. In this case, indicators are nested into eleven dimensions, which in turn can be grouped into two more dimensions. The resulting figure (<a href="poverty-and-measurement-theory-a-statistical-framework.html#fig:cfatownsend">2.6</a> is a third-order factor structure. <span class="citation">Guio et al. (<a href="references.html#ref-Guio2017" role="doc-biblioref">2017</a>)</span> propose a reduced version of this model which does not considers the 11 dimensions and indicators are classified according to material and social deprivation. The loadings of the indicators are ommited. <span class="math inline">\(\kappa_1\)</span> and <span class="math inline">\(\kappa_2\)</span> are the loadings of the higher order factor. These could be specified using <a href="poverty-and-measurement-theory-a-statistical-framework.html#eq:model2">(2.2)</a> as reference- now <span class="math inline">\(\zeta\)</span> has k=2 factors.</p>
+<div class="figure" style="text-align: center"><span id="fig:cfatownsend"></span>
+<img src="Diagram_CFA_townsend.png" alt="This is a visual representation of @Townsend1979's model. Third-order factor." width="3966" />
+<p class="caption">
+Figure 2.6: This is a visual representation of <span class="citation">Townsend (<a href="references.html#ref-Townsend1979" role="doc-biblioref">1979</a>)</span>’s model. Third-order factor.
+</p>
+</div>
+<p>Another way to think about this, is to see the different blueprints in poverty measurement are just the different ways in which researcher sample from <span class="math inline">\(\mathscr J\)</span> and <span class="math inline">\(\mathscr X\)</span>. They lead to diverse structures, i.e. models. This reflection brings us back again to the question: how do we know whether the samples we take from <span class="math inline">\(\mathscr J\)</span> and <span class="math inline">\(\mathscr X\)</span> are an adequate representation of poverty in a given society at a given point in time?</p>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="3">
+<li id="fn3"><p>There is another framework that incorporates the idea of measurement error. Fuzzy sets theory uses the term vagueness to describe the intrinsic imperfection in poverty measurement <span class="citation">(Martinetti, <a href="references.html#ref-Martinetti2006" role="doc-biblioref">2006</a>)</span><a href="poverty-and-measurement-theory-a-statistical-framework.html#fnref3" class="footnote-back">↩</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="Chapter-1.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="measurement-theory-and-principles.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="assets/gitbook-2.6.7/js/app.min.js"></script>
+<script src="assets/gitbook-2.6.7/js/lunr.js"></script>
+<script src="assets/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="assets/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="assets/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="assets/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="assets/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+},
+"toolbar": {
+"position": "static"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

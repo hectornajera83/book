@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 4 Reliability in poverty measurement | Multidimensional poverty measurement: A statistical approach with applications</title>
+  <meta name="description" content="Chapter 4 Reliability in poverty measurement | Multidimensional poverty measurement: A statistical approach with applications" />
+  <meta name="generator" content="bookdown 0.10 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 4 Reliability in poverty measurement | Multidimensional poverty measurement: A statistical approach with applications" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 4 Reliability in poverty measurement | Multidimensional poverty measurement: A statistical approach with applications" />
+  
+  
+  
+
+<meta name="author" content="Héctor Nájera" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="measurement-theory-and-principles.html">
+<link rel="next" href="references.html">
+<script src="assets/jquery-2.2.3/jquery.min.js"></script>
+<link href="assets/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i>Intro</a></li>
+<li class="chapter" data-level="1" data-path="Chapter-1.html"><a href="Chapter-1.html"><i class="fa fa-check"></i><b>1</b> Poverty and measurement theory principles</a><ul>
+<li class="chapter" data-level="1.1" data-path="Chapter-1.html"><a href="Chapter-1.html#the-concept-of-poverty"><i class="fa fa-check"></i><b>1.1</b> The Concept of Poverty</a></li>
+<li class="chapter" data-level="1.2" data-path="Chapter-1.html"><a href="Chapter-1.html#Chapter-1-dimensions"><i class="fa fa-check"></i><b>1.2</b> Theoretical dimensions of poverty</a></li>
+<li class="chapter" data-level="1.3" data-path="Chapter-1.html"><a href="Chapter-1.html#the-measurement-of-poverty-and-its-challenges"><i class="fa fa-check"></i><b>1.3</b> The measurement of poverty and its challenges</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="Chapter-1.html"><a href="Chapter-1.html#challeges-in-selection-of-dimensions-contents-cut-offs-and-weights"><i class="fa fa-check"></i><b>1.3.1</b> Challeges in selection of dimensions, contents, cut offs and weights</a></li>
+<li class="chapter" data-level="1.3.2" data-path="Chapter-1.html"><a href="Chapter-1.html#challenges-in-aggregation-and-identification-of-the-poor"><i class="fa fa-check"></i><b>1.3.2</b> Challenges in aggregation and identification of the poor</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="Chapter-1.html"><a href="Chapter-1.html#the-poor-and-the-not-poor-the-poverty-line"><i class="fa fa-check"></i><b>1.4</b> The poor and the not poor: The poverty line</a></li>
+<li class="chapter" data-level="1.5" data-path="Chapter-1.html"><a href="Chapter-1.html#a-brief-on-multidimensional-poverty-measurement"><i class="fa fa-check"></i><b>1.5</b> A brief on multidimensional poverty measurement</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="poverty-and-measurement-theory-a-statistical-framework.html"><a href="poverty-and-measurement-theory-a-statistical-framework.html"><i class="fa fa-check"></i><b>2</b> Poverty and measurement theory: A statistical framework</a><ul>
+<li class="chapter" data-level="2.1" data-path="poverty-and-measurement-theory-a-statistical-framework.html"><a href="poverty-and-measurement-theory-a-statistical-framework.html#workflow-in-poverty-measurement-a-falsifiable-framework"><i class="fa fa-check"></i><b>2.1</b> Workflow in poverty measurement: A falsifiable framework</a></li>
+<li class="chapter" data-level="2.2" data-path="poverty-and-measurement-theory-a-statistical-framework.html"><a href="poverty-and-measurement-theory-a-statistical-framework.html#samplingspace"><i class="fa fa-check"></i><b>2.2</b> Identification of the sampling space</a></li>
+<li class="chapter" data-level="2.3" data-path="poverty-and-measurement-theory-a-statistical-framework.html"><a href="poverty-and-measurement-theory-a-statistical-framework.html#selection-of-dimensions-and-indicators"><i class="fa fa-check"></i><b>2.3</b> Selection of dimensions and indicators</a></li>
+<li class="chapter" data-level="2.4" data-path="poverty-and-measurement-theory-a-statistical-framework.html"><a href="poverty-and-measurement-theory-a-statistical-framework.html#aggregation-and-weighting"><i class="fa fa-check"></i><b>2.4</b> Aggregation and weighting</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="poverty-and-measurement-theory-a-statistical-framework.html"><a href="poverty-and-measurement-theory-a-statistical-framework.html#splitting-the-population-into-meaningful-groups"><i class="fa fa-check"></i><b>2.4.1</b> Splitting the population into meaningful groups</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="poverty-and-measurement-theory-a-statistical-framework.html"><a href="poverty-and-measurement-theory-a-statistical-framework.html#measurement-theory-as-an-statistical-framework"><i class="fa fa-check"></i><b>2.5</b> Measurement theory as an statistical framework</a></li>
+<li class="chapter" data-level="2.6" data-path="poverty-and-measurement-theory-a-statistical-framework.html"><a href="poverty-and-measurement-theory-a-statistical-framework.html#poverty-and-error-in-measurement"><i class="fa fa-check"></i><b>2.6</b> Poverty and error in measurement</a></li>
+<li class="chapter" data-level="2.7" data-path="poverty-and-measurement-theory-a-statistical-framework.html"><a href="poverty-and-measurement-theory-a-statistical-framework.html#measurement-model-for-poverty"><i class="fa fa-check"></i><b>2.7</b> Measurement model for poverty</a></li>
+<li class="chapter" data-level="2.8" data-path="poverty-and-measurement-theory-a-statistical-framework.html"><a href="poverty-and-measurement-theory-a-statistical-framework.html#blueprints-and-poverty-measurement-models"><i class="fa fa-check"></i><b>2.8</b> Blueprints and poverty measurement models</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="measurement-theory-and-principles.html"><a href="measurement-theory-and-principles.html"><i class="fa fa-check"></i><b>3</b> Measurement theory and principles</a><ul>
+<li class="chapter" data-level="3.1" data-path="measurement-theory-and-principles.html"><a href="measurement-theory-and-principles.html#origins-of-measurement-theory"><i class="fa fa-check"></i><b>3.1</b> Origins of measurement theory</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="Chapter-3.html"><a href="Chapter-3.html"><i class="fa fa-check"></i><b>4</b> Reliability in poverty measurement</a><ul>
+<li class="chapter" data-level="4.1" data-path="Chapter-3.html"><a href="Chapter-3.html#intuition-to-the-concept-of-reliability"><i class="fa fa-check"></i><b>4.1</b> Intuition to the concept of reliability</a></li>
+<li class="chapter" data-level="4.2" data-path="Chapter-3.html"><a href="Chapter-3.html#reliability-theory"><i class="fa fa-check"></i><b>4.2</b> Reliability theory</a></li>
+<li class="chapter" data-level="4.3" data-path="Chapter-3.html"><a href="Chapter-3.html#Chapter-3-measuresrel"><i class="fa fa-check"></i><b>4.3</b> Statistical measures of reliability</a></li>
+<li class="chapter" data-level="4.4" data-path="Chapter-3.html"><a href="Chapter-3.html#item-level-reliability-and-weighting"><i class="fa fa-check"></i><b>4.4</b> Item-level reliability and weighting</a></li>
+<li class="chapter" data-level="4.5" data-path="Chapter-3.html"><a href="Chapter-3.html#estimation-of-reliability"><i class="fa fa-check"></i><b>4.5</b> Estimation of Reliability</a><ul>
+<li class="chapter" data-level="4.5.1" data-path="Chapter-3.html"><a href="Chapter-3.html#overall-reliability"><i class="fa fa-check"></i><b>4.5.1</b> Overall reliability</a></li>
+<li class="chapter" data-level="4.5.2" data-path="Chapter-3.html"><a href="Chapter-3.html#Chapter-3-expoverel"><i class="fa fa-check"></i><b>4.5.2</b> Exploratory (non-model based) estimation of overall reliability</a></li>
+<li class="chapter" data-level="4.5.3" data-path="Chapter-3.html"><a href="Chapter-3.html#model-based-estimation-of-overall-reliability"><i class="fa fa-check"></i><b>4.5.3</b> Model-based estimation of overall reliability</a></li>
+<li class="chapter" data-level="4.5.4" data-path="Chapter-3.html"><a href="Chapter-3.html#overall-reliability-and-population-orderings"><i class="fa fa-check"></i><b>4.5.4</b> Overall reliability and population orderings</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>5</b> References</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Multidimensional poverty measurement: A statistical approach with applications</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="Chapter-3" class="section level1">
+<h1><span class="header-section-number">Chapter 4</span> Reliability in poverty measurement</h1>
+<p><strong>Abstract</strong></p>
+<p>This chapter introduces the theory and concept of reliability. An intuitive explanation is provided at the begining of the chapter to underline the implications of reliability for measurement. Then, a formal introduction to the theory of reliability is provided. Reliability can be estimated using different approaches, the chapter discusses its limitations. The second main section of the chapter ilustrates how reliability works and how can it be estimated using R and Mplus by using simulated data. Then a real-data example is used to show some of the tipical problems involved in the examination of reliability.</p>
+<div id="intuition-to-the-concept-of-reliability" class="section level2">
+<h2><span class="header-section-number">4.1</span> Intuition to the concept of reliability</h2>
+<p>In what sense the concept of reliability relates to the idea of having a measure we can trust? Poverty analysts and policymakers require indices they beleive in to focus on more important issues like devloping and studying poverty erradication strategies. There is nothing worse in measurement that a scale that causes disbelief in that the debate concetrates upon how bad a measure is and not upon how good or bad a policy is. `Trust’ is build upon consistent and meaningful estimates. For example, imagine a case in which we could conduct two surveys to the same population. Ideally, we expect our classification of the poor population to remain unchanged from <span class="math inline">\(t_1\)</span> to <span class="math inline">\(t_2\)</span>. This is telling us that our index is stable across samples. A noisy index, in contrast, would lead to unsatble orderings and it is impossible to distingush a singnal (the thing we are interested in) from noise (unnecessary and confusing variability).</p>
+<p>Consistency, however, is not simply having the same response patterns <em>ceteris paribus</em> across two samples but also by having systematic population orderings. Imagine a case in which one of the deprivation indicators is not a good measure of poverty, like having a folding bycicle. This variable will have a low correlation with the rest of the deprivation indicators. <span class="citation">Spearman (<a href="references.html#ref-Spearman1904" role="doc-biblioref">1904</a>)</span> tells us to be suspicious about such kind of behaviour. Low correlation (or even worse negative correlation) could mean that the indicator in question in not a consequence by poverty (“Lack of command of resources over time” See Chapter <a href="Chapter-1.html#Chapter-1">1</a>). The consequence would be that we will end up with two different population rankings depending on whether we include folding bycicle in our index. How different? It will depend upon how poorly correlated the indicator in question is with the rest. Therefore, even with a very similar response pattern, our scale will be rather unstable to be trusted. Of course, if we know that the folding bycicle item is an unreasonable measure of poverty we would have drop it before the empirical analysis. However, in poverty measurement there are variables or thresholds of these variables that are quite contested.</p>
+<p>Now imagine a different escenario where we have only good outcome measures of poverty and, for some reason, a good variable like lacking drinking piped water inside the house is dropped from the index (assuming this is a developing country where this measure works!). If we dropped this indicator from our analysis we would lose valuable information. Because we will be missing good variables (either because are not available or we just miss it from theory) we would like a measure whose population ordering is not that sensible to information losses. That, indeed, is a measure we can trust in the sense that it will lead to consistent results. High reliability is a property that, for instance, protects an index against certain information losses, i.e. the higher the reliability, the lower the effect of missing variables. Yet, missing indicators could be damaging for policy reasons, of course.</p>
+</div>
+<div id="reliability-theory" class="section level2">
+<h2><span class="header-section-number">4.2</span> Reliability theory</h2>
+<p>Reliability is a key concept in measurement theory and can be simple defined as the homogeneity of an index <span class="citation">(Revelle &amp; Zinbarg, <a href="references.html#ref-Revelle2009" role="doc-biblioref">2009</a>)</span>. An homogeneous index is a scale whose outcome indicators are manifestations of the same trait. In the literature several authors refer to reliability as internal consistenty of an index because this a consequense of homogeneity. In the example above having an indicator that is not a good measure of poverty means that the index is heterogeneous and therefore leads to inconistent population orderings. Thus at the core of the principle of reliability lies the idea of having a series of items that would have a predictable behaviour when aggregated, i.e. if an index is reliable we should expect to have very similar population rankings across samples or small variations of the same reliable index with more or less indicators.</p>
+<p>The theory of reliability is inextricably connected with the evolution of measurement theory. The theory of reliability can be traced back to classical test theory (CTT) but it has been under continous development by more recent breaktrhoughs in latent variable modelling. Reliability is rooted in the acknowlegement that all measures have an unkown mixture of signal and noise (error). For <span class="citation">Spearman (<a href="references.html#ref-Spearman1904" role="doc-biblioref">1904</a>)</span> there should be a <em>true</em> score- that is just the combination of an observed score and error. As in classical or frequentists statistics, it is <em>true</em> in the sense of the expected score across many replications of the same experiment. Being <span class="math inline">\(\theta\)</span> the true score, in CTT reliability is expressed as:</p>
+<p><span class="math display" id="eq:truescore">\[\begin{equation}
+\tag{4.1}
+x_i = \theta_i + \varepsilon_i
+\end{equation}\]</span></p>
+<p>Equation <a href="Chapter-3.html#eq:truescore">(4.1)</a> can be put in terms of variance decomposition. The variance of the observed score <span class="math inline">\(\sigma^{2}_{x}\)</span> is thus equal to the variance of the true score plus the variance of the error. The discrepancy between the true score and the observed score is an estimate of reliability:</p>
+<p><span class="math display" id="eq:reliability1">\[\begin{equation}
+\tag{4.2}
+  \rho =  \frac{\sigma^{2}_{\theta}} {\sigma^{2}_{x} + \sigma^{2}_{e}}
+\end{equation}\]</span></p>
+<p>where <span class="math inline">\(\rho\)</span> is the total reliability and <span class="math inline">\(\sigma^{2}_{i}\)</span> is the subject’s variability and <span class="math inline">\(\sigma^{2}_{e}\)</span> is the measurement error. Because this is a simple proportion, the reliability estimate will be (almost) always between 0 and 1<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a>.</p>
+<p>The classical definition of reliability has been translated and adopted by the latent variable approach. This approach is not at all concerned with the <em>true</em> score but with the extent to which a measure reflects the construct. Here the factor loadings <span class="math inline">\(\lambda_i\)</span>’s are key in that they reflect the association between an outcome and the latent construct. Therefore, latent variable approach naturally accomodates the question about how good are the manifest variables. Furthermore, it can estimate both <span class="math inline">\(\sigma^{2}_{x}\)</span> and <span class="math inline">\(\sigma^{2}_{e}\)</span>. Reliability can be expresed as:</p>
+<p><span class="math display" id="eq:reliability2">\[\begin{equation}
+\tag{4.3}
+\rho_{x_{i}\theta} = \frac{\lambda^2_{i}} {\sigma^{2}_{x}}
+\end{equation}\]</span></p>
+</div>
+<div id="Chapter-3-measuresrel" class="section level2">
+<h2><span class="header-section-number">4.3</span> Statistical measures of reliability</h2>
+<p>The are different ways to estimate the reliability of a scale, each one with its advantages and disadvanatages. The most widely use estimate of reliability is <span class="math inline">\(\alpha\)</span> or <span class="math inline">\(\lambda_3\)</span> (do not mistake with factor loadings) <span class="citation">(Cronbach, <a href="references.html#ref-Cronbach1951" role="doc-biblioref">1951</a>; Guttman, <a href="references.html#ref-Guttman1945" role="doc-biblioref">1945</a>)</span>. This estimate comes from CTT and draws upon <span class="citation">Spearman (<a href="references.html#ref-Spearman1904" role="doc-biblioref">1904</a>)</span> approach to estimate the variance based on parallel tests:</p>
+<p><span class="math display" id="eq:alpha">\[\begin{equation}
+\tag{4.4}
+\alpha = \lambda_3 = \frac{\sigma^{2}_{x} - \sum\sigma^{2}_{xi}} {\sigma^{2}_{x}} \frac{n} {n-1}
+\end{equation}\]</span></p>
+<p>Cronbach’s <span class="math inline">\(\alpha\)</span> is, nonetheless, not a good estimate of reliability <span class="citation">(Revelle &amp; Zinbarg, <a href="references.html#ref-Revelle2009" role="doc-biblioref">2009</a>; Zinbarg, Revelle, Yovel, &amp; Li, <a href="references.html#ref-Zinbarg2005" role="doc-biblioref">2005</a>)</span>. It only works fine under very restrictive assumptions. First, the association between each indicator and the latent variable is equal. For example, for a measure based on three outcome variables it would mean that: <span class="math inline">\(\lambda_1=\lambda_2=\lambda_3\)</span>. Second, the outcome measure have equal error variances. These two assumption are unlikely to hold in practice. Another problem with <span class="math inline">\(\alpha\)</span> is that increasing the number of items and the average inter-item correlation will increase the reliability estimate. Table~<em></em> summarises the relation among the different reliability statistics by dimensionality.</p>
+<p>Given that <span class="math inline">\(\alpha\)</span> is based upon untenable assumptions, there have been several proposals to estimate reliability under more general conditions. <span class="citation">Revelle (<a href="references.html#ref-Revelle1979" role="doc-biblioref">1979</a>)</span> proposes the statistic <span class="math inline">\(\beta\)</span>. This coefficient considers the worse split in different halves, i.e. it minimizes the average covariance by taking into account the lowest interitem correlation (<span class="math inline">\(\bar{\sigma_{ij}}\)</span>). It is thus a measure of the lowest possible reliability and therefore it will always be lower or equal to <span class="math inline">\(\alpha\)</span>. It is estimated as follows:</p>
+<p><span class="math display" id="eq:beta">\[\begin{equation}
+\tag{4.5}
+ \beta = \frac{k^2 \bar{\sigma_{ij}}} {\sigma^{2}_{x}}
+\end{equation}\]</span></p>
+<p><span class="citation">McDonald (<a href="references.html#ref-McDonald1999" role="doc-biblioref">1999</a>)</span> put forward two alternate measures of reliability: <span class="math inline">\(\omega\)</span> and <span class="math inline">\(\omega_h\)</span>. The first statistic is also know as the measure that maximizes the estimation of reliability, i.e. the lowest upper bound <span class="citation">(Zinbarg et al., <a href="references.html#ref-Zinbarg2005" role="doc-biblioref">2005</a>)</span>. Equation <a href="Chapter-3.html#eq:omega">(4.6)</a> shows the formula of <span class="math inline">\(\omega\)</span>. This equation is a proportion of the variance of the latent variable that is accounted by the outcome measures.</p>
+<p><span class="math display" id="eq:omega">\[\begin{equation}
+\tag{4.6}
+ \omega = \frac{ \sum\limits_{j=1}^k  \bigg(\sum\limits_{i=1}^p \lambda_{ij}\bigg)^2 } {\sum\limits_{j=1}^k  \bigg(\sum\limits_{i=1}^p \lambda_{ij}\bigg)^2 + \sum\limits_{i=1}^p e_i}
+\end{equation}\]</span></p>
+<p>Equation <a href="Chapter-3.html#eq:omegah">(4.7)</a> shows the formula to estimate <span class="math inline">\(\omega_h\)</span> which is also a proportion but in this case is the variance accounted by the higher order factor. Therefore, this is a more appropiate measure when having multidimensional scales.</p>
+<p><span class="math display" id="eq:omegah">\[\begin{equation}
+\tag{4.7}
+\omega_h = \frac{  \bigg(\sum\limits_{i=1}^p \lambda_{ij}\bigg) ^2 } {\sum\limits_{j=1}^k  \bigg(\sum\limits_{i=1}^p \lambda_{ij}\bigg) ^2 + \sum\limits_{i=1}^p e_i}
+\end{equation}\]</span></p>
+<p>These different reliability statistics beg the following question: Which one should be used? There are two complementary ways to answer this question. First, these reliability statistics are based on a series of assumptions and thus its usage depends on the extent to which each one is adequate given the data and the research question.</p>
+<p><span class="math inline">\(\alpha\)</span> is a very specific case whose assumptions will be rarely meet in practice. The recommendation is to avoid using <span class="math inline">\(\alpha\)</span> and focus on general cases such as <span class="math inline">\(\omega\)</span> and <span class="math inline">\(\omega_h\)</span>. <span class="math inline">\(\omega\)</span> will work in almost any situation but when the measures are multidimensional. This does not mean that it would be incorrect to use it. In multidimensional settings, <span class="math inline">\(\omega_h\)</span> is just more adequate because it will tell the amount of variance accounted by for the higher order factor.</p>
+<p><span class="citation">Zinbarg et al. (<a href="references.html#ref-Zinbarg2005" role="doc-biblioref">2005</a>)</span> ran a Monte Carlo study to assess how does the different reliability statistics compare one another. They found the following (See Table <a href="Chapter-3.html#tab:reliabilitystats">4.1</a>):</p>
+<table>
+<caption><span id="tab:reliabilitystats">Table 4.1: </span> Summary of the relations among <span class="math inline">\(\beta\)</span>, <span class="math inline">\(\alpha\)</span>, <span class="math inline">\(\omega\)</span> and
+reliability depending on index dimensionality. Taken from <span class="citation">(Zinbarg et al., <a href="references.html#ref-Zinbarg2005" role="doc-biblioref">2005</a>, p. 128)</span></caption>
+<thead>
+<tr class="header">
+<th align="center">Dimensionality</th>
+<th align="center">Expected behaviour</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">Multidimensional</td>
+<td align="center"><span class="math inline">\(\beta&lt;\alpha&lt;\omega\leq\rho\)</span></td>
+</tr>
+<tr class="even">
+<td align="center"></td>
+<td align="center"><span class="math inline">\(\omega_h&lt;\omega\leq\rho\)</span></td>
+</tr>
+<tr class="odd">
+<td align="center">Unidimensional</td>
+<td align="center"><span class="math inline">\(\beta&lt;\alpha&lt;\omega_h=\omega\leq\rho\)</span></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p>The second way to answer the question has to do with the conclusions one could make from the estimation of these measures. If the assumptions are violated our conclusions would be very likely incorrect and misleading. Assuming the correct statistic is selected, the question is: How low is too low to be unacceptable?</p>
+<p>One of the consequences of reliability is that it leads to an accurate ranking or ordering of the population in question, i.e. from the lowest standard of living to the highest. <span class="citation">Nájera (<a href="references.html#ref-Najera2018" role="doc-biblioref">2018</a>)</span> run a Monte Carlo study to assess the relationship between reliability and population classification. Hence, this study poses the question about the level of reliability that guarantees a low amount of error. The result was that there is a clear relationship between reliability and population classification. The summary of the findings of <span class="citation">Nájera (<a href="references.html#ref-Najera2018" role="doc-biblioref">2018</a>)</span> are shown in Table <a href="Chapter-3.html#tab:relentropy">4.2</a>. The simulation considered three possible dimensional structures: unidimensional, weak and strong multidimensional measures. Weak multidimensionality was defined as the case where the dimensions have relatively low loadings to the higher-order factor.</p>
+<table style="width:86%;">
+<caption><span id="tab:relentropy">Table 4.2: </span> Summary of the relations among
+<span class="math inline">\(\beta\)</span>, <span class="math inline">\(\alpha\)</span>, <span class="math inline">\(\omega\)</span> and entropy depending on index
+dimensionality. Summarised from <span class="citation">Nájera (<a href="references.html#ref-Najera2018" role="doc-biblioref">2018</a>)</span>.
+In this case, the unidimensional model seem to meet
+<span class="math inline">\(\tau\)</span> equivalence, i.e. equal loadings.</caption>
+<colgroup>
+<col width="23%" />
+<col width="16%" />
+<col width="31%" />
+<col width="13%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td align="left">Reliabiity
+statistic</td>
+<td align="center">Leads to</td>
+<td align="center">lassification error
+(%)</td>
+<td align="center">Entropy
+value</td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(\alpha&gt;.8\)</span></td>
+<td align="center"><span class="math inline">\(\approx\)</span></td>
+<td align="center"><span class="math inline">\(&lt;5\%\)</span></td>
+<td align="center"><span class="math inline">\(&gt;.8\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(\omega&gt;.8\)</span></td>
+<td align="center"><span class="math inline">\(\approx\)</span></td>
+<td align="center"><span class="math inline">\(&lt;5\%\)</span></td>
+<td align="center"><span class="math inline">\(&gt;.8\)</span></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(\omega&gt;.85\)</span></td>
+<td align="center"><span class="math inline">\(\approx\)</span></td>
+<td align="center"><span class="math inline">\(&lt;5\%\)</span></td>
+<td align="center"><span class="math inline">\(&gt;.8\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(\omega_h&gt;.65\)</span></td>
+<td align="center"><span class="math inline">\(\approx\)</span></td>
+<td align="center"><span class="math inline">\(&lt;5\%\)</span></td>
+<td align="center"><span class="math inline">\(&gt;.8\)</span></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(\omega&gt;.85\)</span></td>
+<td align="center"><span class="math inline">\(\approx\)</span></td>
+<td align="center"><span class="math inline">\(&lt;5\%\)</span></td>
+<td align="center"><span class="math inline">\(&gt;.8\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(\omega_h&gt;.70\)</span></td>
+<td align="center"><span class="math inline">\(\approx\)</span></td>
+<td align="center"><span class="math inline">\(&lt;5\%\)</span></td>
+<td align="center"><span class="math inline">\(&gt;.8\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="item-level-reliability-and-weighting" class="section level2">
+<h2><span class="header-section-number">4.4</span> Item-level reliability and weighting</h2>
+<p>Classical test theory was concerned with overall reliability. Item response theory (IRT) move from the idea of a true score and look at the relationship of the indicators with an underlying trait (e.g. intelegence, depression, poverty) <span class="citation">(Harris, <a href="references.html#ref-Harris1989" role="doc-biblioref">1989</a>)</span>. IRT is a theory about the type of relationship that an indicator has with a latent variable. The simplest IRT specification proposes that a measure is undimensional (i.e. the variance of the indicators is accounted by for one trait) and that each item relates to different degrees of difficulty or severity of the construct. This is called a one-parameter IRT model. A more general IRT model also proposes that some indicators are better than others to differenciate the population. That is, that some deprivation indicators are associated with a higher likelihood of belonging to the poor group. This more general aspect is added via a second parameter called discrimination and leads to a two-parameter IRT model. This kind of model has been used by <span class="citation">Guio et al. (<a href="references.html#ref-Guio2016" role="doc-biblioref">2016</a>)</span> and <span class="citation">Guio et al. (<a href="references.html#ref-Guio2017" role="doc-biblioref">2017</a>)</span> for example.</p>
+<p><span class="math display" id="eq:irt">\[\begin{equation}
+\tag{4.8}
+P_i\theta = \frac{1} {1+e^{-1.7a_i(\theta-b_i)}}
+\end{equation}\]</span></p>
+<p>Equation <a href="Chapter-3.html#eq:irt">(4.8)</a>, translated to poverty measurement, states that the probability of chosing a someone that is deprived in the indicator <span class="math inline">\(i\)</span> is given by the discrimination (a) and the severity(b) of the item. <span class="citation">Muthén (<a href="references.html#ref-Muthen2013" role="doc-biblioref">2013</a>)</span> show how this models relates to a unidimensional factor model, equations 21 and 22. In a factor model (b) is just a threshold and (a) the factor loadings (<span class="math inline">\(\lambda_{i}\)</span>). Therefore, the stronger the loadings, the higher its discrimination power, where <span class="math inline">\(\psi\)</span> is the variance of the latent variable.</p>
+<p><span class="math display" id="eq:irta">\[\begin{equation}
+\tag{4.9}
+ a_{i}=\lambda_{i}\sqrt{\psi} 
+\end{equation}\]</span></p>
+<p>The original IRT models assumed unidimensionality. However, this is no longer the case as it is possible to estimate multidimensional IRT model <span class="citation">(Reckase, <a href="references.html#ref-Reckase2009" role="doc-biblioref">2009</a>)</span>. However, <span class="citation">Gibbons, Immekus, Bock, &amp; Gibbons (<a href="references.html#ref-Gibbons2007" role="doc-biblioref">2007</a>)</span> have shown that the presence of a higher-order factor produces little bias in the estimates when having more dimensions. In theory, all multidimensional poverty models make such an assumption. In any case, the concepts remain the same and a multidimensional IRT model can be simply connected with multidimensional confirmatory factor model.</p>
+<p>Statistics such as <span class="math inline">\(\beta\)</span>, <span class="math inline">\(\alpha\)</span>, <span class="math inline">\(\omega\)</span> provide an summary of the overall reliability. The computation of <span class="math inline">\(\omega\)</span> heavily relies on the factor loadings. The lower the factor loadings the higher the error and the lower the overall reliability. Similarly, low <span class="math inline">\(\lambda_{i}\)</span> can be traslated as low item-level reliability values. The question is thus how low mean unreliable. <span class="citation">Guio et al. (<a href="references.html#ref-Guio2016" role="doc-biblioref">2016</a>)</span> use the rule of <span class="math inline">\(&lt;.4\)</span> standarised loadings as a measure of item-unreliability. <span class="citation">Nájera (<a href="references.html#ref-Najera2018" role="doc-biblioref">2018</a>)</span> shows that indeed those values are more likely to result in overall unreliability and high population classification error.</p>
+<p>One of the most contested issues in poverty measurement revolves around weighting <span class="citation">(Decancq &amp; Lugo, <a href="references.html#ref-Decancq2013" role="doc-biblioref">2013</a>)</span>. Measurement theory proposes that reliability lead to a self-weighting measure in that it guarantees good population classification <span class="citation">(Streiner et al., <a href="references.html#ref-Streiner2015" role="doc-biblioref">2015</a>)</span>. Discrimination parameters have a crucial role upon population classification and item weighting. The square of the factor loadings equals the amount of variance in the indicator explained by the common factor (i.e. communality). Because the factor loadings capture the relationship of each indicator with the latent variable, they can be seen as the optimal weights of the model given the data. Therefore, a test of equality of loadings within dimensional can be used to assess whether using such kind of weighting is reasonable or not. <span class="citation">Nájera (<a href="references.html#ref-Najera2018" role="doc-biblioref">2018</a>)</span> shows that very high reliability leads to a self-weighting index in that the population ranking is less sensible to the items used in a scale. Therefore, discussing the use of differential weights versus non-differential weights misses the point. The critical point is that differential weights, in that they are unkown, will always introduce more noise to the classification of the population. Whereas reliability is a necessary condition for good population orderings, weighting it is not so.</p>
+<p>One of the key axioms in poverty research is the monotonicity axiom. It states that poverty <em>ceteris paribus</em> should decrease after an improvement in one’s achievements <span class="citation">(Alkire et al., <a href="references.html#ref-Alkire2015" role="doc-biblioref">2015</a>; Sen, <a href="references.html#ref-Sen1976" role="doc-biblioref">1976</a>)</span>. Measurement theory states something very similar in that low loadings reflect the fact that changes in the latent variable do not lead to changes in observed deprivation. <span class="citation">Nájera (<a href="references.html#ref-NajeraForthcoming" role="doc-biblioref">n.d.</a>)</span> ran a Monte Carlo experiment the particularities of this behaviour. He finds that item-level unreliability leads to a violation of the monotonicity axiom. His conclusion is that indicators that have weak discrimination <span class="math inline">\(\lambda_ij&lt;.4\)</span> (standardised loadings) violate weak monotonicity and in some circumntances could violate strong monotonicity. Therefore, such indicators are more noise than signal to poverty measures.</p>
+</div>
+<div id="estimation-of-reliability" class="section level2">
+<h2><span class="header-section-number">4.5</span> Estimation of Reliability</h2>
+<div id="overall-reliability" class="section level3">
+<h3><span class="header-section-number">4.5.1</span> Overall reliability</h3>
+<p>To introduce the idea of reliability we will use the data set “Rel_MD_data_1_1.dat”. This is simulated data of a higher-order multidimensional measure of poverty (<span class="math inline">\(n=5000\)</span>). The measure has nine indiactors in total distributed evenly in three dimensions.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(plyr)
+Rel_MD_<span class="dv">1</span>&lt;-<span class="kw">read.table</span>(<span class="st">&quot;Rel_MD_data_1_1.dat&quot;</span>)
+Rel_MD_<span class="dv">1</span><span class="op">$</span>ds&lt;-<span class="kw">rowSums</span>(Rel_MD_<span class="dv">1</span>[,<span class="kw">c</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">9</span>)])
+<span class="kw">colnames</span>(Rel_MD_<span class="dv">1</span>)&lt;-<span class="kw">c</span>(<span class="st">&quot;x1&quot;</span>,<span class="st">&quot;x2&quot;</span>,<span class="st">&quot;x3&quot;</span>,<span class="st">&quot;x4&quot;</span>,<span class="st">&quot;x5&quot;</span>,<span class="st">&quot;x6&quot;</span>,
+                      <span class="st">&quot;x7&quot;</span>,<span class="st">&quot;x8&quot;</span>,<span class="st">&quot;x9&quot;</span>,<span class="st">&quot;x10&quot;</span>,<span class="st">&quot;x11&quot;</span>,
+                      <span class="st">&quot;resources&quot;</span>,<span class="st">&quot;educ_yr&quot;</span>,<span class="st">&quot;occupation&quot;</span>,
+                      <span class="st">&quot;class&quot;</span>,<span class="st">&quot;hh_members&quot;</span>,<span class="st">&quot;ds&quot;</span>)
+Rel_MD_<span class="dv">1</span>[<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>,<span class="dv">1</span><span class="op">:</span><span class="dv">11</span>]</code></pre>
+<pre><code>##    x1 x2 x3 x4 x5 x6 x7 x8 x9 x10 x11
+## 1   1  1  1  1  0  0  0  0  0   0   0
+## 2   0  0  0  0  0  0  0  0  0   0   0
+## 3   0  0  0  1  0  0  0  0  0   0   0
+## 4   1  1  0  0  0  0  1  0  0   0   0
+## 5   1  0  0  0  0  0  0  0  0   1   1
+## 6   1  0  0  0  0  0  0  0  0   0   0
+## 7   0  0  0  1  0  1  0  0  0   0   0
+## 8   0  0  0  1  0  0  0  0  0   1   1
+## 9   1  0  0  1  1  1  1  1  1   0   0
+## 10  0  0  0  0  0  0  0  0  0   1   0</code></pre>
+<p>We do not know yet if our selected deprivation indicators lead to a reliable score. However, we can inspect its distribution by plotting it (Figure <a href="Chapter-3.html#fig:depscore">4.1</a>) as follows:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">require</span>(ggplot2)
+<span class="kw">ggplot</span>(Rel_MD_<span class="dv">1</span>, <span class="kw">aes</span>(ds)) <span class="op">+</span>
+<span class="st">    </span><span class="kw">geom_histogram</span>() <span class="op">+</span><span class="st"> </span><span class="kw">theme_bw</span>() <span class="op">+</span><span class="st"> </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Deprivation score&quot;</span>) <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">scale_x_continuous</span>(<span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">9</span>, <span class="dt">by =</span> <span class="dv">1</span>))</code></pre>
+<div class="figure"><span id="fig:depscore"></span>
+<img src="PM_Book_files/figure-html/depscore-1.png" alt="This is the histogram of the deprivation score. It shows the number of people by the equally weighted deprivation count." width="672" />
+<p class="caption">
+Figure 4.1: This is the histogram of the deprivation score. It shows the number of people by the equally weighted deprivation count.
+</p>
+</div>
+<p>Now we can check the proportion of people deprived of each indicator as follows:</p>
+<pre class="sourceCode r"><code class="sourceCode r">dep_prop&lt;-<span class="kw">unlist</span>(<span class="kw">lapply</span>(Rel_MD_<span class="dv">1</span>, <span class="cf">function</span>(x) <span class="kw">mean</span>(x)))
+dep_prop&lt;-<span class="kw">round</span>(dep_prop[<span class="dv">1</span><span class="op">:</span><span class="dv">9</span>]<span class="op">*</span><span class="dv">100</span>,<span class="dv">0</span>)
+dep_prop</code></pre>
+<pre><code>## x1 x2 x3 x4 x5 x6 x7 x8 x9 
+## 50 29 16 49 29 16 45 26 16</code></pre>
+</div>
+<div id="Chapter-3-expoverel" class="section level3">
+<h3><span class="header-section-number">4.5.2</span> Exploratory (non-model based) estimation of overall reliability</h3>
+<p>ow that we have familiarised with the data ourselves we can proceed to check the reliability of this scale. Reliability concerns with the homogeneity of a scale and its capacity to produce consistent rankings of a population. We will start by estimating the overall reliability of our scale using the <code>psych</code> package <span class="citation">(Revelle, <a href="references.html#ref-Revelle2014" role="doc-biblioref">2014</a>)</span>. This is a comprenhensive R-package to estimate different reliability statistics (<span class="math inline">\(\alpha\)</span>, <span class="math inline">\(\beta\)</span>, <span class="math inline">\(\omega\)</span> and <span class="math inline">\(\omega_h\)</span>) under different changing conditions. The <code>psych</code> package can be used for exploratory and confirmatory settings for both unidimensional and multidimensional measures. This book focuses on confirmatory measurement models and to introduce the estimation of overall reliability we will rely on the simpliest way to estimate the homogeneity of a scale using the simulated data set. This will be further developed and the next section shows how <code>psych</code> interacts with another R-package <code>lavaan</code> to estimate <span class="math inline">\(\omega\)</span> and <span class="math inline">\(\omega_h\)</span> from a confirmatory factor model <span class="citation">(Rosseel, <a href="references.html#ref-Rosseel2012" role="doc-biblioref">2012</a>)</span>.</p>
+<p>The <code>pysch</code> package permits estimtating <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\omega\)</span> using the same function (<code>omega</code>). The package has several options but we know that there are three dimensions and one higher order factor and these values match the defaults of the <code>omega</code> function. It is important to bear in mind that in this simple case the value of <span class="math inline">\(\omega\)</span> is approximated with an Exploratory Factor Analysis (EFA). Below is shown how to do it with a confirmatory model.</p>
+<p>After aplying the <code>omega()</code> to our nine indicators, there will be different objects that store information with the results of the analysis. We will focus on the overall estimate of <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\omega\)</span> as here we are interested in knowing the homogeneity of our scale. We can appreciate below that both values are high (<span class="math inline">\(\geq.8\)</span>) (See <em></em> for an explanation) and suggest that the scale is highly reliable. In this case, <span class="math inline">\(\alpha&lt;\omega\)</span> indicating that this scale violates <span class="math inline">\(\tau\)</span> equivalence (equality of loadings).</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># install.packages(&quot;psych&quot;)</span>
+<span class="kw">require</span>(psych)
+omega_exp1&lt;-<span class="kw">omega</span>(Rel_MD_<span class="dv">1</span>[,<span class="kw">c</span>(<span class="dv">3</span><span class="op">:</span><span class="dv">9</span>)])
+rel_uni_exp&lt;-<span class="kw">data.frame</span>(<span class="dt">omega_exp1=</span>omega_exp1<span class="op">$</span>omega.tot, 
+                        <span class="dt">alpha=</span>omega_exp1<span class="op">$</span>alpha)
+rel_uni_exp</code></pre>
+<pre><code>##   omega_exp1     alpha
+## 1  0.8599319 0.8127129</code></pre>
+<p>Both <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\omega\)</span> are easily estimated with the <code>psych</code> package. However, the previous example was pretty straightforward in that all the indicators are well-behaved. Thus to gain a deeper understanding of reliability and populatioin classification we will check what happens when one has indicators that reduce reliability. This can be done by adding noise to our measure. We will generate two uncorrelated indicators and substitute x10 and x11 for the indicators x1 and x2.
+Once the we have introduce some noise to our measure we will estimate a new deprivation score using the two new indicators and dropping x1 and x2. The result is shown below. Then we can apply <code>omega()</code> to the new matrix that includes V1 and v1 and excludes x1 and x2. Reliability has drop slitghly but enough to raise concerns as both <span class="math inline">\(\omega\)</span> and <span class="math inline">\(\alpha\)</span> are below the rules of thumb drawn from a Monte Carlo experiment.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co">#Computing deprivation score with uncorrelated items</span>
+Rel_MD_<span class="dv">1</span><span class="op">$</span>ds_ur&lt;-<span class="kw">rowSums</span>(Rel_MD_<span class="dv">1</span>[,<span class="kw">c</span>(<span class="dv">3</span><span class="op">:</span><span class="dv">11</span>)])
+Rel_MD_<span class="dv">1</span>[<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>,<span class="kw">c</span>(<span class="dv">16</span>,<span class="dv">17</span>)]</code></pre>
+<pre><code>##    hh_members ds
+## 1           2  4
+## 2           1  0
+## 3           1  1
+## 4           2  3
+## 5           2  1
+## 6           1  1
+## 7           1  2
+## 8           2  1
+## 9           2  7
+## 10          2  0</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co">#Now reliability drops</span>
+omega_unr_exp&lt;-<span class="kw">omega</span>(Rel_MD_<span class="dv">1</span>[,<span class="kw">c</span>(<span class="dv">3</span><span class="op">:</span><span class="dv">11</span>)])
+unrel_uni_exp&lt;-<span class="kw">data.frame</span>(<span class="dt">omega_exp=</span>omega_unr_exp<span class="op">$</span>omega.tot, 
+                          <span class="dt">alpha=</span>omega_unr_exp<span class="op">$</span>alpha)
+unrel_uni_exp</code></pre>
+<pre><code>##   omega_exp    alpha
+## 1  0.799405 0.738685</code></pre>
+<p>What is the impact of introducing the two uncorrelated indicators? From theory is known that losses in reliability affect the consistency of population classification. We can check if this theory holds by looking at the correlation of different rankings that are produce from different measures. For this experiment, first, we will estimate the omega values using different combinations of items (in all case we have the seven items from the reliable measure x1-x9).</p>
+<pre class="sourceCode r"><code class="sourceCode r">omega_exp2&lt;-<span class="kw">omega</span>(Rel_MD_<span class="dv">1</span>[,<span class="kw">c</span>(<span class="dv">3</span><span class="op">:</span><span class="dv">9</span>)])
+omega_exp3&lt;-<span class="kw">omega</span>(Rel_MD_<span class="dv">1</span>[,<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">7</span>,<span class="dv">8</span>)])
+omega_exp4&lt;-<span class="kw">omega</span>(Rel_MD_<span class="dv">1</span>[,<span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">8</span>,<span class="dv">9</span>)])
+omega_exp5&lt;-<span class="kw">omega</span>(Rel_MD_<span class="dv">1</span>[,<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">9</span>)])
+
+
+omegas_exp&lt;-<span class="kw">data.frame</span>(<span class="dt">omega_exp1=</span>omega_exp1<span class="op">$</span>omega.tot, 
+                       <span class="dt">omega_exp2=</span>omega_exp2<span class="op">$</span>omega.tot,
+                       <span class="dt">omega_exp3=</span>omega_exp3<span class="op">$</span>omega.tot, 
+                       <span class="dt">omega_exp4=</span>omega_exp4<span class="op">$</span>omega.tot, 
+                       <span class="dt">omega_exp5=</span>omega_exp5<span class="op">$</span>omega.tot, 
+                       <span class="dt">omega_unrel=</span>omega_unr_exp<span class="op">$</span>omega.tot)</code></pre>
+<p>We then can compare the omega values of each measure. The theory holds for this example. We see that the lowest reliability scale is the one that incorporates V1 and V2. The measures with only seven items have higher reliability. This is a very important lesson as poverty researchers sometimes keep unreliable indicators in their scales and the consequence will be a heavy loss in reliability.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">t</span>(omegas_exp)</code></pre>
+<pre><code>##                  [,1]
+## omega_exp1  0.8599319
+## omega_exp2  0.8599319
+## omega_exp3  0.8779016
+## omega_exp4  0.8543497
+## omega_exp5  0.8441886
+## omega_unrel 0.7994050</code></pre>
+<p>The second prediction of reliability theory is that the population orderings are consistent for high reliability values. One way to check this is by estimating the correlation among the different deprivation scores. Again, the theory holds for this simple exercise, the measure with higher <span class="math inline">\(\omega\)</span> are highly correlated. The correlation of the unreliable measure seems still high, however, when <span class="math inline">\(\omega&lt;.8\)</span> we could expect to see a classification error <span class="math inline">\(&gt;5\%\)</span> which might be very worring when put into perspective. If the poverty rate is <span class="math inline">\(20\%\)</span> and the classification error is <span class="math inline">\(5\%\)</span> it would mean that potentially a <span class="math inline">\(25\%\)</span> of the poor are mistakenly classified .</p>
+<pre class="sourceCode r"><code class="sourceCode r">Rel_MD_<span class="dv">1</span><span class="op">$</span>ds_r2&lt;-<span class="kw">rowSums</span>(Rel_MD_<span class="dv">1</span>[,<span class="kw">c</span>(<span class="dv">3</span><span class="op">:</span><span class="dv">9</span>)])
+Rel_MD_<span class="dv">1</span><span class="op">$</span>ds_r3&lt;-<span class="kw">rowSums</span>(Rel_MD_<span class="dv">1</span>[,<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">7</span>,<span class="dv">8</span>)])
+Rel_MD_<span class="dv">1</span><span class="op">$</span>ds_r4&lt;-<span class="kw">rowSums</span>(Rel_MD_<span class="dv">1</span>[,<span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">8</span>,<span class="dv">9</span>)])
+Rel_MD_<span class="dv">1</span><span class="op">$</span>ds_r5&lt;-<span class="kw">rowSums</span>(Rel_MD_<span class="dv">1</span>[,<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">9</span>)])
+
+ds.m&lt;-(Rel_MD_<span class="dv">1</span>[,<span class="kw">c</span>(<span class="dv">16</span><span class="op">:</span><span class="dv">21</span>)])
+ds.cor&lt;-<span class="kw">cor</span>(ds.m)
+ds.cor</code></pre>
+<pre><code>##            hh_members        ds     ds_ur     ds_r2     ds_r3     ds_r4
+## hh_members  1.0000000 0.4330385 0.3945498 0.4077791 0.4422686 0.3777748
+## ds          0.4330385 1.0000000 0.9272651 0.9684719 0.9764524 0.9523882
+## ds_ur       0.3945498 0.9272651 1.0000000 0.9520979 0.8899044 0.8941369
+## ds_r2       0.4077791 0.9684719 0.9520979 1.0000000 0.9284786 0.9370200
+## ds_r3       0.4422686 0.9764524 0.8899044 0.9284786 1.0000000 0.8875033
+## ds_r4       0.3777748 0.9523882 0.8941369 0.9370200 0.8875033 1.0000000</code></pre>
+</div>
+<div id="model-based-estimation-of-overall-reliability" class="section level3">
+<h3><span class="header-section-number">4.5.3</span> Model-based estimation of overall reliability</h3>
+<p>The ideal workflow in poverty measurement leads to a specification of a model. Diffrent models suggest that poverty is multidimensional and hierarchical (See Section <a href="Chapter-1.html#Chapter-1-dimensions">1.2</a>). Therefore, the interest is in both estimates of reliability: overall and hierarchical omega (<span class="math inline">\(\omega\)</span> and <span class="math inline">\(\omega_h\)</span>). Both can be estimated from an EFA using the R-package “psych”. However, this book is an attempt to encourage poverty researchers to walk toward the production and assessment of theoretical models. To estimate reliability for a pre-especified model, it is necessary to use Confirmatory Factor Analysis (CFA). Given a pattern loading specification, a CFA will estimate the different parameters of the model. Section <a href="Chapter-3.html#Chapter-3-measuresrel">4.3</a> showed the formulas to estimate both <span class="math inline">\(\omega\)</span> and <span class="math inline">\(\omega_h\)</span>. Item-factor loadings and the residuals of the model are the key parameters for the estimation of both reliability statistics (See equation <a href="Chapter-3.html#eq:omega">(4.6)</a>).</p>
+<p>In the following we will show how in both Mplus and R is possible to estimate <span class="math inline">\(\omega\)</span> and <span class="math inline">\(\omega_h\)</span>. We will start with R and for this purpose we need the “lavaan” package <span class="citation">(Rosseel, <a href="references.html#ref-Rosseel2012" role="doc-biblioref">2012</a>)</span>. This package comprises a series of functions to estimate different kinds of latent variable models such as measurement and analytic models like Structural Equation Models (SEM). Once the CFA model is fitted with the R-package <code>lavaan</code>, the function <code>omegaFromSem()</code> of the <code>psych</code> R-package can be used to estimate <span class="math inline">\(\omega\)</span> and <span class="math inline">\(\omega_h\)</span>. However, we will show how this can be done by hand to gain insight of the differences between the two reliability statistics and to operationalise the process using the Mplus estimates.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co">#Omega from Sem</span>
+<span class="kw">library</span>(lavaan)
+<span class="co"># We first specify the model</span>
+MD_model &lt;-<span class="st"> &#39; h =~ +x1+x2+x3+x4+x5+x6+x7+x8+x9 </span>
+<span class="st">                F1=~  + x7 + x8 + x9        </span>
+<span class="st">                F2=~  + x4 + x5 + x6         </span>
+<span class="st">                F3=~  + x1 + x2 + x3</span>
+<span class="st">                h  ~~ 0*F1</span>
+<span class="st">                h  ~~ 0*F2</span>
+<span class="st">                h  ~~ 0*F3</span>
+<span class="st">                F1 ~~ 0*F2</span>
+<span class="st">                F2 ~~ 0*F3</span>
+<span class="st">                F1 ~~ 0*F3</span>
+
+<span class="st">&#39;</span></code></pre>
+<p>To fit the CFA model we will use <code>sem</code> function which has been harmonised with the functions <code>cfa</code> and <code>lavaan</code>. The function requires specifying the measurement model (MD_model), the data, the kind of variables we have (in this case categorical) and we will request standarised loadings with <code>std.lv=TRUE</code>.</p>
+<pre class="sourceCode r"><code class="sourceCode r">fit &lt;-<span class="st"> </span><span class="kw">sem</span>(MD_model, <span class="dt">data =</span> Rel_MD_<span class="dv">1</span>, 
+           <span class="dt">ordered=</span><span class="kw">c</span>(<span class="st">&quot;x1&quot;</span>,<span class="st">&quot;x2&quot;</span>,<span class="st">&quot;x3&quot;</span>,<span class="st">&quot;x4&quot;</span>,<span class="st">&quot;x5&quot;</span>,
+                     <span class="st">&quot;x6&quot;</span>,<span class="st">&quot;x7&quot;</span>,<span class="st">&quot;x8&quot;</span>,<span class="st">&quot;x9&quot;</span>),
+           <span class="dt">std.lv=</span><span class="ot">TRUE</span>)
+<span class="co"># The command below is to check the output (We will check this in the </span>
+<span class="co">#next section and validity chapter)</span>
+<span class="co">#summary(fit, fit.measures=TRUE, rsquare=TRUE, standardized=TRUE)</span></code></pre>
+<p>Both <span class="math inline">\(\omega\)</span> and <span class="math inline">\(\omega_h\)</span> can be manually calculated. There are two main paramaters one needs for their computation: factor loadings from the indicators to the overall factor (<span class="math inline">\(\lambda_h\)</span>), to each dimension (<span class="math inline">\(\lambda_j\)</span>) and the error. This can be easily extracted from the fit object as follows:</p>
+<pre class="sourceCode r"><code class="sourceCode r">lambdas&lt;-<span class="kw">as.data.frame</span>(fit<span class="op">@</span>Model<span class="op">@</span>GLIST<span class="op">$</span>lambda)
+error&lt;-<span class="kw">colSums</span>(fit<span class="op">@</span>Model<span class="op">@</span>GLIST<span class="op">$</span>theta)</code></pre>
+<p>The then the square of the sum of the loadings (<span class="math inline">\(\lambda_h\)</span>) and (<span class="math inline">\(\lambda_j\)</span>) is taken as well as the sum of the error. The we can compute both <span class="math inline">\(\omega\)</span> and <span class="math inline">\(\omega_h\)</span> using equation <a href="Chapter-3.html#eq:omega">(4.6)</a> and <a href="Chapter-3.html#eq:omegah">(4.7)</a>.</p>
+<pre class="sourceCode r"><code class="sourceCode r">Slambda_<span class="dv">2</span>&lt;-<span class="kw">sum</span>(lambdas[<span class="dv">1</span>])<span class="op">^</span><span class="dv">2</span> <span class="op">+</span><span class="st"> </span><span class="kw">sum</span>(lambdas[<span class="dv">2</span>])<span class="op">^</span><span class="dv">2</span> <span class="op">+</span><span class="st"> </span>
+<span class="st">           </span><span class="kw">sum</span>(lambdas[<span class="dv">3</span>])<span class="op">^</span><span class="dv">2</span> <span class="op">+</span><span class="st"> </span><span class="kw">sum</span>(lambdas[<span class="dv">4</span>])<span class="op">^</span><span class="dv">2</span>
+error &lt;-<span class="st"> </span><span class="kw">sum</span>(error)
+
+omega_t &lt;-<span class="st"> </span>Slambda_<span class="dv">2</span> <span class="op">/</span><span class="st"> </span>(Slambda_<span class="dv">2</span><span class="op">+</span>error)
+omega_h &lt;-<span class="st"> </span><span class="kw">sum</span>(lambdas[<span class="dv">1</span>])<span class="op">^</span><span class="dv">2</span> <span class="op">/</span><span class="st"> </span>(Slambda_<span class="dv">2</span><span class="op">+</span>error)
+omegamanual&lt;-<span class="kw">c</span>(<span class="dt">omega_h=</span>omega_h,<span class="dt">omega_t=</span>omega_t)
+omegamanual</code></pre>
+<pre><code>##   omega_h   omega_t 
+## 0.8445022 0.9707344</code></pre>
+<p>Fortunately, there is an R function from the “psych” package that does this for us. Once the model has been fitted, we apply the function <code>omegaFromSem()</code> to request the estimates and store the estimates of both <span class="math inline">\(\omega\)</span> and <span class="math inline">\(\omega_h\)</span> in the <code>omegasem</code> object. The results indicate high overall reliability and high reliability after considering the multidimensional features of the scale.</p>
+<pre class="sourceCode r"><code class="sourceCode r">omegasem&lt;-<span class="kw">omegaFromSem</span>(fit)
+omegasem&lt;-<span class="kw">c</span>(<span class="dt">omega_h=</span>omegasem<span class="op">$</span>omega,
+            <span class="dt">omega_t=</span>omegasem<span class="op">$</span>omega.tot)
+omegasem</code></pre>
+<pre><code>##   omega_h   omega_t 
+## 0.8446990 0.9707276</code></pre>
+<p>The R package “mplusAutomation” is an excellent alternative to automate Mplus from R <span class="citation">(Hallquist &amp; Wiley, <a href="references.html#ref-Hallquist2018" role="doc-biblioref">2018</a>)</span>. We can create within R an Mplus object as follows using the function <code>mplusObject()</code>. The syntax is the standard Mplus syntax to fit a model. As with <code>lavaan</code> we will fit a bi-factor model. We will store the syntax in the object <code>test</code>.</p>
+<pre class="sourceCode r"><code class="sourceCode r">test &lt;-<span class="st"> </span><span class="kw">mplusObject</span>(
+<span class="dt">TITLE =</span> <span class="st">&quot;Bi-factor model CFA;&quot;</span>,
+   <span class="dt">VARIABLE =</span> <span class="st">&quot;</span>
+<span class="st">     NAMES = x1-x9 resources educ_yr occupation class;</span>
+<span class="st">     CATEGORICAL = x1-x9;</span>
+<span class="st">     USEVARIABLES = x1-x9;&quot;</span>,
+   <span class="dt">ANALYSIS =</span> <span class="st">&quot;ESTIMATOR = wlsmv;</span>
+<span class="st">              PROCESS = 4;&quot;</span>,
+
+<span class="dt">MODEL =</span> <span class="st">&quot;f1 by x1-x3;</span>
+<span class="st">  f2 by x4-x6;</span>
+<span class="st">  f3 by x7-x9;</span>
+<span class="st">  h by x1 x2 x3 x4 x4 x5 x6 x7 x8 x9;</span>
+<span class="st">  F1 with F2@0;</span>
+<span class="st">  F2 with F3@0;</span>
+<span class="st">  F3 with F1@0;</span>
+<span class="st">  h with f1@0;</span>
+<span class="st">  h with f2@0;</span>
+<span class="st">  h with f3@0;&quot;</span>,
+
+<span class="dt">OUTPUT =</span> <span class="st">&quot;std stdyx;&quot;</span>)</code></pre>
+<p>To write the <code>test</code> object as an "*.inp" Mplus syntax file, we will use the function <code>mplusModeler()</code>. This function permits estimating the model directly using the option <code>run</code>.</p>
+<pre class="sourceCode r"><code class="sourceCode r">res &lt;-<span class="st"> </span><span class="kw">mplusModeler</span>(test, <span class="dt">modelout =</span> <span class="st">&quot;rel_CFA_2.inp&quot;</span>, 
+                    <span class="dt">writeData =</span> <span class="st">&quot;never&quot;</span>, <span class="dt">hashfilename =</span> <span class="ot">FALSE</span>, 
+                    <span class="dt">dataout=</span><span class="st">&quot;Rel_MD_data_1_1.dat&quot;</span>, <span class="dt">run =</span> 1L)</code></pre>
+<pre><code>## 
+## Running model: rel_CFA_2.inp 
+## System command: C:\WINDOWS\system32\cmd.exe /c cd &quot;.&quot; &amp;&amp; &quot;Mplus&quot; &quot;rel_CFA_2.inp&quot; 
+## Reading model:  rel_CFA_2.out</code></pre>
+<p>Once the model has been run, we can import the output using the function <code>readModels()</code>. We will explore the full output in the next chapter as for now we will focus in the estimation of <span class="math inline">\(\omega\)</span> and <span class="math inline">\(\omega_h\)</span>. The factor loadings of the Bi-factor model are stored in a list (parameters). We request the standarised estimates as we did with <code>lavaan</code>. We also can request the error from the `<code>r2</code> object in the parameters list. Once we have the parameters we need we can proceed as above to estimate the reliability statistics. We see that we could replicate the results from <code>lavaan</code>.</p>
+<pre class="sourceCode r"><code class="sourceCode r">REL_CFA_<span class="dv">2</span>&lt;-<span class="kw">readModels</span>(<span class="dt">filefilter =</span><span class="st">&quot;rel_CFA_2&quot;</span>)</code></pre>
+<pre><code>## Reading model:  C:/Proyectos Investigacion/PM Book/rel_cfa_2.out</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">lambdas&lt;-REL_CFA_<span class="dv">2</span><span class="op">$</span>parameters<span class="op">$</span>std.standardized[<span class="dv">1</span><span class="op">:</span><span class="dv">18</span>,<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>]
+error&lt;-REL_CFA_<span class="dv">2</span><span class="op">$</span>parameters<span class="op">$</span>r2[<span class="dv">6</span>]
+
+lambda_<span class="dv">2</span>&lt;-<span class="kw">sum</span>(lambdas[<span class="dv">10</span><span class="op">:</span><span class="dv">18</span>,<span class="dv">3</span>])<span class="op">^</span><span class="dv">2</span> <span class="op">+</span><span class="st"> </span><span class="kw">sum</span>(lambdas[<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>,<span class="dv">3</span>])<span class="op">^</span><span class="dv">2</span> <span class="op">+</span><span class="st"> </span>
+<span class="st">          </span><span class="kw">sum</span>(lambdas[<span class="dv">4</span><span class="op">:</span><span class="dv">6</span>,<span class="dv">3</span>])<span class="op">^</span><span class="dv">2</span> <span class="op">+</span><span class="st"> </span><span class="kw">sum</span>(lambdas[<span class="dv">7</span><span class="op">:</span><span class="dv">9</span>,<span class="dv">3</span>])<span class="op">^</span><span class="dv">2</span>
+error &lt;-<span class="st"> </span><span class="kw">sum</span>(error)
+
+omega_t &lt;-<span class="st"> </span>lambda_<span class="dv">2</span> <span class="op">/</span><span class="st"> </span>(lambda_<span class="dv">2</span><span class="op">+</span>error)
+omega_h &lt;-<span class="st"> </span><span class="kw">sum</span>(lambdas[<span class="dv">10</span><span class="op">:</span><span class="dv">18</span>,<span class="dv">3</span>])<span class="op">^</span><span class="dv">2</span> <span class="op">/</span><span class="st"> </span>(lambda_<span class="dv">2</span><span class="op">+</span>error)
+
+omega_t</code></pre>
+<pre><code>## [1] 0.9707333</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">omega_h</code></pre>
+<pre><code>## [1] 0.8445348</code></pre>
+</div>
+<div id="overall-reliability-and-population-orderings" class="section level3">
+<h3><span class="header-section-number">4.5.4</span> Overall reliability and population orderings</h3>
+<p>One of the predictions of measurement theory is that reliability leads to consistent population orderings, i.e. poor people will have high deprivation scores and not poor people will have low deprivation scores (see Table (#tab:relentropy)). We ilustrated this point using the correlation between the different deprivation scores corresponding to diverse levels of overall reliabilities. We can follow up that example by looking at the values of the latent variable for the multidimensional reliable measure (Rel_MD_1). After fitting the CFA model we just can simply use the function <code>predict()</code> to obtain the Maximum Likelihood estimates of the latent variable. Then we can merge these values with our data set. The prediction will generate four estimates for the latent variables. The overall factor (h) and the values for the three dimensions.</p>
+<pre class="sourceCode r"><code class="sourceCode r">factor_scores&lt;-<span class="kw">predict</span>(fit)
+Rel_MD_<span class="dv">1</span>&lt;-<span class="kw">cbind</span>(Rel_MD_<span class="dv">1</span>,factor_scores)
+<span class="kw">head</span>(Rel_MD_<span class="dv">1</span>[,<span class="kw">c</span>(<span class="dv">21</span><span class="op">:</span><span class="dv">24</span>)])</code></pre>
+<pre><code>##   ds_r4 ds_r5          h          F1
+## 1     2     3  0.4475885 -0.81293477
+## 2     0     0 -0.6781638 -0.08627376
+## 3     0     1 -0.2440620 -0.28822588
+## 4     1     2  0.2851351  0.13806885
+## 5     0     1 -0.2207057 -0.30252106
+## 6     0     1 -0.2207057 -0.30252106</code></pre>
+<p>To contrast the values of the reliable multidimensional measure with the values of an slitghly less reliable measure we will fit a new model. As in the previous example (Section @ref(#Chapter-3-expoverel)), we will replace the first two indicators x1 and x2 by x10 and x11. Both load into the first factor (f1). The estimates are stored in a differen object (fit_ur) and estimate the factor scores using the <code>predict()</code> function. Finally we inspect the values.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co">## We first specify the model</span>
+MD_model &lt;-<span class="st"> &#39; h =~ +x10+x11+x3+x4+x5+x6+x7+x8+x9 </span>
+<span class="st">                F1=~  + x7 + x8 + x9        </span>
+<span class="st">                F2=~  + x4 + x5 + x6         </span>
+<span class="st">                F3=~  + x10 + x11 + x3</span>
+<span class="st">                h  ~~ 0*F1</span>
+<span class="st">                h  ~~ 0*F2</span>
+<span class="st">                h  ~~ 0*F3</span>
+<span class="st">                F1 ~~ 0*F2</span>
+<span class="st">                F2 ~~ 0*F3</span>
+<span class="st">                F1 ~~ 0*F3</span>
+
+<span class="st">&#39;</span>
+
+fit_ur &lt;-<span class="st"> </span><span class="kw">sem</span>(MD_model, <span class="dt">data =</span> Rel_MD_<span class="dv">1</span>, 
+           <span class="dt">ordered=</span><span class="kw">c</span>(<span class="st">&quot;x10&quot;</span>,<span class="st">&quot;x11&quot;</span>,<span class="st">&quot;x3&quot;</span>,<span class="st">&quot;x4&quot;</span>,<span class="st">&quot;x5&quot;</span>,<span class="st">&quot;x6&quot;</span>,<span class="st">&quot;x7&quot;</span>,<span class="st">&quot;x8&quot;</span>,<span class="st">&quot;x9&quot;</span>),
+           <span class="dt">std.lv=</span><span class="ot">TRUE</span>)
+factor_scores_ur&lt;-<span class="kw">predict</span>(fit_ur)
+<span class="kw">colnames</span>(factor_scores_ur)[<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>]&lt;-<span class="kw">c</span>(<span class="st">&quot;hur&quot;</span>,<span class="st">&quot;F1ur&quot;</span>,<span class="st">&quot;F2ur&quot;</span>,<span class="st">&quot;F3ur&quot;</span>)
+Rel_MD_<span class="dv">1</span>&lt;-<span class="kw">cbind</span>(Rel_MD_<span class="dv">1</span>,factor_scores_ur)
+<span class="kw">head</span>(Rel_MD_<span class="dv">1</span>[,<span class="kw">c</span>(<span class="dv">25</span><span class="op">:</span><span class="dv">28</span>)])</code></pre>
+<pre><code>##           F2         F3         hur       F1ur
+## 1 -0.1296229  1.2478407  0.38436469 -0.7563179
+## 2 -0.1536510 -0.1720003 -0.59656764 -0.1126966
+## 3  0.5290560 -0.3986557 -0.10512455 -0.3763817
+## 4 -0.7559100  0.7442695 -0.05228111  0.4723843
+## 5 -0.3910445  0.4514504 -0.50856087 -0.1482380
+## 6 -0.3910445  0.4514504 -0.59656764 -0.1126966</code></pre>
+<p>To assess the consistency of both multidimensional scales we will plot the latent factor values by the deprivation score. Figure~<a href="Chapter-3.html#fig:fsdesrel">4.2</a> shows that the factor scores are very similar within each deprivation group. For each deprivation score we find very different factor scores, indicating that the deprivation scores is a good measure to rank and split the population according to the severity of deprivation. In contrast, figure~@ref{(fig:fsdesunrel) show that although there is relationship between the deprivation score and factor scores, this relationship is more noisy. Not only there is much more variability within each deprivation group but also there is some overlap. That means that if we use some cutoff to split the poor from the not poor based on a deprivation score, we will be more likely to confound both groups. In this case, the mixing of groups is not that dramatic as the scale is still somewhat reliable, but it could be very noisy for less reliable scales.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">require</span>(ggplot2)
+g &lt;-<span class="st"> </span><span class="kw">ggplot</span>(Rel_MD_<span class="dv">1</span>, <span class="kw">aes</span>(<span class="kw">as.factor</span>(ds), h))
+g <span class="op">+</span><span class="st"> </span><span class="kw">geom_boxplot</span>(<span class="dt">varwidth=</span>T) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">labs</span>(<span class="dt">x=</span><span class="st">&quot;Deprivation score. Reliable&quot;</span>,
+         <span class="dt">y=</span><span class="st">&quot;Factor score (Latent variable)&quot;</span>) <span class="op">+</span><span class="st"> </span><span class="kw">theme_bw</span>()</code></pre>
+<div class="figure"><span id="fig:fsdesrel"></span>
+<img src="PM_Book_files/figure-html/fsdesrel-1.png" alt="Relationship between the deprivation score (x1-x9) and the latent variable score. We appreciate the narrowness of the boxplots, indicating good group separation." width="672" />
+<p class="caption">
+Figure 4.2: Relationship between the deprivation score (x1-x9) and the latent variable score. We appreciate the narrowness of the boxplots, indicating good group separation.
+</p>
+</div>
+<pre class="sourceCode r"><code class="sourceCode r">g &lt;-<span class="st"> </span><span class="kw">ggplot</span>(Rel_MD_<span class="dv">1</span>, <span class="kw">aes</span>(<span class="kw">as.factor</span>(ds_ur), hur))
+g <span class="op">+</span><span class="st"> </span><span class="kw">geom_boxplot</span>(<span class="dt">varwidth=</span>T) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">labs</span>(<span class="dt">x=</span><span class="st">&quot;Deprivation score. Unreliable&quot;</span>,
+         <span class="dt">y=</span><span class="st">&quot;Factor score (Latent variable)&quot;</span>) <span class="op">+</span><span class="st"> </span><span class="kw">theme_bw</span>()</code></pre>
+<div class="figure"><span id="fig:fsdesunrel"></span>
+<img src="PM_Book_files/figure-html/fsdesunrel-1.png" alt="Relationship between the deprivation score (x10, x11 and x3-x9) and the latent variable score. There is more variability in this case indicating poor group separation." width="672" />
+<p class="caption">
+Figure 4.3: Relationship between the deprivation score (x10, x11 and x3-x9) and the latent variable score. There is more variability in this case indicating poor group separation.
+</p>
+</div>
+
+</div>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="4">
+<li id="fn4"><p>If the scale is badly constucted reliability could be negative using some statistics like <span class="math inline">\(\alpha\)</span><a href="Chapter-3.html#fnref4" class="footnote-back">↩</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="measurement-theory-and-principles.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="assets/gitbook-2.6.7/js/app.min.js"></script>
+<script src="assets/gitbook-2.6.7/js/lunr.js"></script>
+<script src="assets/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="assets/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="assets/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="assets/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="assets/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+},
+"toolbar": {
+"position": "static"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
