@@ -3,10 +3,23 @@ bookdown::gitbook:
   split_by: chapter
   split_bib: FALSE
   config:
+    toc:
+      collapse: subsection
+      scroll_highlight: yes
+      before: null
+      after: null
     toolbar:
-      position: static
+      position: fixed
+    search: yes
+    fontsettings:
+      theme: white
+      family: sans
+      size: 2
 bookdown::pdf_book:
   keep_tex: yes
+  toc : yes
+  fig_width: 3 
+  fig_height: 3
 bookdown::html_book:
   css: toc.css
 

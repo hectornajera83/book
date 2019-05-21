@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 4 Validity in poverty measurement | Multidimensional poverty measurement: A statistical approach with applications</title>
+  <meta name="description" content="Chapter 4 Validity in poverty measurement | Multidimensional poverty measurement: A statistical approach with applications" />
+  <meta name="generator" content="bookdown 0.10 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 4 Validity in poverty measurement | Multidimensional poverty measurement: A statistical approach with applications" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 4 Validity in poverty measurement | Multidimensional poverty measurement: A statistical approach with applications" />
+  
+  
+  
+
+<meta name="author" content="Héctor Nájera" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="Chapter-3.html">
+<link rel="next" href="Chapter-5.html">
+<script src="assets/jquery-2.2.3/jquery.min.js"></script>
+<link href="assets/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="assets/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="preface.html"><a href="preface.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="Chapter-1.html"><a href="Chapter-1.html"><i class="fa fa-check"></i><b>1</b> Poverty and measurement theory principles</a><ul>
+<li class="chapter" data-level="1.1" data-path="Chapter-1.html"><a href="Chapter-1.html#the-concept-of-poverty"><i class="fa fa-check"></i><b>1.1</b> The Concept of Poverty</a></li>
+<li class="chapter" data-level="1.2" data-path="Chapter-1.html"><a href="Chapter-1.html#Chapter-1-dimensions"><i class="fa fa-check"></i><b>1.2</b> Theoretical dimensions of poverty</a></li>
+<li class="chapter" data-level="1.3" data-path="Chapter-1.html"><a href="Chapter-1.html#the-measurement-of-poverty-and-its-challenges"><i class="fa fa-check"></i><b>1.3</b> The measurement of poverty and its challenges</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="Chapter-1.html"><a href="Chapter-1.html#challenges-in-selection-of-dimensions-contents-cut-offs-and-weights"><i class="fa fa-check"></i><b>1.3.1</b> Challenges in selection of dimensions, contents, cut offs and weights</a></li>
+<li class="chapter" data-level="1.3.2" data-path="Chapter-1.html"><a href="Chapter-1.html#challenges-in-aggregation-and-identification-of-the-poor"><i class="fa fa-check"></i><b>1.3.2</b> Challenges in aggregation and identification of the poor</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="Chapter-1.html"><a href="Chapter-1.html#the-poor-and-the-not-poor-the-poverty-line"><i class="fa fa-check"></i><b>1.4</b> The poor and the not poor: The poverty line</a></li>
+<li class="chapter" data-level="1.5" data-path="Chapter-1.html"><a href="Chapter-1.html#a-brief-on-multidimensional-poverty-measurement"><i class="fa fa-check"></i><b>1.5</b> A brief on multidimensional poverty measurement</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="poverty-and-measurement-theory-a-statistical-framework.html"><a href="poverty-and-measurement-theory-a-statistical-framework.html"><i class="fa fa-check"></i><b>2</b> Poverty and measurement theory: A statistical framework</a><ul>
+<li class="chapter" data-level="2.1" data-path="poverty-and-measurement-theory-a-statistical-framework.html"><a href="poverty-and-measurement-theory-a-statistical-framework.html#work-flow-in-poverty-measurement-a-falsifiable-framework"><i class="fa fa-check"></i><b>2.1</b> Work flow in poverty measurement: A falsifiable framework</a></li>
+<li class="chapter" data-level="2.2" data-path="poverty-and-measurement-theory-a-statistical-framework.html"><a href="poverty-and-measurement-theory-a-statistical-framework.html#samplingspace"><i class="fa fa-check"></i><b>2.2</b> Identification of the sampling space</a></li>
+<li class="chapter" data-level="2.3" data-path="poverty-and-measurement-theory-a-statistical-framework.html"><a href="poverty-and-measurement-theory-a-statistical-framework.html#selection-of-dimensions-and-indicators"><i class="fa fa-check"></i><b>2.3</b> Selection of dimensions and indicators</a></li>
+<li class="chapter" data-level="2.4" data-path="poverty-and-measurement-theory-a-statistical-framework.html"><a href="poverty-and-measurement-theory-a-statistical-framework.html#aggregation-and-weighting"><i class="fa fa-check"></i><b>2.4</b> Aggregation and weighting</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="poverty-and-measurement-theory-a-statistical-framework.html"><a href="poverty-and-measurement-theory-a-statistical-framework.html#splitting-the-population-into-meaningful-groups"><i class="fa fa-check"></i><b>2.4.1</b> Splitting the population into meaningful groups</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="poverty-and-measurement-theory-a-statistical-framework.html"><a href="poverty-and-measurement-theory-a-statistical-framework.html#measurement-theory-as-an-statistical-framework"><i class="fa fa-check"></i><b>2.5</b> Measurement theory as an statistical framework</a></li>
+<li class="chapter" data-level="2.6" data-path="poverty-and-measurement-theory-a-statistical-framework.html"><a href="poverty-and-measurement-theory-a-statistical-framework.html#poverty-and-error-in-measurement"><i class="fa fa-check"></i><b>2.6</b> Poverty and error in measurement</a></li>
+<li class="chapter" data-level="2.7" data-path="poverty-and-measurement-theory-a-statistical-framework.html"><a href="poverty-and-measurement-theory-a-statistical-framework.html#measurement-model-for-poverty"><i class="fa fa-check"></i><b>2.7</b> Measurement model for poverty</a></li>
+<li class="chapter" data-level="2.8" data-path="poverty-and-measurement-theory-a-statistical-framework.html"><a href="poverty-and-measurement-theory-a-statistical-framework.html#blueprints-and-poverty-measurement-models"><i class="fa fa-check"></i><b>2.8</b> Blueprints and poverty measurement models</a></li>
+<li class="chapter" data-level="2.9" data-path="poverty-and-measurement-theory-a-statistical-framework.html"><a href="poverty-and-measurement-theory-a-statistical-framework.html#measurement-theory-and-principles"><i class="fa fa-check"></i><b>2.9</b> Measurement theory and principles</a><ul>
+<li class="chapter" data-level="2.9.1" data-path="poverty-and-measurement-theory-a-statistical-framework.html"><a href="poverty-and-measurement-theory-a-statistical-framework.html#origins-of-measurement-theory"><i class="fa fa-check"></i><b>2.9.1</b> Origins of measurement theory</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="Chapter-3.html"><a href="Chapter-3.html"><i class="fa fa-check"></i><b>3</b> Reliability in poverty measurement</a><ul>
+<li class="chapter" data-level="3.1" data-path="Chapter-3.html"><a href="Chapter-3.html#intuition-to-the-concept-of-reliability"><i class="fa fa-check"></i><b>3.1</b> Intuition to the concept of reliability</a></li>
+<li class="chapter" data-level="3.2" data-path="Chapter-3.html"><a href="Chapter-3.html#reliability-theory"><i class="fa fa-check"></i><b>3.2</b> Reliability theory</a></li>
+<li class="chapter" data-level="3.3" data-path="Chapter-3.html"><a href="Chapter-3.html#Chapter-3-measuresrel"><i class="fa fa-check"></i><b>3.3</b> Statistical measures of reliability</a></li>
+<li class="chapter" data-level="3.4" data-path="Chapter-3.html"><a href="Chapter-3.html#item-level-reliability-and-weighting"><i class="fa fa-check"></i><b>3.4</b> Item-level reliability and weighting</a></li>
+<li class="chapter" data-level="3.5" data-path="Chapter-3.html"><a href="Chapter-3.html#estimation-of-reliability"><i class="fa fa-check"></i><b>3.5</b> Estimation of Reliability</a><ul>
+<li class="chapter" data-level="3.5.1" data-path="Chapter-3.html"><a href="Chapter-3.html#overall-reliability"><i class="fa fa-check"></i><b>3.5.1</b> Overall reliability</a></li>
+<li class="chapter" data-level="3.5.2" data-path="Chapter-3.html"><a href="Chapter-3.html#Chapter-3-expoverel"><i class="fa fa-check"></i><b>3.5.2</b> Exploratory (non-model based) estimation of overall reliability</a></li>
+<li class="chapter" data-level="3.5.3" data-path="Chapter-3.html"><a href="Chapter-3.html#model-based-estimation-of-overall-reliability"><i class="fa fa-check"></i><b>3.5.3</b> Model-based estimation of overall reliability</a></li>
+<li class="chapter" data-level="3.5.4" data-path="Chapter-3.html"><a href="Chapter-3.html#overall-reliability-and-population-orderings"><i class="fa fa-check"></i><b>3.5.4</b> Overall reliability and population orderings</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="Chapter-3.html"><a href="Chapter-3.html#item-level-reliability"><i class="fa fa-check"></i><b>3.6</b> Item-level reliability</a></li>
+<li class="chapter" data-level="3.7" data-path="Chapter-3.html"><a href="Chapter-3.html#multidimensional-item-reliability-evaluation"><i class="fa fa-check"></i><b>3.7</b> Multidimensional item-reliability evaluation</a><ul>
+<li class="chapter" data-level="3.7.1" data-path="Chapter-3.html"><a href="Chapter-3.html#item-reliability-and-monotonicity"><i class="fa fa-check"></i><b>3.7.1</b> Item-reliability and monotonicity</a></li>
+</ul></li>
+<li class="chapter" data-level="3.8" data-path="Chapter-3.html"><a href="Chapter-3.html#real-data-example"><i class="fa fa-check"></i><b>3.8</b> Real data example</a><ul>
+<li class="chapter" data-level="3.8.1" data-path="Chapter-3.html"><a href="Chapter-3.html#item-level-reliability-1"><i class="fa fa-check"></i><b>3.8.1</b> Item-level reliability</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="Chapter-4.html"><a href="Chapter-4.html"><i class="fa fa-check"></i><b>4</b> Validity in poverty measurement</a><ul>
+<li class="chapter" data-level="4.1" data-path="Chapter-4.html"><a href="Chapter-4.html#intuition-to-the-concept-of-validity"><i class="fa fa-check"></i><b>4.1</b> Intuition to the concept of validity</a></li>
+<li class="chapter" data-level="4.2" data-path="Chapter-4.html"><a href="Chapter-4.html#theory-of-validity"><i class="fa fa-check"></i><b>4.2</b> Theory of validity</a></li>
+<li class="chapter" data-level="4.3" data-path="Chapter-4.html"><a href="Chapter-4.html#methods-for-the-analysis-validity"><i class="fa fa-check"></i><b>4.3</b> Methods for the analysis validity</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="Chapter-4.html"><a href="Chapter-4.html#criterion-validity"><i class="fa fa-check"></i><b>4.3.1</b> Criterion validity</a></li>
+<li class="chapter" data-level="4.3.2" data-path="Chapter-4.html"><a href="Chapter-4.html#construct-validity"><i class="fa fa-check"></i><b>4.3.2</b> Construct validity</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="Chapter-4.html"><a href="Chapter-4.html#validity-assessment"><i class="fa fa-check"></i><b>4.4</b> Validity assessment</a><ul>
+<li class="chapter" data-level="4.4.1" data-path="Chapter-4.html"><a href="Chapter-4.html#criterion-validity-1"><i class="fa fa-check"></i><b>4.4.1</b> Criterion Validity</a></li>
+<li class="chapter" data-level="4.4.2" data-path="Chapter-4.html"><a href="Chapter-4.html#construct-validity-1"><i class="fa fa-check"></i><b>4.4.2</b> Construct Validity</a></li>
+<li class="chapter" data-level="4.4.3" data-path="Chapter-4.html"><a href="Chapter-4.html#a-joint-assessment-criterion-and-construct-validity"><i class="fa fa-check"></i><b>4.4.3</b> A joint assessment: Criterion and construct validity</a></li>
+<li class="chapter" data-level="4.4.4" data-path="Chapter-4.html"><a href="Chapter-4.html#real-data-example-1"><i class="fa fa-check"></i><b>4.4.4</b> Real-data example</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="Chapter-5.html"><a href="Chapter-5.html"><i class="fa fa-check"></i><b>5</b> Comparability in poverty measurement</a><ul>
+<li class="chapter" data-level="5.1" data-path="Chapter-5.html"><a href="Chapter-5.html#measurement-invariance"><i class="fa fa-check"></i><b>5.1</b> Measurement invariance</a></li>
+<li class="chapter" data-level="5.2" data-path="Chapter-5.html"><a href="Chapter-5.html#introduction-to-key-aspects-of-measurement-invariance"><i class="fa fa-check"></i><b>5.2</b> Introduction to key aspects of measurement invariance</a></li>
+<li class="chapter" data-level="5.3" data-path="Chapter-5.html"><a href="Chapter-5.html#methods-for-the-assessment-of-measurement-invariance"><i class="fa fa-check"></i><b>5.3</b> Methods for the assessment of Measurement Invariance</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="Chapter-5.html"><a href="Chapter-5.html#multiple-group-factor-analysis"><i class="fa fa-check"></i><b>5.3.1</b> Multiple Group Factor Analysis</a></li>
+<li class="chapter" data-level="5.3.2" data-path="Chapter-5.html"><a href="Chapter-5.html#the-alignment-method"><i class="fa fa-check"></i><b>5.3.2</b> The alignment method</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="Chapter-5.html"><a href="Chapter-5.html#real-data-analysis-of-measurement-invariance"><i class="fa fa-check"></i><b>5.4</b> Real-data analysis of Measurement Invariance</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="scale-equating-and-linking.html"><a href="scale-equating-and-linking.html"><i class="fa fa-check"></i><b>6</b> Scale equating and linking</a><ul>
+<li class="chapter" data-level="6.1" data-path="scale-equating-and-linking.html"><a href="scale-equating-and-linking.html#intuition-to-scale-equation"><i class="fa fa-check"></i><b>6.1</b> Intuition to scale equation</a></li>
+<li class="chapter" data-level="6.2" data-path="scale-equating-and-linking.html"><a href="scale-equating-and-linking.html#theory-of-scale-equating"><i class="fa fa-check"></i><b>6.2</b> Theory of scale equating</a></li>
+<li class="chapter" data-level="6.3" data-path="scale-equating-and-linking.html"><a href="scale-equating-and-linking.html#example-with-simulated-data-in-r"><i class="fa fa-check"></i><b>6.3</b> Example with simulated data in R</a></li>
+<li class="chapter" data-level="6.4" data-path="scale-equating-and-linking.html"><a href="scale-equating-and-linking.html#real-data-example-2"><i class="fa fa-check"></i><b>6.4</b> Real-data example</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="identifying-the-poor-group.html"><a href="identifying-the-poor-group.html"><i class="fa fa-check"></i><b>7</b> Identifying the poor group</a><ul>
+<li class="chapter" data-level="7.1" data-path="identifying-the-poor-group.html"><a href="identifying-the-poor-group.html#the-poverty-line"><i class="fa fa-check"></i><b>7.1</b> The poverty line</a></li>
+<li class="chapter" data-level="7.2" data-path="identifying-the-poor-group.html"><a href="identifying-the-poor-group.html#perspectives-on-the-poverty-line-union-and-intersection-approaches"><i class="fa fa-check"></i><b>7.2</b> Perspectives on the poverty line: Union and intersection approaches</a></li>
+<li class="chapter" data-level="7.3" data-path="identifying-the-poor-group.html"><a href="identifying-the-poor-group.html#the-human-rights-based-approach"><i class="fa fa-check"></i><b>7.3</b> The human rights-based approach</a></li>
+<li class="chapter" data-level="7.4" data-path="identifying-the-poor-group.html"><a href="identifying-the-poor-group.html#the-ubn-weighted-approach"><i class="fa fa-check"></i><b>7.4</b> The UBN weighted approach</a></li>
+<li class="chapter" data-level="7.5" data-path="identifying-the-poor-group.html"><a href="identifying-the-poor-group.html#the-partially-weighted-approach"><i class="fa fa-check"></i><b>7.5</b> The partially-weighted approach</a></li>
+<li class="chapter" data-level="7.6" data-path="identifying-the-poor-group.html"><a href="identifying-the-poor-group.html#the-bristol-optimal-approach"><i class="fa fa-check"></i><b>7.6</b> The Bristol Optimal approach</a></li>
+<li class="chapter" data-level="7.7" data-path="identifying-the-poor-group.html"><a href="identifying-the-poor-group.html#example-with-simulated-data"><i class="fa fa-check"></i><b>7.7</b> Example with simulated data</a></li>
+<li class="chapter" data-level="7.8" data-path="identifying-the-poor-group.html"><a href="identifying-the-poor-group.html#real-data-analysis"><i class="fa fa-check"></i><b>7.8</b> Real-data analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="final-thoughts.html"><a href="final-thoughts.html"><i class="fa fa-check"></i><b>8</b> Final thoughts</a><ul>
+<li class="chapter" data-level="8.1" data-path="final-thoughts.html"><a href="final-thoughts.html#the-future-of-data-production-in-multidimensional-poverty-measurement"><i class="fa fa-check"></i><b>8.1</b> The future of data production in multidimensional poverty measurement</a></li>
+<li class="chapter" data-level="8.2" data-path="final-thoughts.html"><a href="final-thoughts.html#advanced-topics-in-multidimensional-poverty-measurement"><i class="fa fa-check"></i><b>8.2</b> Advanced topics in multidimensional poverty measurement</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>9</b> References</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Multidimensional poverty measurement: A statistical approach with applications</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="Chapter-4" class="section level1">
+<h1><span class="header-section-number">Chapter 4</span> Validity in poverty measurement</h1>
+<p><strong>Abstract</strong></p>
+<p>This chapter focuses on the theory and implementation of validity. An intuitive explanation is provided about the relationship between reliability and validity and then the different definitions of validity are reviewed. The chapter then uses simulated data to illustrate how construct and criterion validity can be investigated using R and Mplus. The chapter finalised by looking at a real-data example.</p>
+<div id="intuition-to-the-concept-of-validity" class="section level2">
+<h2><span class="header-section-number">4.1</span> Intuition to the concept of validity</h2>
+<p>We have seen so far that reliability is homogeneity in measurement and it means the capacity of a measure to reproduce the ranking of a population under changing conditions. Reliability, thus, will tell us whether the set of indicators will be useful to order individual’s according to their latent scores which we presume reflect poverty. Therefore, reliability is a necessary condition for good measurement but not a sufficient one. We need to make sure that our indicators are effectively capturing poverty.</p>
+<p>Imagine that we know the standards of living of two subject in a sample- one highly educated, wealthy and healthy and another with low education attainment, with a lot of debt and with systematic health problems. However, we find an unexpected result. The first subject is ranked lower than the second one, i.e. is more likely to be poor than the second. Measurement theory tells us that our scale is reliable but invalid. That means that there is very little evidence to interpret our index in accordance with our theory and concept of poverty.</p>
+<p>A valid measure is one that tells use the nature of what is being measured and its relationship with the index in question to its cause. Validity is a property that aims to assess the extent to which an index captures what we mean to measure. In other fields, one could ask someone the amount of sugary drink they had in a week. This information could be recoded using a questionnaire, for example. How can we validate this measurement? Well, we could follow someone everywhere and every time and take notes of their drinking behaviours. Then we could compare our measurement to hers to assess the precision of our instrument.</p>
+<p>Can we follow the same strategy in poverty research? No, we cannot as we work with an unobserved construct. The history of the Standards for Educational and Psychological Testing summarises the conceptualisation of validation of constructs. The way forward has been an unified framework of validity which looks at the extent to which the existence evidence on a scale supports the intended interpretation of test scores for the proposed use <span class="citation">(AERA, APA and NCME, <a href="references.html#ref-AERA2014" role="doc-biblioref">2014</a>)</span>.</p>
+</div>
+<div id="theory-of-validity" class="section level2">
+<h2><span class="header-section-number">4.2</span> Theory of validity</h2>
+<p>Classical test theory (CTT) proposes that reliability is the maximum possible validity of a scale. Reliability is affected by both systematic and random error but systematic error only affect validity. How this is possible according to CTT? The observed score is just the combination of the true score plus error. Validity is a function of systematic error (i.e. constant deviations from the construct of interest) and results in deviations from the construct of interest. That means that a scale can be reliable but always wrong because it always deviates from the target of interest. In CTT validity is formulated as follows:</p>
+<p><span class="math display" id="eq:validity1">\[\begin{equation}
+\tag{4.1}
+V = \frac{\sigma^2_{CI}} {\sigma^2_{observed}}
+\end{equation}\]</span></p>
+<p>The problem with this formulation is that it was little practical usage as the problem in question is knowing <span class="math inline">\(\sigma^2_{CI}\)</span>. The best approximation for this notion of validity consisted in focusin on the predictive capacity of a scale. Nonetheless, this approach to validity changed after the 1950s. <span class="citation">Bandalos (<a href="references.html#ref-Bandalos2018" role="doc-biblioref">2018</a>)</span> provides and overview of how the <em>standards</em> have both discussed and expanded the definition of validity over time. In the 1950s, criteria and predictive validity were the dominant approaches in both psychometrics and educational measurement literature. These two forms of validity focused on the correlation between the scale in question and a predictor of the phenomenon of interest. In our example, criterion validity would have shown that our scale had an inverse relationship with some observable attributes of the subject in the sample. Therefore, the scale would have been regarded as invalid from the perspective of criterion validity.</p>
+<p>Criterion validity demands a clear theory about the causes and consequences of the phenomenon of interest. <span class="citation">Townsend (<a href="references.html#ref-Townsend1979" role="doc-biblioref">1979</a>)</span> provides a good framework for such a purpose in that it provides a clear causal mechanism: command of resources, poverty and deprivation. Therefore, measures of command of resources (another latent construct) could be used to predict poverty. For example, in Townsend’s theory there are five main types of resources. Drawing upon, <span class="citation">Townsend (<a href="references.html#ref-Townsend1979" role="doc-biblioref">1979</a>)</span>, criterion validity has been used in poverty measurement by <span class="citation">Guio et al. (<a href="references.html#ref-Guio2012" role="doc-biblioref">2012</a>)</span> for the production of the European deprivation index and by <span class="citation">Gordon (<a href="references.html#ref-Gordon2010" role="doc-biblioref">2010</a>)</span> in his proposal for the Mexican multidimensional measure. Similarly, <span class="citation">Nandy &amp; Pomati (<a href="references.html#ref-Nandy2015" role="doc-biblioref">2015</a>)</span> used criterion validity to assess their proposed index for Benin.</p>
+<p>The association of an index with a predictive criterion may be inadequate or infeasible in some circumstances. In practice, some scales are developed to target certain aspects of a construct, for example, in poverty research it could be acute poverty or housing and facilities deprivation. In other settings, policymakers or institutions might prioritise some aspects of poverty from a human rights perspective, for example. This consideration leads to content validity. In poverty measurement, perhaps the most emblematic recent example is the Mexican measure. Drawing upon the Mexican Constitution (1917), the National Social Development Law defined poverty in terms of social rights. Because the Mexican law represents the will of the people, this gives a content validity to the measure <span class="citation">(Gordon, <a href="references.html#ref-Gordon2010" role="doc-biblioref">2010</a>)</span>. This, nonetheless, does not means that the law will lead to a valid scale. It means that the one should assess validity in accordance to the definition, i.e. examine whether the dimensions and indicators lead to a reliable and valid measure.</p>
+<p>One critical question about content validity is about how does a researcher <strong>knows</strong> or <strong>defines</strong> the constituent parts of the phenomenon of interests. Most of the time these aspects come from theory. However, the use of mixed methods is a way to enhance the capacity of theorists to develop concepts and frameworks about the mechanisms through which such concepts interact. The use of different kinds of good data will enhance the theory that gives content to a concept. <strong>Face validity</strong> is a form of validation that comes mainly from qualitative work. One way to see face validity is thinking in terms of how transparent a test looks like for the participants of the measurement. In other words, how sensible a the contents of a poverty index seem to the poor and the not poor. There are several qualitative methods to assess face validity and the best implementation to date is the Poverty and Social Exclusion project implementation of the Consensual Method (<span class="citation">Pantazis et al. (<a href="references.html#ref-Pantazis2006a" role="doc-biblioref">2006</a>)</span>; <span class="citation">Gordon (<a href="references.html#ref-Gordon2018" role="doc-biblioref">2018</a>)</span>). This project follows the ideal work flow production of a poverty measure (see <a href="poverty-and-measurement-theory-a-statistical-framework.html#fig:idealwf">2.2</a>) in that the concept of poverty has a theory that defines it, the questionnaire is first calibrated with qualitative work (face validity), and then a survey questionnaire is developed with the explicit purpose of measuring multidimensional poverty.</p>
+<p>However, as discussed in Figure <a href="poverty-and-measurement-theory-a-statistical-framework.html#fig:realwf">2.1</a>, in practice poverty researchers work with the data they already have and content validity is constrain and face validity is ignored. Furthermore, in many cases, criterion validity might not be available due to the fact that there is no a clear priority about the aspects of a concept that should be targeted in a measurement exercise. Furthermore, it might be the case that there is no clear predictor to conduct criterion validity. For example, when there is no agreement about the causes and correlate variables of poverty. <span class="citation">Cronbach &amp; Meehl (<a href="references.html#ref-Cronbach1955" role="doc-biblioref">1955</a>)</span> put forward a third form of validity that suggest that the measurement of the construct should be useful to <em>meaningfully</em> split groups. Whereas reliability guarantees certain ordering, construct validity focuses on the meaning of such ranking. Construct validity, at first, was seeing as the last resource but in the contemporary literature is no longer the case. Construct validity requires mounting evidence in favour that the scale does what is meant to do. <span class="citation">Messick (<a href="references.html#ref-Messick1987" role="doc-biblioref">1987</a>)</span> argued that construct validity embraces almost all types of validity evidence. For him, all the available evidence on a scale adds to the latent rejection or continuity of a scale. <span class="citation">AERA, APA and NCME (<a href="references.html#ref-AERA2014" role="doc-biblioref">2014</a>)</span> define validity as (p.14):</p>
+<blockquote>
+<p><em>It is the degree to which all the accumulated evidence supports the intended interpretation of test scores for the proposed used.</em></p>
+</blockquote>
+<p>This modern definition refers thus to the different types of evidence on the validity of a scale- criterion, predictive and content.</p>
+</div>
+<div id="methods-for-the-analysis-validity" class="section level2">
+<h2><span class="header-section-number">4.3</span> Methods for the analysis validity</h2>
+<div id="criterion-validity" class="section level3">
+<h3><span class="header-section-number">4.3.1</span> Criterion validity</h3>
+<p>Criterion validation is characterised by the correlation between an index and an alternative measure on the cause or effects of the construct of interest. This book is not about the different explanations of poverty but requires an illustration of the importance of having a theory for validity. This requires a theoretical framework explaining the drivers and consequences of poverty as well as how these two relate with the concept of deprivation. There are several good books on theories of poverty (see for an overview of different sources)<span class="citation">(Spicker et al., <a href="references.html#ref-Spicker2006" role="doc-biblioref">2006</a>)</span>. Poverty theories are crudely classified into structural and individual-centred theories. <span class="citation">Peter Townsend (<a href="references.html#ref-Townsend1993" role="doc-biblioref">1993</a>)</span> and <span class="citation">Townsend (<a href="references.html#ref-Townsend1979" role="doc-biblioref">1979</a>)</span> provide and overview of these frameworks. To illustrate how a theory of poverty relates to validity we will draw upon Townsend’s theory as it is one of the few frameworks that links an explanation of poverty with a cogent theory for its measurement.</p>
+<p>Townsend predicts that the lack of command of different kinds of resources lead to deprivation. This means that poverty should be related with different expressions of command of resources such as position in the labour market, education attainment, social class, etc. Poverty leads to exclusion and is said to be a good predictor of ill-health, therefore, poverty should be correlated with a measure of health status too. This means that the type of the employment should be correlated with our index of poverty, for example.</p>
+<p><span class="citation">Gordon (<a href="references.html#ref-Gordon2010" role="doc-biblioref">2010</a>)</span> proposes fitting a regression model to assess the extent to which the (reliable) indicators of a poverty measure correlate with a proxy measure of command of resources. He used income as a measure of resources given that the Mexican Income and Expenditure Survey lacked a validator (we reflected on the problem of data production for poverty measurement see section). He did fit a Generalized Linear Model (GLM) using a binary variable (income poverty. Poor=1 and Not poor=2) as a response variable and the deprivation indicators as predictors. The model was adjusted by urban/rural and household size. The expectation thus was to find relative risks ratios higher than 1 (<span class="math inline">\(\beta_i&gt;1\)</span>) as this is an indication that being deprived of a given item increased the chances of being classified as poor. In <span class="citation">Gordon (<a href="references.html#ref-Gordon2010" role="doc-biblioref">2010</a>)</span>’s example the validator is far from ideal but illustrates the idea of criterion validation. In figure <a href="Chapter-4.html#fig:valgordon">4.1</a> it is proposed a slightly better validator such as the position in the labour market. International occupation scales that aim to measure socio-economic position could be useful for this purpose <span class="citation">(Ganzeboom &amp; Treiman, <a href="references.html#ref-Ganzeboom1996" role="doc-biblioref">1996</a>)</span>. There are other alternatives like using subjective indicators of well-being or self-assessments of health status as those used by <span class="citation">Guio et al. (<a href="references.html#ref-Guio2012" role="doc-biblioref">2012</a>)</span>.</p>
+<div class="figure" style="text-align: center"><span id="fig:valgordon"></span>
+<img src="val_gordon.png" alt="This is a visual representation of @Gordon2010 criterion validation. Here income poverty is replaced by a measure of socio-economic position like employment status." width="1408" />
+<p class="caption">
+Figure 4.1: This is a visual representation of <span class="citation">Gordon (<a href="references.html#ref-Gordon2010" role="doc-biblioref">2010</a>)</span> criterion validation. Here income poverty is replaced by a measure of socio-economic position like employment status.
+</p>
+</div>
+<p>The advantage of using a unified framework such as measurement theory is that it is possible to further specifying a criterion validation model in terms of a Confirmatory Factor Model plus and explanatory model (Structural Equation Modelling, SEM). In the latent variable literature, these kind of models are known as MIMIC models or Multiple Indicator, Multiple Cause. Figure <a href="Chapter-4.html#fig:valmimic">4.2</a> shows a visual representation of the criterion validation of the unidimensional model previously shown. In this case, there is a new path from the validator (Y) toward the latent variable. The model is adjusted by a series of covariates (Z). In this model the expectation would be to see that <span class="math inline">\(\beta_y\)</span> to be associated with the factor (poverty) in a sensible way. If the metric of the factor (often standardised with mean zero and variance equal to one), tells that higher values denote higher severity, then we should expect that people with non-skilled jobs to be associated with positive factor values.</p>
+<div class="figure" style="text-align: center"><span id="fig:valmimic"></span>
+<img src="val_MIMIC.png" alt="This is a visual representation of a MIMIC criterion validation of a unidimensional or null model" width="1155" />
+<p class="caption">
+Figure 4.2: This is a visual representation of a MIMIC criterion validation of a unidimensional or null model
+</p>
+</div>
+<p>We could easily extend this example of criterion validation for a simplified version of the Townsend model. Figure <a href="Chapter-4.html#fig:valmdmimic">4.3</a> shows that poverty is predicted by a validator and some auxiliary variables (Z). The expectation is to find a predictive relationship between Y and the latent variable. The rest is just Townsend’s measurement model of poverty. In this reduced version, only the two main dimensions are presented. In the next section is discussed that having just two dimensions leads to some identification issues for the empirical analysis.</p>
+<div class="figure" style="text-align: center"><span id="fig:valmdmimic"></span>
+<img src="val_md_MIMIC.png" alt="This is a visual representation of a MIMIC criterion validation of a reduced version of the theoretical model of Townsend" width="1297" />
+<p class="caption">
+Figure 4.3: This is a visual representation of a MIMIC criterion validation of a reduced version of the theoretical model of Townsend
+</p>
+</div>
+</div>
+<div id="construct-validity" class="section level3">
+<h3><span class="header-section-number">4.3.2</span> Construct validity</h3>
+<p>Construct validity is an ongoing process and it is part of a unified framework of validity. Model specification is central in a statistical framework to measure poverty. This entails making explicit assumptions about the number, type and nature of the dimensions and its indicators. It also involves making assumptions about how the model should behave, i.e. people with multiple deprivation should be more deprived than people with a single or no deprivations, for example. Construct validity comprises different sorts of evidence on the different hypothesis of the measurement model. To ilustrate this we will use the Multidimensional Poverty Measure of acute poverty.</p>
+<ul>
+<li>Multidimensional poverty has three substantive dimensions: education, health and standard of living.</li>
+<li>These dimensions are clearly distinguishable (discriminant validity).</li>
+<li>The indicators of each dimensions are adequate manifestations of deprivation of education, health and standard of living (classification of indicators).</li>
+<li>The indicators of each dimensions equally account by for variation of the sub-dimensions (within-dimension weights).</li>
+</ul>
+<p>The four hypothesis underpin the measurement model of poverty of the MPI. These are ordered from the more general to the most specific. How then these assumptions could be tested. Measurement theory has developed factor models for such a purpose. These models have evolved to such extent that the most powerful factor model could be used to test in one model a number of hypothesis. There are two main ways to conduct factor analysis: exploratory and confirmatory. This book puts emphasis on the second kind as it soughs to encourage the development of scales based on theory and not on what the available data says. The label “Confirmatory” is ambitious in that it suggest that we confirm that our model is right. This, of course, is never possible. The best we can do is to assess whether the model is not a bad one, which does not necessarily means that is the correct one.</p>
+<p>Measurement models have a series of parameters (item loadings, dimension loadings, item thresholds and errors). Confirmatory factor analysis (CFA) is a way to estimate the value of the parameters in question and assess the extent to which the model reproduces the observable relationships among the indicators. This is no different from any experiment where given some assumptions, researchers compute if their model of reality is matched by observation. CFA models aim to assess if the presumed model of poverty seems to hold given the data, i.e. whether there is any indication that there are three dimensions, the indicators seem to relate to these dimensions and the contribution of the indicators is equally important or not within dimensions.</p>
+<p>To explain the theory of CFA models is necessary to bring back equations <a href="poverty-and-measurement-theory-a-statistical-framework.html#eq:model1">(2.1)</a> and <a href="poverty-and-measurement-theory-a-statistical-framework.html#eq:model2">(2.2)</a>.</p>
+<p><span class="math display">\[\begin{equation}
+ x_{ij} = \lambda_{ij} \eta_j + \varepsilon_ij   
+\end{equation}\]</span></p>
+<p><span class="math display">\[\begin{equation}
+ \eta_j = \gamma_{j} \zeta  + \xi
+\end{equation}\]</span></p>
+<p>These equations represent a hierarchical Confirmatory Factor model. These make our measurement model testable using a method that was developed for such purpose. This model will tell us: if the three dimensions <span class="math inline">\(\eta_j\)</span> (<span class="math inline">\(j=1,2,3\)</span>) is an adequate representation of poverty. It will also tell us if the indicators are manifest (<span class="math inline">\(\lambda_{ij}\)</span>) of the presumed dimensions, and whether the loadings are equal or not within dimensions.</p>
+<p>How does CFA assesses whether a model matches observation? CFA estimates a series of parameters that produce a variance-covariance matrix (<span class="math inline">\(\Sigma\)</span>) that approximates as closely as possible the observed variance-covariance matrix (<span class="math inline">\(S\)</span>). Therefore, the goal in CFA is to find a set of parameters that best reproduces the input matrix. This process is achieved by minimizing the difference between <span class="math inline">\(\Sigma\)</span> and <span class="math inline">\(S\)</span>. Maximum Likelihood (ML) is one of the preferred methods to estimate the minimizing function <span class="math inline">\(F_{ML}\)</span> (see p. 72 and 73 for an explanation)<span class="citation">(Brown, <a href="references.html#ref-Brown2006" role="doc-biblioref">2006</a>)</span>. There are, nonetheless, several estimating procedures that are more or less adequate depending on the nature of the data. One of the most useful and adequate for the kind of data in poverty measurement (categorical data with large samples) is robust weighted least squares (WLSMV) as it is faster than ML and is asymptotic distribution free. <span class="math inline">\(F_{ML}\)</span> is very useful because it provides standard errors (SEs) of the estimates but also because it can be used for the calculation of several indices of goodness-of-fit which tell how poor or good the model is.</p>
+<p><span class="math inline">\(F_{ML}\)</span> is used for several goodness-of-fit indices. An absolute index is <span class="math inline">\(\chi^2\)</span> which operates with the null hypothesis that <span class="math inline">\(S=\Sigma\)</span>. When rejected, it tell that the proposed model is not good enough to reproduce <span class="math inline">\(S\)</span>. In other words, the number, type of dimensions and indicators do not result in an adequate representation of the construct. <span class="math inline">\(\chi^2 = F_{ML}(N-1)\)</span> and thus is sensible to sample size and based on a very stringent hypothesis that <span class="math inline">\(S=\Sigma\)</span>.</p>
+<p>A relative index of goodness-of-fit is root mean square error of approximation (RMSEA) <span class="citation">(Steiger, <a href="references.html#ref-Steiger1980" role="doc-biblioref">1980</a>)</span>. This index looks at the extent to which a model is a reasonable approximation in the population. This index is sensible to the number of parameters in the model but insensitive to sample size.</p>
+<p>Comparative fit indices use a baseline model (typically a null model) as reference to evaluate the fit of the proposed model. These indexes often look more favourable than the strict <span class="math inline">\(\chi^2\)</span>. Extensive Monte Carlo studies have found that these indexes are nonetheless trustworthy and well-behaved. The Comparative Fit Index (CFI) is one of the most widely used. It varies between 0 and 1 where values closer to 1 indicate a good model fit. The Tucker-Lewis index (TLI) is another popular alternative which includes a penalty function for adding more parameters that do not necessarily improve the fit of the model. It typically has values between 0 and 1, where again closer to 1 implies a relatively good model fit.</p>
+<p>Several Monte Carlo studies have been conducted to assess the behaviour of these indices <span class="citation">(Bentler, <a href="references.html#ref-Bentler2007" role="doc-biblioref">2007</a>; Browne, Cudeck, &amp; others, <a href="references.html#ref-Browne1993" role="doc-biblioref">1993</a>; Hu &amp; Bentler, <a href="references.html#ref-Hu1999" role="doc-biblioref">1999</a>; Rigdon, <a href="references.html#ref-Rigdon1996" role="doc-biblioref">1996</a>)</span>. From these studies it has been possible to have an approximation to the values of the indices that often indicate a good fit. These values are summarised as follows:</p>
+<table>
+<caption><span id="tab:cfafitstats">Table 4.1: </span> Summary of the suggested cut off for the goodness-of-fit statistics.
+The values of RMSEA, CFI and TLI need to be taken as an approximation.</caption>
+<thead>
+<tr class="header">
+<th align="left">Index</th>
+<th align="center">Range values</th>
+<th align="center">Poor model fit rule</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><span class="math inline">\(\chi^2\)</span></td>
+<td align="center">p-values 1-0</td>
+<td align="center"><span class="math inline">\(p&lt;.05\)</span></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(RMSEA\)</span></td>
+<td align="center">p-values 1-0</td>
+<td align="center"><span class="math inline">\(p&gt;.06\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(CFI\)</span></td>
+<td align="center"><span class="math inline">\(1-0\)</span></td>
+<td align="center"><span class="math inline">\(&lt;.95\)</span></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(TLI\)</span></td>
+<td align="center"><span class="math inline">\(1-0\)</span></td>
+<td align="center"><span class="math inline">\(&lt;.95\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Factor loadings are often thought as a measure of item-reliability (see Section @ref()). So how does the factor loading values fit in a validity analysis? There is no consensus about threating factor loadings as measures of item validity. Only and only if the measure is proven to be valid in some way, it is possible to frame item loadings in terms of validity. In such a context, the square of the factor loadings equals the amount of variance in the indicator explained by the common factor (i.e. communality). Because the factor loadings capture the relationship of each indicator with the latent variable, they can be seen as the optimal weights of the model given the data. Therefore, a test of equality of loadings within dimensional can be used to assess whether using such kind of weighting is reasonable or not. The next section shows how these tests work but the idea is to assess the extent to which <span class="math inline">\(\lambda_{11}=\lambda_{21}=\lambda_{31}\)</span>, for example for three items in dimension <span class="math inline">\(j=1\)</span>.</p>
+</div>
+</div>
+<div id="validity-assessment" class="section level2">
+<h2><span class="header-section-number">4.4</span> Validity assessment</h2>
+<div id="criterion-validity-1" class="section level3">
+<h3><span class="header-section-number">4.4.1</span> Criterion Validity</h3>
+<p>Criterion or predictive validity holds when there is a correlation between an scale and an alternative measure on the cause or effects of the construct of interest. In poverty research, this kind of validation has been used in the empirical literature <span class="citation">(Gordon, <a href="references.html#ref-Gordon2010" role="doc-biblioref">2010</a>; Guio et al., <a href="references.html#ref-Guio2012" role="doc-biblioref">2012</a>; Nandy &amp; Pomati, <a href="references.html#ref-Nandy2015" role="doc-biblioref">2015</a>)</span>. We will again use our simulated multidimensional measure to illustrate how a validation exercise can be undertaken and to underline some issue researchers might find in practice.</p>
+<p>Fitting a regression model to assess the relationship between a proposed index and an alternative measure is a common approach to assess predictive validity. To illustrate how this kind of validation works, we will use the simulated data (“Rel_MD_data_1_1.dat”). This data set contains the nine manifest variables (x1-x9) plus the two unreliable indicators(x10-x11). Three variables were simulated as alternative measures. One is a “perfect” measure of the resources available for each household in the sample. So in principle, this measure ranks the households according to their potential to fulfil their needs. The measure is expressed in monetary terms to facilitate the interpretation. Education years of the household head and occupation (skill scale) are two predictors of the living standards of the households. These two variables reflect the often common case where the survey was not designed with a validator in mind. We will use the variable “hh_members” to adjust the estimates.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(plyr)
+Rel_MD_<span class="dv">1</span>&lt;-<span class="kw">read.table</span>(<span class="st">&quot;Rel_MD_data_1_1.dat&quot;</span>)
+Rel_MD_<span class="dv">1</span><span class="op">$</span>ds&lt;-<span class="kw">rowSums</span>(Rel_MD_<span class="dv">1</span>[,<span class="kw">c</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">9</span>)])
+<span class="kw">colnames</span>(Rel_MD_<span class="dv">1</span>)&lt;-<span class="kw">c</span>(<span class="st">&quot;x1&quot;</span>,<span class="st">&quot;x2&quot;</span>,<span class="st">&quot;x3&quot;</span>,<span class="st">&quot;x4&quot;</span>,<span class="st">&quot;x5&quot;</span>,<span class="st">&quot;x6&quot;</span>,
+                      <span class="st">&quot;x7&quot;</span>,<span class="st">&quot;x8&quot;</span>,<span class="st">&quot;x9&quot;</span>,<span class="st">&quot;x10&quot;</span>,<span class="st">&quot;x11&quot;</span>,
+                      <span class="st">&quot;resources&quot;</span>,<span class="st">&quot;educ_yr&quot;</span>,<span class="st">&quot;occupation&quot;</span>,
+                      <span class="st">&quot;hh_members&quot;</span>,<span class="st">&quot;class&quot;</span>,<span class="st">&quot;ds&quot;</span>)
+Rel_MD_<span class="dv">1</span>[<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>,<span class="dv">1</span><span class="op">:</span><span class="dv">11</span>]</code></pre>
+<pre><code>##   x1 x2 x3 x4 x5 x6 x7 x8 x9 x10 x11
+## 1  1  1  1  1  0  0  0  0  0   0   0
+## 2  0  0  0  0  0  0  0  0  0   0   0
+## 3  0  0  0  1  0  0  0  0  0   0   0
+## 4  1  1  0  0  0  0  1  0  0   0   0
+## 5  1  0  0  0  0  0  0  0  0   1   1</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">Rel_MD_<span class="dv">1</span>[<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>,<span class="dv">12</span><span class="op">:</span><span class="dv">15</span>]</code></pre>
+<pre><code>##   resources educ_yr occupation hh_members
+## 1  3276.687       6          4          5
+## 2  7508.982      15          2          1
+## 3  7183.707       8          5          2
+## 4  1574.356       6          2          7
+## 5  2210.297       9          5          4</code></pre>
+<p>One way to conduct the validation analysis consists in estimating the association between the manifest variables of our index with the validator. This can be simply done by fitting a series of regression models. Because deprivations are binary variables, we need to use a Generalised Linear Model (GLM) with the appropriate distribution. Relative Risk Ratios (RRR) are easier to interpret, so we will fit a Poisson model with log link to obtain the RRRs. Of course, there is no problem in estimating odd-ratios as here we are interested in looking at the association between variables.</p>
+<p>In total we have 11 dependent variables (x1-x11) and, thus 11 models. In principle, x1-x11 resulted unreliable and should have been dropped from the analysis but we will keep them just to discuss some connections between reliability and validity. We will create a simple function <code>lms()</code> below to loop across the deprivation indicators. We will also transform the resources to get a more sensible metric.</p>
+<pre class="sourceCode r"><code class="sourceCode r">Rel_MD_<span class="dv">1</span><span class="op">$</span>resources&lt;-Rel_MD_<span class="dv">1</span><span class="op">$</span>resources<span class="op">*</span>.<span class="dv">01</span>
+
+lms&lt;-<span class="cf">function</span>(index)
+{
+  fit&lt;-<span class="kw">glm</span>(Rel_MD_<span class="dv">1</span>[,index] <span class="op">~</span><span class="st"> </span>Rel_MD_<span class="dv">1</span><span class="op">$</span>resources <span class="op">+</span>
+<span class="st">                              </span>Rel_MD_<span class="dv">1</span><span class="op">$</span>hh_members,
+           <span class="dt">family=</span><span class="kw">poisson</span>(<span class="dt">link=</span><span class="st">&quot;log&quot;</span>))
+  <span class="kw">exp</span>(<span class="kw">cbind</span>(<span class="dt">OR =</span> <span class="kw">coef</span>(fit), <span class="kw">confint</span>(fit)))
+}
+
+coefs&lt;-<span class="kw">lapply</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">11</span>,lms)
+
+coefs[[<span class="dv">1</span>]]</code></pre>
+<p>We could check each of the outputs in list  but it is easier to plot the RRRs of resources for each one of the 11 variables. We will not show the code here but one could just simply extract the coefficients and use  to produce the graph. The coefficients are displayed with 95% confidence intervals in plot~. The null hypothesis in this model is that there is no relationship between resources and deprivation. For items x1-x9 we see that the difference seems to be different from zero and that the estimates are likely to be less than one. This suggests the higher the resources and lower the chances of being deprived. This is in line with our expectation. For items x10 and x11, however, we found no relationship at all. This is an indication that both items are unreliable and invalid. This reinforces our previous suspicion that these two items are not useful to measure poverty.</p>
+<pre class="sourceCode r"><code class="sourceCode r">coefs&lt;-<span class="kw">lapply</span>(coefs, <span class="cf">function</span>(x) <span class="kw">unlist</span>(x[<span class="dv">2</span>,]))
+coefs&lt;-<span class="st"> </span><span class="kw">as.matrix</span>(<span class="kw">matrix</span>(<span class="kw">unlist</span>(coefs), <span class="dt">nrow=</span><span class="kw">length</span>(coefs), <span class="dt">byrow=</span>T))
+coefs&lt;-<span class="kw">data.frame</span>(<span class="kw">rbind</span>(coefs[,<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>)]))
+
+coefs<span class="op">$</span>item &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="kw">c</span>(<span class="st">&quot;x1&quot;</span>,<span class="st">&quot;x2&quot;</span>,<span class="st">&quot;x3&quot;</span>,<span class="st">&quot;x4&quot;</span>,<span class="st">&quot;x5&quot;</span>,<span class="st">&quot;x6&quot;</span>,
+                      <span class="st">&quot;x7&quot;</span>,<span class="st">&quot;x8&quot;</span>,<span class="st">&quot;x9&quot;</span>,<span class="st">&quot;x10&quot;</span>,<span class="st">&quot;x11&quot;</span>),<span class="dv">1</span>)
+coefs<span class="op">$</span>var&lt;-<span class="kw">c</span>(<span class="kw">rep</span>(<span class="st">&quot;Resources (*100)&quot;</span>, <span class="dv">11</span>))
+coefs</code></pre>
+<p>We can simply plot the coefficients of each variable using the object <code>coefs</code> and <code>ggplot2()</code> as follows:</p>
+<pre class="sourceCode r"><code class="sourceCode r">p&lt;-<span class="st"> </span><span class="kw">ggplot</span>(coefs, <span class="kw">aes</span>(<span class="dt">x=</span>item,<span class="dt">y=</span>X1)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st">  </span>
+<span class="st">  </span><span class="kw">geom_errorbar</span>(<span class="kw">aes</span>(<span class="dt">ymin=</span>X2, <span class="dt">ymax=</span>X3)) <span class="op">+</span>
+<span class="st"> </span><span class="kw">theme_bw</span>() <span class="op">+</span><span class="st"> </span><span class="kw">scale_y_continuous</span>(<span class="dt">trans =</span> <span class="st">&#39;log10&#39;</span>, <span class="dt">limits =</span> <span class="kw">c</span>(.<span class="dv">9</span>, <span class="fl">1.1</span>))
+p <span class="op">+</span><span class="st"> </span><span class="kw">facet_grid</span>(. <span class="op">~</span><span class="st"> </span>var) <span class="op">+</span><span class="st"> </span><span class="kw">labs</span>(<span class="dt">y=</span><span class="st">&quot;Relative Risk Ratios&quot;</span>) <span class="op">+</span><span class="st"> </span><span class="kw">geom_hline</span>(<span class="dt">yintercept=</span><span class="dv">1</span>, <span class="dt">linetype=</span><span class="st">&quot;dashed&quot;</span>,
+                <span class="dt">color =</span> <span class="st">&quot;red&quot;</span>, <span class="dt">size=</span><span class="dv">2</span>)</code></pre>
+<div class="figure"><span id="fig:val1"></span>
+<img src="PM_Book_files/figure-html/val1-1.png" alt="This plot shows the Relative Risk Ratios for the resources variable, adjusted by the household size. Having more resources reduces the risk of being deprived of the item x, as expected." width="672" />
+<p class="caption">
+Figure 4.4: This plot shows the Relative Risk Ratios for the resources variable, adjusted by the household size. Having more resources reduces the risk of being deprived of the item x, as expected.
+</p>
+</div>
+<p>Now we will go through the case of the lack of a validator. Most of the time researchers will lack a validator that was designed a priori. In these circumstances researchers need to use variables that predict poverty. Education attainment of the household head and occupation status are one of the two best predictors of poverty. We will rewrite our <code>lms()</code> function to fit a series of models using both education and occupation. All models adjusted by the household size. Again we will fit a GLM to obtain relative risks.</p>
+<pre class="sourceCode r"><code class="sourceCode r">lms&lt;-<span class="cf">function</span>(index)
+{
+  fit&lt;-<span class="kw">glm</span>(Rel_MD_<span class="dv">1</span>[,index] <span class="op">~</span><span class="st"> </span>Rel_MD_<span class="dv">1</span><span class="op">$</span>occupation <span class="op">+</span>
+<span class="st">                              </span>Rel_MD_<span class="dv">1</span><span class="op">$</span>educ_yr <span class="op">+</span>
+<span class="st">                              </span>Rel_MD_<span class="dv">1</span><span class="op">$</span>hh_members,
+           <span class="dt">family=</span><span class="kw">poisson</span>(<span class="dt">link=</span><span class="st">&quot;log&quot;</span>))
+  <span class="kw">exp</span>(<span class="kw">cbind</span>(<span class="dt">OR =</span> <span class="kw">coef</span>(fit), <span class="kw">confint</span>(fit)))
+}
+
+coefs&lt;-<span class="kw">lapply</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">11</span>,lms)</code></pre>
+<pre><code>## Waiting for profiling to be done...
+## Waiting for profiling to be done...
+## Waiting for profiling to be done...
+## Waiting for profiling to be done...
+## Waiting for profiling to be done...
+## Waiting for profiling to be done...
+## Waiting for profiling to be done...
+## Waiting for profiling to be done...
+## Waiting for profiling to be done...
+## Waiting for profiling to be done...
+## Waiting for profiling to be done...</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">coefs[[<span class="dv">1</span>]]</code></pre>
+<pre><code>##                            OR     2.5 %    97.5 %
+## (Intercept)         0.6866791 0.5503763 0.8554189
+## Rel_MD_1$occupation 1.0531859 1.0377362 1.0688189
+## Rel_MD_1$educ_yr    0.9206710 0.9051449 0.9364577
+## Rel_MD_1$hh_members 1.0163837 0.9939741 1.0391996</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">coefs&lt;-<span class="kw">lapply</span>(coefs, <span class="cf">function</span>(x) <span class="kw">unlist</span>(x[<span class="dv">2</span><span class="op">:</span><span class="dv">3</span>,]))
+coefs&lt;-<span class="st"> </span><span class="kw">as.matrix</span>(<span class="kw">matrix</span>(<span class="kw">unlist</span>(coefs), <span class="dt">nrow=</span><span class="kw">length</span>(coefs), <span class="dt">byrow=</span>T))
+coefs&lt;-<span class="kw">data.frame</span>(<span class="kw">rbind</span>(coefs[,<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">5</span>)],coefs[,<span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">6</span>)]))
+
+coefs<span class="op">$</span>item &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="kw">c</span>(<span class="st">&quot;x1&quot;</span>,<span class="st">&quot;x2&quot;</span>,<span class="st">&quot;x3&quot;</span>,<span class="st">&quot;x4&quot;</span>,<span class="st">&quot;x5&quot;</span>,<span class="st">&quot;x6&quot;</span>,
+                      <span class="st">&quot;x7&quot;</span>,<span class="st">&quot;x8&quot;</span>,<span class="st">&quot;x9&quot;</span>,<span class="st">&quot;x10&quot;</span>,<span class="st">&quot;x11&quot;</span>),<span class="dv">2</span>)
+coefs<span class="op">$</span>var&lt;-<span class="kw">c</span>(<span class="kw">rep</span>(<span class="st">&quot;Occupation (Skill) scale&quot;</span>, <span class="dv">11</span>), <span class="kw">rep</span>(<span class="st">&quot;Education years&quot;</span>, <span class="dv">11</span>))
+coefs</code></pre>
+<pre><code>##           X1        X2        X3 item                      var
+## 1  1.0531859 1.0377362 1.0688189   x1 Occupation (Skill) scale
+## 2  1.0691741 1.0489816 1.0896804   x2 Occupation (Skill) scale
+## 3  1.0781765 1.0510322 1.1058950   x3 Occupation (Skill) scale
+## 4  1.0590273 1.0433546 1.0748872   x4 Occupation (Skill) scale
+## 5  1.0721107 1.0517452 1.0927967   x5 Occupation (Skill) scale
+## 6  1.0993761 1.0713526 1.1280058   x6 Occupation (Skill) scale
+## 7  1.0610757 1.0448192 1.0775352   x7 Occupation (Skill) scale
+## 8  1.0728834 1.0512460 1.0948827   x8 Occupation (Skill) scale
+## 9  1.1084601 1.0802115 1.1373136   x9 Occupation (Skill) scale
+## 10 1.0001156 0.9817638 1.0187286  x10 Occupation (Skill) scale
+## 11 1.0087886 0.9905182 1.0273171  x11 Occupation (Skill) scale
+## 12 0.9206710 0.9051449 0.9364577   x1          Education years
+## 13 0.8977545 0.8780443 0.9178932   x2          Education years
+## 14 0.8758993 0.8500184 0.9025356   x3          Education years
+## 15 0.9311522 0.9153057 0.9472680   x4          Education years
+## 16 0.9052537 0.8851807 0.9257679   x5          Education years
+## 17 0.8979686 0.8708921 0.9258545   x6          Education years
+## 18 0.9150086 0.8987985 0.9315038   x7          Education years
+## 19 0.9029371 0.8816859 0.9246844   x8          Education years
+## 20 0.8974289 0.8704803 0.9251801   x9          Education years
+## 21 0.9848866 0.9650072 1.0051781  x10          Education years
+## 22 0.9958716 0.9759022 1.0162522  x11          Education years</code></pre>
+<p>Once the models have been fitted, we could proceed to inspect the parameters. To inspect them we produce two plots shown in figure~<a href="Chapter-4.html#fig:val2">4.5</a>. The plot show the RRRs for both education and occupation adjusted by the household size. There is no evidence to support an association between items x10 and x11 and both predictors of poverty. In contrast, education and occupation predict an decrease and increase in the likelihood of being deprived of items x1-x9. On this basis we could conclude that our scale has criterion validity.</p>
+<pre class="sourceCode r"><code class="sourceCode r">p&lt;-<span class="st"> </span><span class="kw">ggplot</span>(coefs, <span class="kw">aes</span>(<span class="dt">x=</span>item,<span class="dt">y=</span>X1)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st">  </span>
+<span class="st">  </span><span class="kw">geom_errorbar</span>(<span class="kw">aes</span>(<span class="dt">ymin=</span>X2, <span class="dt">ymax=</span>X3)) <span class="op">+</span>
+<span class="st"> </span><span class="kw">theme_bw</span>() <span class="op">+</span><span class="st"> </span><span class="kw">scale_y_continuous</span>(<span class="dt">trans =</span> <span class="st">&#39;log10&#39;</span>, <span class="dt">limits =</span> <span class="kw">c</span>(.<span class="dv">8</span>, <span class="fl">1.2</span>))
+p <span class="op">+</span><span class="st"> </span><span class="kw">facet_grid</span>(. <span class="op">~</span><span class="st"> </span>var) <span class="op">+</span><span class="st"> </span><span class="kw">labs</span>(<span class="dt">y=</span><span class="st">&quot;Relative Risk Ratios&quot;</span>) <span class="op">+</span><span class="st"> </span><span class="kw">geom_hline</span>(<span class="dt">yintercept=</span><span class="dv">1</span>, <span class="dt">linetype=</span><span class="st">&quot;dashed&quot;</span>,
+                <span class="dt">color =</span> <span class="st">&quot;red&quot;</span>, <span class="dt">size=</span><span class="dv">2</span>)</code></pre>
+<div class="figure"><span id="fig:val2"></span>
+<img src="PM_Book_files/figure-html/val2-1.png" alt="This plot shows the Relative Risk Ratios for each item using two validators (adjusted by the total household members)" width="672" />
+<p class="caption">
+Figure 4.5: This plot shows the Relative Risk Ratios for each item using two validators (adjusted by the total household members)
+</p>
+</div>
+<pre class="sourceCode r"><code class="sourceCode r">p&lt;-<span class="st"> </span><span class="kw">ggplot</span>(coefs, <span class="kw">aes</span>(<span class="dt">x=</span>item,<span class="dt">y=</span>X1)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st">  </span>
+<span class="st">  </span><span class="kw">geom_errorbar</span>(<span class="kw">aes</span>(<span class="dt">ymin=</span>X2, <span class="dt">ymax=</span>X3)) <span class="op">+</span>
+<span class="st"> </span><span class="kw">theme_bw</span>() <span class="op">+</span><span class="st"> </span><span class="kw">scale_y_continuous</span>(<span class="dt">trans =</span> <span class="st">&#39;log10&#39;</span>, <span class="dt">limits =</span> <span class="kw">c</span>(.<span class="dv">8</span>, <span class="fl">1.2</span>))
+
+<span class="kw">jpeg</span>(<span class="st">&quot;val_rrrs.jpg&quot;</span>, <span class="dt">units=</span><span class="st">&quot;cm&quot;</span>, <span class="dt">width=</span><span class="dv">10</span>, <span class="dt">height=</span><span class="dv">10</span>, <span class="dt">res=</span><span class="dv">300</span>)
+p <span class="op">+</span><span class="st"> </span><span class="kw">facet_grid</span>(. <span class="op">~</span><span class="st"> </span>var) <span class="op">+</span><span class="st"> </span><span class="kw">labs</span>(<span class="dt">y=</span><span class="st">&quot;Relative Risk Ratios&quot;</span>) <span class="op">+</span><span class="st"> </span><span class="kw">geom_hline</span>(<span class="dt">yintercept=</span><span class="dv">1</span>, <span class="dt">linetype=</span><span class="st">&quot;dashed&quot;</span>,
+                <span class="dt">color =</span> <span class="st">&quot;red&quot;</span>, <span class="dt">size=</span><span class="dv">2</span>)
+<span class="kw">dev.off</span>()</code></pre>
+</div>
+<div id="construct-validity-1" class="section level3">
+<h3><span class="header-section-number">4.4.2</span> Construct Validity</h3>
+<p>Validity now is seen under a unified approach that looks at different aspects of the extent to which our scale can be interpreted as it is supposed to- a measure of poverty. Predictive validity might be a useful way to check the predictive validity at item-level. However, such kind of validation tells nothing about the structure of the measure. In section @ref{} we mention that modern poverty research should walk toward the specification of measurement models so that researchers make their assumptions better. We have mention that our scale is a higher-order scale with three dimensions, each one measured by three items. Construct validity concerns with the assessment of the structure of our scale. We will address several hypothesis about our scale:</p>
+<ul>
+<li>Are three dimensions a sensible way to arrange our indicators?</li>
+<li>Is a higher order factor present in our scale?</li>
+<li>Is the contribution to the explanation of the variance of each item equal or unequal?</li>
+</ul>
+<p>We will focus on the first two question for now. To assess the validity of our measure we will use CFA to assess whether our measurement model is an adequate representation of poverty given these data. A CFA explicitly asks the question about the capacity of a model to reproduce the observed data. The first step, thus, consists in specifying our model. We have done already this in section @ref{} when we estimated the reliability statistics <span class="math inline">\(\omega\)</span> and <span class="math inline">\(\omega_h\)</span>. We will fit again the model using the <code>lavaan</code> R-package and Mplus. We will start with <code>lavaan</code> by specifying the <span class="math inline">\(MD_model\)</span>. As can be appreciated we are assuming three factors (f1 to f3) and a higher order factor h. We are also stating that the indicators are manifest of one factor, i.e. we do not see x1 in f2 or f3. Then we can simply use the <code>sem()</code> function and tell that our items are categorical. We will store the output in the fit object.</p>
+<pre class="sourceCode r"><code class="sourceCode r">MD_model &lt;-<span class="st"> &#39; f1  =~ x1 + x2 + x3</span>
+<span class="st">              f2 =~ x4 + x5 + x6</span>
+<span class="st">              f3   =~ x7 + x8 + x9</span>
+<span class="st">               h =~ f1 + f2 + f3</span>
+<span class="st">&#39;</span>
+
+fit &lt;-<span class="st"> </span><span class="kw">sem</span>(MD_model,
+           <span class="dt">data =</span> Rel_MD_<span class="dv">1</span>,<span class="dt">ordered=</span><span class="kw">c</span>(<span class="st">&quot;x1&quot;</span>,<span class="st">&quot;x2&quot;</span>,<span class="st">&quot;x3&quot;</span>,<span class="st">&quot;x4&quot;</span>,<span class="st">&quot;x5&quot;</span>,
+                                     <span class="st">&quot;x6&quot;</span>,<span class="st">&quot;x7&quot;</span>,<span class="st">&quot;x8&quot;</span>,<span class="st">&quot;x9&quot;</span>))</code></pre>
+<p>Once the model has been estimated, we can request the global statistics of fit of our model saved in the fit object. To extract the statistics we will use the function <code>fitmeasures()</code>. We will request the <span class="math inline">\(\chi^2\)</span> test (absolute fit), the CFI and TLI values and RMSEA (relative fit). The p-value of the <span class="math inline">\(\chi^2\)</span> test suggest that we reject the hypothesis that the model does not reproduces the observed data. That means that dimensions, classification of the indicators and the presence of the higher order factor do a good job in representing the structure of the data. CFI, TLI and RMSEA point in the same direction.</p>
+<pre class="sourceCode r"><code class="sourceCode r">chisq&lt;-<span class="kw">fitmeasures</span>(fit,<span class="dt">fit.measures =</span> <span class="kw">c</span>(<span class="st">&quot;chisq&quot;</span>,<span class="st">&quot;df&quot;</span>,<span class="st">&quot;pvalue&quot;</span>))
+relfit&lt;-<span class="kw">fitmeasures</span>(fit,<span class="dt">fit.measures =</span> <span class="kw">c</span>(<span class="st">&quot;tli&quot;</span>,<span class="st">&quot;cfi&quot;</span>))
+rmsea&lt;-<span class="kw">fitmeasures</span>(fit,<span class="dt">fit.measures =</span> <span class="kw">c</span>(<span class="st">&quot;rmsea&quot;</span>, <span class="st">&quot;rmsea.ci.lower&quot;</span>,
+                                        <span class="st">&quot;rmsea.ci.upper&quot;</span>, <span class="st">&quot;rmsea.pvalue&quot;</span>))
+chisq</code></pre>
+<pre><code>##  chisq     df pvalue 
+## 17.717 24.000  0.817</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">relfit</code></pre>
+<pre><code>## tli cfi 
+##   1   1</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">rmsea</code></pre>
+<pre><code>##          rmsea rmsea.ci.lower rmsea.ci.upper   rmsea.pvalue 
+##          0.000          0.000          0.007          1.000</code></pre>
+<p>We can fit the same model in Mplus using the following code. We estimate the same model: three dimensions, one higher-order factor and each dimension with three exclusive indicators. We store the model specification in the test object and then we use the function <code>mplusModeler()</code> to pass (rel_CFA_1.inp) and fit the model on Mplus. The results of this operation are saved on the <code>res</code> object.</p>
+<pre class="sourceCode r"><code class="sourceCode r">test &lt;-<span class="st"> </span><span class="kw">mplusObject</span>(
+<span class="dt">TITLE =</span> <span class="st">&quot;Higher order CFA;&quot;</span>,
+   <span class="dt">VARIABLE =</span> <span class="st">&quot;</span>
+<span class="st">     NAMES = x1-x11 resources educ_yr occupation hh_size class;</span>
+<span class="st">     CATEGORICAL = x1-x9;</span>
+<span class="st">     USEVARIABLES = x1-x9;&quot;</span>,
+   <span class="dt">ANALYSIS =</span> <span class="st">&quot;ESTIMATOR = WLSMV;</span>
+<span class="st">              PROCESS = 4&quot;</span>,
+
+<span class="dt">MODEL =</span> <span class="st">&quot;f1 by x1-x3;</span>
+<span class="st">  f2 by x4-x6;</span>
+<span class="st">  f3 by x7-x9;</span>
+<span class="st">  h by f1 f2 f3;&quot;</span>,
+
+<span class="dt">OUTPUT =</span> <span class="st">&quot;STD stdyx;&quot;</span>)
+
+res &lt;-<span class="st"> </span><span class="kw">mplusModeler</span>(test, <span class="dt">modelout =</span> <span class="st">&quot;rel_CFA_1.inp&quot;</span>,
+                    <span class="dt">writeData =</span> <span class="st">&quot;never&quot;</span>,
+                    <span class="dt">hashfilename =</span> <span class="ot">FALSE</span>,
+                    <span class="dt">dataout=</span><span class="st">&quot;Rel_MD_data_1_1.dat&quot;</span>, <span class="dt">run =</span> 1L)</code></pre>
+<pre><code>## 
+## Running model: rel_CFA_1.inp 
+## System command: C:\WINDOWS\system32\cmd.exe /c cd &quot;.&quot; &amp;&amp; &quot;Mplus&quot; &quot;rel_CFA_1.inp&quot; 
+## Reading model:  rel_CFA_1.out</code></pre>
+<p>Once the model has been estimated we can request the global statistics of fit using the following piece of code. We observed that the estimates match the <code>lavaan()</code> figures. The model reproduces the observed data.</p>
+<pre class="sourceCode r"><code class="sourceCode r">fitstats&lt;-<span class="kw">c</span>(<span class="dt">TLI=</span>res<span class="op">$</span>results<span class="op">$</span>summaries<span class="op">$</span>TLI,
+            <span class="dt">CFI=</span>res<span class="op">$</span>results<span class="op">$</span>summaries<span class="op">$</span>CFI,
+            <span class="dt">Chisq=</span>res<span class="op">$</span>results<span class="op">$</span>summaries<span class="op">$</span>ChiSqM_PValue,
+            <span class="dt">RMSEA=</span>res<span class="op">$</span>results<span class="op">$</span>summaries<span class="op">$</span>RMSEA_Estimate)
+fitstats</code></pre>
+<pre><code>##    TLI    CFI  Chisq  RMSEA 
+## 1.0000 1.0000 0.1576 0.0080</code></pre>
+</div>
+<div id="a-joint-assessment-criterion-and-construct-validity" class="section level3">
+<h3><span class="header-section-number">4.4.3</span> A joint assessment: Criterion and construct validity</h3>
+<p>Ideally, we would like to move toward a unified validation of scales. This involves examining both criterion and construct validity in the same model. Previously, we discussed that our full model looks like figure <a href="Chapter-4.html#fig:valmdmimic">4.3</a>. This is called a MIMIC model. This moves us from the world of CFA into Structural Equation Modelling (SEM) but still the focus is on measurement and not so much on explanation. Again we will use <code>lavaan()</code> and Mplus to fit the model. In <code>lavaan()</code> we just need to create a new model that includes a new path. We would like to assess whether the higher-order factor (h) is associated with resources, adjusting by the total of household members. This can be simply achieved by adding a new line with a regression of h on the variables resources and hh_members. We fit and save the model in the fit object.</p>
+<pre class="sourceCode r"><code class="sourceCode r">MD_model &lt;-<span class="st"> &#39; f1  =~ x1 + x2 + x3</span>
+<span class="st">              f2 =~ x4 + x5 + x6</span>
+<span class="st">              f3   =~ x7 + x8 + x9</span>
+<span class="st">               h =~ f1 + f2 + f3</span>
+<span class="st">               h ~ resources + hh_members</span>
+<span class="st">&#39;</span>
+
+fit &lt;-<span class="st"> </span><span class="kw">sem</span>(MD_model,
+           <span class="dt">data =</span> Rel_MD_<span class="dv">1</span>,<span class="dt">ordered=</span><span class="kw">c</span>(<span class="st">&quot;x1&quot;</span>,<span class="st">&quot;x2&quot;</span>,<span class="st">&quot;x3&quot;</span>,<span class="st">&quot;x4&quot;</span>,<span class="st">&quot;x5&quot;</span>,
+                                     <span class="st">&quot;x6&quot;</span>,<span class="st">&quot;x7&quot;</span>,<span class="st">&quot;x8&quot;</span>,<span class="st">&quot;x9&quot;</span>))</code></pre>
+<p>Construct validity is assessed on the same terms. We will look at the overall fit of our model, which now know includes a new path, using the same statitsics: <span class="math inline">\(\chi^2\)</span>, CLI, TLI and RMSEA. We find that our measurement model still holds.</p>
+<pre class="sourceCode r"><code class="sourceCode r">chisq&lt;-<span class="kw">fitmeasures</span>(fit,<span class="dt">fit.measures =</span> <span class="kw">c</span>(<span class="st">&quot;chisq&quot;</span>,<span class="st">&quot;df&quot;</span>,<span class="st">&quot;pvalue&quot;</span>))
+relfit&lt;-<span class="kw">fitmeasures</span>(fit,<span class="dt">fit.measures =</span> <span class="kw">c</span>(<span class="st">&quot;tli&quot;</span>,<span class="st">&quot;cfi&quot;</span>))
+rmsea&lt;-<span class="kw">fitmeasures</span>(fit,<span class="dt">fit.measures =</span> <span class="kw">c</span>(<span class="st">&quot;rmsea&quot;</span>, <span class="st">&quot;rmsea.ci.lower&quot;</span>,
+                                        <span class="st">&quot;rmsea.ci.upper&quot;</span>, <span class="st">&quot;rmsea.pvalue&quot;</span>))
+chisq</code></pre>
+<pre><code>##  chisq     df pvalue 
+## 26.066 40.000  0.956</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">relfit</code></pre>
+<pre><code>## tli cfi 
+##   1   1</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">rmsea</code></pre>
+<pre><code>##          rmsea rmsea.ci.lower rmsea.ci.upper   rmsea.pvalue 
+##              0              0              0              1</code></pre>
+<p>Now we can check criterion validity by looking at the parameters of the regression part of our model. To extract the values of the parameters we will use the function <code>parameterEstimates()</code>, which is applied to the object fit. This is save in the slope object, which has all the estimated parameters in our model. For simplicity we will only show the slope h on resources by selecting the appropriate row. We observe that indeed there is a relationship between the factor and our parameters. What is the meaning of the reported value? The factor scores are presumed to follow a normal distribution. The higher the values of the factor, the higher the severity of poverty and vice versa. Therefore, we see that higher resources predict a decrease in the factor score, which is the expected behaviour in our measurement model.</p>
+<pre class="sourceCode r"><code class="sourceCode r">slope&lt;-<span class="kw">as.data.frame</span>(<span class="kw">parameterEstimates</span>(fit))
+slope[<span class="dv">13</span>,]</code></pre>
+<pre><code>##    lhs op       rhs         est           se        z pvalue    ci.lower
+## 13   h  ~ resources -0.02989634 0.0009216571 -32.4376      0 -0.03170276
+##       ci.upper
+## 13 -0.02808993</code></pre>
+<p>We can estimate the same Model in Mplus as follows. All we have to do is to add a new path “h on resources and hh_members”. The rest of the script is similar to the previous CFA model. We will create the following Mplus syntax: val_sem_1.inp. We will run the model using the <code>mplusModeler()</code> function and ask R to run the model in Mplus and save everything in the <code>res</code> object.</p>
+<pre class="sourceCode r"><code class="sourceCode r">test &lt;-<span class="st"> </span><span class="kw">mplusObject</span>(
+<span class="dt">TITLE =</span> <span class="st">&quot;</span>
+<span class="st">HIgher order MIMIC;&quot;</span>,
+<span class="dt">VARIABLE=</span><span class="st">&quot;</span>
+
+<span class="st">     NAMES = x1-x9 resources educ_yr occupation hh_members class;</span>
+<span class="st">     CATEGORICAL = x1-x9;</span>
+<span class="st">     USEVARIABLES = x1-x9 resources hh_members;&quot;</span>,
+<span class="dt">ANALYSIS=</span><span class="st">&quot;</span>
+<span class="st">ESTIMATOR = WLSMV;</span>
+<span class="st">              PROCESS = 4;&quot;</span>,
+<span class="dt">MODEL=</span> <span class="st">&quot;</span>
+<span class="st">f1 by x1-x3;</span>
+<span class="st">  f2 by x4-x6;</span>
+<span class="st">  f3 by x7-x9;</span>
+
+<span class="st">h by f1 f2 f3;</span>
+
+<span class="st">h on resources hh_members;&quot;</span>,
+
+<span class="dt">OUTPUT=</span>
+<span class="st">&quot;STD stdyx;&quot;</span>)
+
+res &lt;-<span class="st"> </span><span class="kw">mplusModeler</span>(test, <span class="dt">modelout =</span> <span class="st">&quot;val_sem_1.inp&quot;</span>,
+                    <span class="dt">writeData =</span> <span class="st">&quot;never&quot;</span>,
+                    <span class="dt">hashfilename =</span> <span class="ot">FALSE</span>,
+                    <span class="dt">dataout=</span><span class="st">&quot;Rel_MD_data_1_1.dat&quot;</span>, <span class="dt">run =</span> 1L)</code></pre>
+<pre><code>## Wrote model to: val_sem_1.inp</code></pre>
+<pre><code>## Wrote data to: Rel_MD_data_1_1.dat</code></pre>
+<pre><code>## No action taken as writeData = &#39;never&#39;</code></pre>
+<p>We extract the parameters of the MIMIC model using <code>{fitmeasures()</code> and then we check the estimates. We confirm that our estimates reproduce the <code>lavaan()</code> output.</p>
+<pre class="sourceCode r"><code class="sourceCode r">fitstats&lt;-<span class="kw">c</span>(<span class="dt">TLI=</span>res<span class="op">$</span>results<span class="op">$</span>summaries<span class="op">$</span>TLI,
+            <span class="dt">CFI=</span>res<span class="op">$</span>results<span class="op">$</span>summaries<span class="op">$</span>CFI,
+            <span class="dt">Chisq=</span>res<span class="op">$</span>results<span class="op">$</span>summaries<span class="op">$</span>ChiSqM_PValue,
+            <span class="dt">RMSEA=</span>res<span class="op">$</span>results<span class="op">$</span>summaries<span class="op">$</span>RMSEA_Estimate)
+fitstats</code></pre>
+<pre><code>##    TLI    CFI  Chisq  RMSEA 
+## 0.9990 1.0000 0.0603 0.0090</code></pre>
+<p>With some code we could request the estimate of the slope as we did with the <code>lavaan()</code> model. However, we will stress the importance of visualising our measurement models by looking at the standardised parameters on a diagram of our model. Figure (fig:valsem1) shows the standardised estimates of our model. We can see that resource predicts poverty -latent factor- (following Townsnend’s theory representation in this case) and this constitutes a validation of our measure.</p>
+<pre class="sourceCode r"><code class="sourceCode r">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&quot;val_sem_1.png&quot;</span>)</code></pre>
+<div class="figure"><span id="fig:valsem1"></span>
+<img src="val_sem_1.png" alt="This is a MIMIC model were a higher-order factor model loads into three dimensions and there is one path to examine criterion validity (resources and hh members)" width="2648" />
+<p class="caption">
+Figure 4.6: This is a MIMIC model were a higher-order factor model loads into three dimensions and there is one path to examine criterion validity (resources and hh members)
+</p>
+</div>
+</div>
+<div id="real-data-example-1" class="section level3">
+<h3><span class="header-section-number">4.4.4</span> Real-data example</h3>
+<p>We will use the Mexican data (pobreza_14.dta) to illustrate how validity could be assessed using a MIMIC model. We had already created a *.dat file (Mex_pobreza_14.dat) with the variables we need for the analysis (Section ). We can inspect the deprivation variables to familiarise ourselves with these data. The reduce model of the Mexican multidimensional measure comprises 14 variables classified in three dimensions: Housing, Essential services and food deprivation.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(haven)
+Mex_D&lt;-<span class="kw">read_dta</span>(<span class="st">&quot;pobreza_14.dta&quot;</span>)
+<span class="kw">head</span>(Mex_D[<span class="dv">31</span><span class="op">:</span><span class="dv">34</span>])</code></pre>
+<pre><code>## # A tibble: 6 x 4
+##            icv_muros          icv_techos         icv_pisos          icv_hac
+##            &lt;dbl+lbl&gt;           &lt;dbl+lbl&gt;         &lt;dbl+lbl&gt;        &lt;dbl+lbl&gt;
+## 1 0 [No presenta ca~ 0 [No presenta car~ 0 [No presenta c~ 0 [No presenta ~
+## 2 0 [No presenta ca~ 0 [No presenta car~ 0 [No presenta c~ 0 [No presenta ~
+## 3 0 [No presenta ca~ 0 [No presenta car~ 0 [No presenta c~ 0 [No presenta ~
+## 4 0 [No presenta ca~ 0 [No presenta car~ 0 [No presenta c~ 0 [No presenta ~
+## 5 0 [No presenta ca~ 0 [No presenta car~ 0 [No presenta c~ 0 [No presenta ~
+## 6 0 [No presenta ca~ 0 [No presenta car~ 0 [No presenta c~ 0 [No presenta ~</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(Mex_D[<span class="dv">36</span><span class="op">:</span><span class="dv">39</span>])</code></pre>
+<pre><code>## # A tibble: 6 x 4
+##             isb_agua           isb_dren          isb_luz         isb_combus
+##            &lt;dbl+lbl&gt;          &lt;dbl+lbl&gt;        &lt;dbl+lbl&gt;          &lt;dbl+lbl&gt;
+## 1 0 [No presenta ca~ 0 [No presenta ca~ 0 [No presenta ~ 0 [No presenta ca~
+## 2 0 [No presenta ca~ 0 [No presenta ca~ 0 [No presenta ~ 0 [No presenta ca~
+## 3 0 [No presenta ca~ 0 [No presenta ca~ 0 [No presenta ~ 0 [No presenta ca~
+## 4 0 [No presenta ca~ 0 [No presenta ca~ 0 [No presenta ~ 0 [No presenta ca~
+## 5 0 [No presenta ca~ 0 [No presenta ca~ 0 [No presenta ~ 0 [No presenta ca~
+## 6 0 [No presenta ca~ 0 [No presenta ca~ 0 [No presenta ~ 0 [No presenta ca~</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(Mex_D[<span class="dv">41</span><span class="op">:</span><span class="dv">46</span>])</code></pre>
+<pre><code>## # A tibble: 6 x 6
+##   ia_1ad ia_2ad ia_3ad ia_4ad ia_5ad ia_6ad
+##    &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;
+## 1      1      1      1      1      1      0
+## 2      0      0      0      0      0      0
+## 3      1      0      0      0      0      0
+## 4      0      0      0      0      0      0
+## 5      0      0      0      0      0      0
+## 6      1      1      1      0      1      0</code></pre>
+<p>For the validity analysis we will fit the same higher-order CFA model with the three dimensions (essential services, housing quality and food deprivation). We will use two validators: Education attainment of the household head and an index of assets (fridge, tv, washing machine, computer and internet). The estimation of the parameters of both validators will be adjusted by rural v urban areas (rururb) and household size (tot_integ).</p>
+<p>We will fit the model on Mplus. We will add the four new variables to the USEVARIABLES list and then include four new paths to the CFA model. This is achieved by including “h on rururb tot_integ durables educ_hh;” in the script (val_CFA_mex.inp). Again, we will save this in the test object and we will run the model from R using the <code>mplusModeler()</code> function. Bear in mind that the model will take some seconds to run.</p>
+<pre class="sourceCode r"><code class="sourceCode r">test &lt;-<span class="st"> </span><span class="kw">mplusObject</span>(
+<span class="dt">TITLE =</span> <span class="st">&quot;Validity Mexico CFA model;&quot;</span>,
+   <span class="dt">VARIABLE =</span> <span class="st">&quot;</span>
+<span class="st">     NAMES = proyecto folioviv foliohog icv_muros icv_techos</span>
+<span class="st">             icv_pisos icv_hac isb_agua isb_dren isb_luz isb_combus</span>
+<span class="st">             ic_sbv ia_1ad ia_2ad ia_3ad ia_4ad ia_5ad ia_6ad</span>
+<span class="st">             ia_7men ia_8men ia_9men ia_10men ia_11men ia_12men</span>
+<span class="st">             tv_dep radio_dep fridge_dep</span>
+<span class="st">             washingmach_dep compu_dep inter_dep psu weight</span>
+<span class="st">             rururb tot_integ durables educ_hh;</span>
+<span class="st">MISSING=.;</span>
+<span class="st">     CATEGORICAL = icv_muros icv_techos icv_pisos icv_hac isb_agua</span>
+<span class="st">                   isb_dren isb_luz isb_combus  ia_1ad</span>
+<span class="st">                   ia_2ad ia_3ad ia_4ad ia_5ad ia_6ad;</span>
+<span class="st">     USEVARIABLES = icv_muros icv_techos icv_pisos icv_hac isb_agua</span>
+<span class="st">                   isb_dren isb_luz isb_combus  ia_1ad</span>
+<span class="st">                   ia_2ad ia_3ad ia_4ad ia_5ad ia_6ad</span>
+<span class="st">                   rururb tot_integ durables educ_hh;</span>
+
+<span class="st">WEIGHT=weight;</span>
+<span class="st">cluster = psu;&quot;</span>,
+
+   <span class="dt">ANALYSIS =</span> <span class="st">&quot;TYPE = complex;</span>
+
+<span class="st">ESTIMATOR = wlsmv;</span>
+<span class="st">PROCESS = 4;&quot;</span>,
+
+<span class="dt">MODEL =</span> <span class="st">&quot;f1 by icv_muros icv_techos icv_pisos icv_hac;</span>
+<span class="st">  f2 by isb_agua</span>
+<span class="st">        isb_dren isb_luz isb_combus;</span>
+<span class="st">  f3 by ia_1ad ia_2ad ia_3ad ia_4ad ia_5ad ia_6ad;</span>
+<span class="st">  h  by f1 f2 f3;</span>
+<span class="st">  h on durables educ_hh rururb tot_integ;&quot;</span>,
+
+<span class="dt">OUTPUT =</span> <span class="st">&quot;std stdyx;&quot;</span>)
+
+res&lt;-<span class="kw">mplusModeler</span>(test, <span class="dt">modelout =</span> <span class="st">&quot;val_CFA_mex.inp&quot;</span>,
+                    <span class="dt">writeData =</span> <span class="st">&quot;never&quot;</span>, <span class="dt">hashfilename =</span> <span class="ot">FALSE</span>,
+                    <span class="dt">dataout=</span><span class="st">&quot;Mex_pobreza_14.dat&quot;</span>, <span class="dt">run =</span> 1L)</code></pre>
+<pre><code>## Wrote model to: val_CFA_mex.inp</code></pre>
+<pre><code>## Wrote data to: Mex_pobreza_14.dat</code></pre>
+<pre><code>## No action taken as writeData = &#39;never&#39;</code></pre>
+<pre><code>## 
+## Running model: val_CFA_mex.inp 
+## System command: C:\WINDOWS\system32\cmd.exe /c cd &quot;.&quot; &amp;&amp; &quot;Mplus&quot; &quot;val_CFA_mex.inp&quot; 
+## Reading model:  val_CFA_mex.out</code></pre>
+<p>Once the model has been fitted we can examine construct validity by assessing whether our model holds after adding the predictors. We will save the statistics of fit in the <code>fitstats()</code> object. We can see that the fit of this model is very good. We find that the model seems to be a valid representation of poverty for Mexico. That means that the dimensions and indicators are adequately classified and identified.</p>
+<pre class="sourceCode r"><code class="sourceCode r">fitstats&lt;-<span class="kw">c</span>(<span class="dt">TLI=</span>res<span class="op">$</span>results<span class="op">$</span>summaries<span class="op">$</span>TLI,
+            <span class="dt">CFI=</span>res<span class="op">$</span>results<span class="op">$</span>summaries<span class="op">$</span>CFI,
+            <span class="dt">Chisq=</span>res<span class="op">$</span>results<span class="op">$</span>summaries<span class="op">$</span>ChiSqM_PValue,
+            <span class="dt">RMSEA=</span>res<span class="op">$</span>results<span class="op">$</span>summaries<span class="op">$</span>RMSEA_Estimate)
+fitstats</code></pre>
+<pre><code>##   TLI   CFI Chisq RMSEA 
+## 0.987 0.989 0.000 0.019</code></pre>
+<p>On Mplus we can produce a diagram to display the estimated values of the parameters of our model. From left to right, we appreciate the standardised parameters of the validators and the adjustment variables. We see the four have the expected signs. The higher the education attainment, the lower the factor scores (higher severity). The asset index shows a similar behaviour, having more durables in the household is associated with lower factor scores. Both rurality and the household size increase the factor scores. Then we appreciate that the standardised factor loadings are high (<span class="math inline">\(&gt;.5\)</span>).</p>
+<div class="figure" style="text-align: center"><span id="fig:valcfamex"></span>
+<img src="val_cfa_mex.png" alt="This is a MIMIC model of a reduced version of the multidimensional Mexican measure. The model shows that poverty is associated by posession of different goods and education attainment of the household head, adjusted by rurality and household size. Standardised coefficients (Standard error within brackets)" width="2606" />
+<p class="caption">
+Figure 4.7: This is a MIMIC model of a reduced version of the multidimensional Mexican measure. The model shows that poverty is associated by posession of different goods and education attainment of the household head, adjusted by rurality and household size. Standardised coefficients (Standard error within brackets)
+</p>
+</div>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="Chapter-3.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="Chapter-5.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="assets/gitbook-2.6.7/js/app.min.js"></script>
+<script src="assets/gitbook-2.6.7/js/lunr.js"></script>
+<script src="assets/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="assets/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="assets/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="assets/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="assets/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection",
+"scroll_highlight": true
+},
+"toolbar": {
+"position": "fixed"
+},
+"search": true
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

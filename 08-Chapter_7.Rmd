@@ -1,0 +1,19 @@
+
+# Identifying the poor group
+
+## The poverty line 
+
+## Perspectives on the poverty line: Union and intersection approaches
+
+## The human rights-based approach
+
+## The UBN weighted approach 
+
+## The partially-weighted approach
+
+## The Bristol Optimal approach
+
+## Example with simulated data
+
+## Real-data analysis 
+

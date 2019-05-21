@@ -1,0 +1,15 @@
+
+# Scale equating and linking
+
+## Intuition to scale equation
+
+Previous chapter introduces the sources affecting the comparability of different poverty indices and presents the concept and empirical implementation of measurement invariance. In poverty research, households are ranked according to some indicators of (low) living standards using survey or census data. The indicators in question have a structure (unidimensional or multidimensional, See chapter X) for the population in question. One problem is that such a measurement model might not be adequate for a different population or for a different year. That is, the measurement model is not equivalent (see previous chapter). Therefore, we would like to assess whether a measure is equivalent across populations/periods. Once this assessment is conducted poverty can be compared on the factor using the aligment method. This, however, might not be fully satisfactory for policy makers as the values of a standarized latent variable make little practical sense. Furthermore, it is unclear how to use these values to set a poverty line. 
+
+Another critical problem is that MI is adequate when scales have the same items and it does not solve the problem of working with scales that have different items or that have been upgraded in accordance with the living standards. Ideally, once measurement invariance is assessed researches would like to put everything into a meaninful metric and being able to compare measures that might have suffered from changes in its contents. Moreover, one question in poverty research is about how the severity of poverty is affected by changes in living standards and how this can be tractable using the available data. 
+
+## Theory of scale equating 
+
+
+## Example with simulated data in R
+
+## Real-data example 
