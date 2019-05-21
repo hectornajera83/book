@@ -1,0 +1,72 @@
+\contentsline {chapter}{Preface}{5}{chapter*.2}% 
+\contentsline {chapter}{\numberline {1}Poverty and measurement theory principles}{7}{chapter.1}% 
+\contentsline {section}{\numberline {1.1}The Concept of Poverty}{7}{section.1.1}% 
+\contentsline {section}{\numberline {1.2}Theoretical dimensions of poverty}{8}{section.1.2}% 
+\contentsline {section}{\numberline {1.3}The measurement of poverty and its challenges}{9}{section.1.3}% 
+\contentsline {subsection}{\numberline {1.3.1}Challenges in selection of dimensions, contents, cut offs and weights}{9}{subsection.1.3.1}% 
+\contentsline {subsection}{\numberline {1.3.2}Challenges in aggregation and identification of the poor}{10}{subsection.1.3.2}% 
+\contentsline {section}{\numberline {1.4}The poor and the not poor: The poverty line}{11}{section.1.4}% 
+\contentsline {section}{\numberline {1.5}A brief on multidimensional poverty measurement}{13}{section.1.5}% 
+\contentsline {chapter}{\numberline {2}Poverty and measurement theory: A statistical framework}{17}{chapter.2}% 
+\contentsline {section}{\numberline {2.1}Work flow in poverty measurement: A falsifiable framework}{17}{section.2.1}% 
+\contentsline {section}{\numberline {2.2}Identification of the sampling space}{20}{section.2.2}% 
+\contentsline {section}{\numberline {2.3}Selection of dimensions and indicators}{20}{section.2.3}% 
+\contentsline {section}{\numberline {2.4}Aggregation and weighting}{20}{section.2.4}% 
+\contentsline {subsection}{\numberline {2.4.1}Splitting the population into meaningful groups}{21}{subsection.2.4.1}% 
+\contentsline {section}{\numberline {2.5}Measurement theory as an statistical framework}{21}{section.2.5}% 
+\contentsline {section}{\numberline {2.6}Poverty and error in measurement}{21}{section.2.6}% 
+\contentsline {section}{\numberline {2.7}Measurement model for poverty}{21}{section.2.7}% 
+\contentsline {section}{\numberline {2.8}Blueprints and poverty measurement models}{22}{section.2.8}% 
+\contentsline {section}{\numberline {2.9}Measurement theory and principles}{26}{section.2.9}% 
+\contentsline {subsection}{\numberline {2.9.1}Origins of measurement theory}{26}{subsection.2.9.1}% 
+\contentsline {chapter}{\numberline {3}Reliability in poverty measurement}{29}{chapter.3}% 
+\contentsline {section}{\numberline {3.1}Intuition to the concept of reliability}{29}{section.3.1}% 
+\contentsline {section}{\numberline {3.2}Reliability theory}{30}{section.3.2}% 
+\contentsline {section}{\numberline {3.3}Statistical measures of reliability}{30}{section.3.3}% 
+\contentsline {section}{\numberline {3.4}Item-level reliability and weighting}{32}{section.3.4}% 
+\contentsline {section}{\numberline {3.5}Estimation of Reliability}{33}{section.3.5}% 
+\contentsline {subsection}{\numberline {3.5.1}Overall reliability}{33}{subsection.3.5.1}% 
+\contentsline {subsection}{\numberline {3.5.2}Exploratory (non-model based) estimation of overall reliability}{34}{subsection.3.5.2}% 
+\contentsline {subsection}{\numberline {3.5.3}Model-based estimation of overall reliability}{37}{subsection.3.5.3}% 
+\contentsline {subsection}{\numberline {3.5.4}Overall reliability and population orderings}{40}{subsection.3.5.4}% 
+\contentsline {section}{\numberline {3.6}Item-level reliability}{44}{section.3.6}% 
+\contentsline {section}{\numberline {3.7}Multidimensional item-reliability evaluation}{46}{section.3.7}% 
+\contentsline {subsection}{\numberline {3.7.1}Item-reliability and monotonicity}{46}{subsection.3.7.1}% 
+\contentsline {section}{\numberline {3.8}Real data example}{47}{section.3.8}% 
+\contentsline {subsection}{\numberline {3.8.1}Item-level reliability}{50}{subsection.3.8.1}% 
+\contentsline {chapter}{\numberline {4}Validity in poverty measurement}{53}{chapter.4}% 
+\contentsline {section}{\numberline {4.1}Intuition to the concept of validity}{53}{section.4.1}% 
+\contentsline {section}{\numberline {4.2}Theory of validity}{53}{section.4.2}% 
+\contentsline {section}{\numberline {4.3}Methods for the analysis validity}{55}{section.4.3}% 
+\contentsline {subsection}{\numberline {4.3.1}Criterion validity}{55}{subsection.4.3.1}% 
+\contentsline {subsection}{\numberline {4.3.2}Construct validity}{58}{subsection.4.3.2}% 
+\contentsline {section}{\numberline {4.4}Validity assessment}{60}{section.4.4}% 
+\contentsline {subsection}{\numberline {4.4.1}Criterion Validity}{60}{subsection.4.4.1}% 
+\contentsline {subsection}{\numberline {4.4.2}Construct Validity}{65}{subsection.4.4.2}% 
+\contentsline {subsection}{\numberline {4.4.3}A joint assessment: Criterion and construct validity}{66}{subsection.4.4.3}% 
+\contentsline {subsection}{\numberline {4.4.4}Real-data example}{68}{subsection.4.4.4}% 
+\contentsline {chapter}{\numberline {5}Comparability in poverty measurement}{73}{chapter.5}% 
+\contentsline {section}{\numberline {5.1}Measurement invariance}{73}{section.5.1}% 
+\contentsline {section}{\numberline {5.2}Introduction to key aspects of measurement invariance}{74}{section.5.2}% 
+\contentsline {section}{\numberline {5.3}Methods for the assessment of Measurement Invariance}{80}{section.5.3}% 
+\contentsline {subsection}{\numberline {5.3.1}Multiple Group Factor Analysis}{81}{subsection.5.3.1}% 
+\contentsline {subsection}{\numberline {5.3.2}The alignment method}{88}{subsection.5.3.2}% 
+\contentsline {section}{\numberline {5.4}Real-data analysis of Measurement Invariance}{90}{section.5.4}% 
+\contentsline {chapter}{\numberline {6}Scale equating and linking}{95}{chapter.6}% 
+\contentsline {section}{\numberline {6.1}Intuition to scale equation}{95}{section.6.1}% 
+\contentsline {section}{\numberline {6.2}Theory of scale equating}{95}{section.6.2}% 
+\contentsline {section}{\numberline {6.3}Example with simulated data in R}{95}{section.6.3}% 
+\contentsline {section}{\numberline {6.4}Real-data example}{95}{section.6.4}% 
+\contentsline {chapter}{\numberline {7}Identifying the poor group}{97}{chapter.7}% 
+\contentsline {section}{\numberline {7.1}The poverty line}{97}{section.7.1}% 
+\contentsline {section}{\numberline {7.2}Perspectives on the poverty line: Union and intersection approaches}{97}{section.7.2}% 
+\contentsline {section}{\numberline {7.3}The human rights-based approach}{97}{section.7.3}% 
+\contentsline {section}{\numberline {7.4}The UBN weighted approach}{97}{section.7.4}% 
+\contentsline {section}{\numberline {7.5}The partially-weighted approach}{97}{section.7.5}% 
+\contentsline {section}{\numberline {7.6}The Bristol Optimal approach}{97}{section.7.6}% 
+\contentsline {section}{\numberline {7.7}Example with simulated data}{97}{section.7.7}% 
+\contentsline {section}{\numberline {7.8}Real-data analysis}{97}{section.7.8}% 
+\contentsline {chapter}{\numberline {8}Final thoughts}{99}{chapter.8}% 
+\contentsline {section}{\numberline {8.1}The future of data production in multidimensional poverty measurement}{99}{section.8.1}% 
+\contentsline {section}{\numberline {8.2}Advanced topics in multidimensional poverty measurement}{99}{section.8.2}% 
+\contentsline {chapter}{\numberline {9}References}{101}{chapter.9}% 
