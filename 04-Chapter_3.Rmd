@@ -2,21 +2,21 @@
 
 **Abstract**
 
-This chapter introduces the theory and concept of reliability. An intuitive explanation is provided at the begining of the chapter to underline the implications of reliability for measurement. Then, a formal introduction to the theory of reliability is provided. Reliability can be estimated using different approaches, the chapter discusses its limitations. The second main section of the chapter ilustrates how reliability works and how can it be estimated using R and Mplus by using simulated data. Then a real-data example is used to show some of the tipical problems involved in the examination of reliability. 
+This chapter introduces the theory and concept of reliability. An intuitive explanation is provided at the beginning of the chapter to underline the implications of reliability for measurement. Then, a formal introduction to the theory of reliability is provided. Reliability can be estimated using different approaches, the chapter discusses its limitations. The second main section of the chapter illustrates how reliability works and how can it be estimated using **R** and **Mplus** by using simulated data. Then a real-data example is used to show some of the typical problems involved in the examination of reliability. 
 
 ## Intuition to the concept of reliability
 
-In what sense the concept of reliability relates to the idea of having a measure we can trust? Poverty analysts and policymakers require indices they beleive in to focus on more important issues like devloping and studying poverty erradication strategies. There is nothing worse in measurement that a scale that causes disbelief in that the debate concetrates upon how bad a measure is and not upon how good or bad a policy is. `Trust' is build upon consistent and meaningful estimates. For example, imagine a case in which we could conduct two surveys to the same population. Ideally, we expect our classification of the poor population to remain unchanged from $t_1$ to $t_2$. This is telling us that our index is stable across samples. A noisy index, in contrast, would lead to unsatble orderings and it is impossible to distingush a singnal (the thing we are interested in) from noise (unnecessary and confusing variability). 
+In what sense the concept of reliability relates to the idea of having a measure we can trust? Poverty analysts and policymakers require indices they believe in to focus on more important issues like developing and studying poverty eradication strategies. There is nothing worse in measurement that a scale that causes disbelief in that the debate concentrates upon how bad a measure is and not upon how good or bad a policy is. `Trust' is built upon consistent and meaningful estimates. For example, imagine a case in which we could conduct two surveys to the same population. Ideally, we expect our classification of the poor population to remain unchanged from $t_1$ to $t_2$. This is telling us that our index is stable across samples. A noisy index, in contrast, would lead to unstable orderings and it is impossible to distinguish a signal (the thing we are interested in) from noise (unnecessary and confusing variability). 
 
-Consistency, however, is not simply having the same response patterns *ceteris paribus* across two samples but also by having systematic population orderings. Imagine a case in which one of the deprivation indicators is not a good measure of poverty, like having a folding bycicle. This variable will have a low correlation with the rest of the deprivation indicators. @Spearman1904 tells us to be suspicious about such kind of behaviour. Low correlation (or even worse negative correlation) could mean that the indicator in question in not a consequence by poverty ("Lack of command of resources over time" See Chapter \@ref(Chapter-1)). The consequence would be that we will end up with two different population rankings depending on whether we include folding bycicle in our index. How different? It will depend upon how poorly correlated the indicator in question is with the rest. Therefore, even with a very similar response pattern, our scale will be rather unstable to be trusted. Of course, if we know that the folding bycicle item is an unreasonable measure of poverty we would have drop it before the empirical analysis. However, in poverty measurement there are variables or thresholds of these variables that are quite contested.  
+Consistency, however, is not simply having the same response patterns *ceteris paribus* across two samples but also by having systematic population orderings. Imagine a case in which one of the deprivation indicators is not a good measure of poverty, like having a folding bicycle. This variable will have a low correlation with the rest of the deprivation indicators. @Spearman1904 tells us to be suspicious about such kind of behaviour. Low correlation (or even worse negative correlation) could mean that the indicator in question in not a consequence by poverty ("Lack of command of resources over time" See Chapter \@ref(Chapter-1)). The consequence would be that we will end up with two different population rankings depending on whether we include folding bicycle in our index. How different? It will depend upon how poorly correlated the indicator in question is with the rest. Therefore, even with a very similar response pattern, our scale will be rather unstable to be trusted. Of course, if we know that the folding bicycle item is an unreasonable measure of poverty, we would have drop it before the empirical analysis. However, in poverty measurement there are variables or thresholds of these variables that are quite contested.  
 
-Now imagine a different escenario where we have only good outcome measures of poverty and, for some reason, a good variable like lacking drinking piped water inside the house is dropped from the index (assuming this is a developing country where this measure works!). If we dropped this indicator from our analysis we would lose valuable information. Because we will be missing good variables (either because are not available or we just miss it from theory) we would like a measure whose population ordering is not that sensible to information losses. That, indeed, is a measure we can trust in the sense that it will lead to consistent results. High reliability is a property that, for instance, protects an index against certain information losses, i.e. the higher the reliability, the lower the effect of missing variables. Yet, missing indicators could be damaging for policy reasons, of course.  
+Now imagine a different scenario where we have only good outcome measures of poverty and, for some reason, a good variable like lacking drinking piped water inside the house is dropped from the index (assuming this is a developing country where this measure works!). If we dropped this indicator from our analysis, we would lose valuable information. Because we will be missing good variables (either because are not available or we just miss it from theory) we would like a measure whose population ordering is not that sensible to information losses. That, indeed, is a measure we can trust in the sense that it will lead to consistent results. High reliability is a property that, for instance, protects an index against certain information losses, i.e. the higher the reliability, the lower the effect of missing variables. Yet, missing indicators could be damaging for policy reasons, of course.  
 
 ## Reliability theory
 
-Reliability is a key concept in measurement theory and can be simple defined as the homogeneity of an index [@Revelle2009]. An homogeneous index is a scale whose outcome indicators are manifestations of the same trait. In the literature several authors refer to reliability as internal consistenty of an index because this a consequense of homogeneity. In the example above having an indicator that is not a good measure of poverty means that the index is heterogeneous and therefore leads to inconistent population orderings. Thus at the core of the principle of reliability lies the idea of having a series of items that would have a predictable behaviour when aggregated, i.e. if an index is reliable we should expect to have very similar population rankings across samples or small variations of the same reliable index with more or less indicators. 
+Reliability is a key concept in measurement theory and can be simple defined as the homogeneity of an index [@Revelle2009]. A homogeneous index is a scale whose outcome indicators are manifestations of the same trait. In the literature several authors refer to reliability as internal consistency of an index because this a consequence of homogeneity. In the example above having an indicator that is not a good measure of poverty means that the index is heterogeneous and therefore leads to inconsistent population orderings. Thus at the core of the principle of reliability lies the idea of having a series of items that would have a predictable behaviour when aggregated, i.e. if an index is reliable we should expect to have very similar population rankings across samples or small variations of the same reliable index with more or less indicators. 
 
-The theory of reliability is inextricably connected with the evolution of measurement theory. The theory of reliability can be traced back to classical test theory (CTT) but it has been under continous development by more recent breaktrhoughs in latent variable modelling. Reliability is rooted in the acknowlegement that all measures have an unkown mixture of signal and noise (error). For @Spearman1904 there should be a *true* score- that is just the combination of an observed score and error. As in classical or frequentists statistics, it is *true* in the sense of the expected score across many replications of the same experiment. Being $\theta$ the true score, in CTT reliability is expressed as:
+The theory of reliability is inextricably connected with the evolution of measurement theory. The theory of reliability can be traced back to classical test theory (CTT) but it has been under continuous development by more recent breakthroughs in latent variable modelling. Reliability is rooted in the acknowledgement that all measures have an unknown mixture of signal and noise (error). For @Spearman1904 there should be a *true* score- that is just the combination of an observed score and error. As in classical or frequentists statistics, it is *true* in the sense of the expected score across many replications of the same experiment. Being $\theta$ the true score, in CTT reliability is expressed as:
 
 \begin{equation}
 (\#eq:truescore)
@@ -30,9 +30,9 @@ Equation \@ref(eq:truescore) can be put in terms of variance decomposition. The 
   \rho =  \frac{\sigma^{2}_{\theta}} {\sigma^{2}_{x} + \sigma^{2}_{e}}
 \end{equation}
 
-where $\rho$ is the total reliability and $\sigma^{2}_{i}$ is the subject's variability and $\sigma^{2}_{e}$ is the measurement error. Because this is a simple proportion, the reliability estimate will be (almost) always between 0 and 1^[If the scale is badly constucted reliability could be negative using some statistics like $\alpha$]. 
+where $\rho$ is the total reliability and $\sigma^{2}_{i}$ is the subject's variability and $\sigma^{2}_{e}$ is the measurement error. Because this is a simple proportion, the reliability estimate will be (almost) always between 0 and 1^[If the scale is badly constructed reliability could be negative using some statistics like $\alpha$]. 
 
-The classical definition of reliability has been translated and adopted by the latent variable approach. This approach is not at all concerned with the *true* score but with the extent to which a measure reflects the construct. Here the factor loadings $\lambda_i$'s are key in that they reflect the association between an outcome and the latent construct. Therefore, latent variable approach naturally accomodates the question about how good are the manifest variables. Furthermore, it can estimate both $\sigma^{2}_{x}$ and $\sigma^{2}_{e}$.  Reliability can be expresed as:
+The classical definition of reliability has been translated and adopted by the latent variable approach. This approach is not at all concerned with the *true* score but with the extent to which a measure reflects the construct. Here the factor loadings $\lambda_i$'s are key in that they reflect the association between an outcome and the latent construct. Therefore, latent variable approach naturally accommodates the question about how good the manifest variables are. Furthermore, it can estimate both $\sigma^{2}_{x}$ and $\sigma^{2}_{e}$.  Reliability can be expressed as:
 
 \begin{equation}
 (\#eq:reliability2)
@@ -41,16 +41,16 @@ The classical definition of reliability has been translated and adopted by the l
 
 ## Statistical measures of reliability {#Chapter-3-measuresrel}
 
-The are different ways to estimate the reliability of a scale, each one with its advantages and disadvanatages. The most widely use estimate of reliability is $\alpha$ or $\lambda_3$ (do not mistake with factor loadings) [@Cronbach1951;@Guttman1945]. This estimate comes from CTT and draws upon @Spearman1904 approach to estimate the variance based on parallel tests:
+There are different ways to estimate the reliability of a scale, each one with its advantages and disadvantages. The most widely used estimator/index of reliability is $\alpha$ or $\lambda_3$ (do not mistake with factor loadings) [@Cronbach1951;@Guttman1945]. This estimate comes from CTT and draws upon @Spearman1904 approach to estimate the variance based on parallel tests:
 
 \begin{equation}
 (\#eq:alpha)
 \alpha = \lambda_3 = \frac{\sigma^{2}_{x} - \sum\sigma^{2}_{xi}} {\sigma^{2}_{x}} \frac{n} {n-1}
 \end{equation}
 
-Cronbach's $\alpha$ is, nonetheless, not a good estimate of reliability [@Zinbarg2005;@Revelle2009]. It only works fine under very restrictive assumptions. First, the association between each indicator and the latent variable is equal. For example, for a measure based on three outcome variables it would mean that: $\lambda_1=\lambda_2=\lambda_3$. Second, the outcome measure have equal error variances. These two assumption are unlikely to hold in practice. Another problem with $\alpha$ is that increasing the number of items and the average inter-item correlation will increase the reliability estimate. Table~*\ref{ta:reliabilitystats}* summarises the relation among the different reliability statistics by dimensionality. 
+Cronbach's $\alpha$ is, nonetheless, not a good estimate of reliability [@Zinbarg2005;@Revelle2009]. It only works fine under very restrictive assumptions. First, the association between each indicator and the latent variable is equal. For example, for a measure based on three outcome variables it would mean that: $\lambda_1=\lambda_2=\lambda_3$. Second, the outcome measures have equal error variances. These two assumptions are unlikely to hold in practice. Another problem with $\alpha$ is that increasing the number of items and the average inter-item correlation will increase the reliability estimate. Table~*\ref{ta:reliabilitystats}* summarises the relation among the different reliability statistics by dimensionality. 
 
-Given that $\alpha$ is based upon untenable assumptions, there have been several proposals to estimate reliability under more general conditions. @Revelle1979 proposes the statistic $\beta$. This coefficient considers the worse split in different halves, i.e. it minimizes the average covariance by taking into account the lowest interitem correlation ($\bar{\sigma_{ij}}$). It is thus a measure of the lowest possible reliability and therefore it will always be lower or equal to $\alpha$. It is estimated as follows:
+Given that $\alpha$ is based upon untenable assumptions, there have been several proposals to estimate reliability under more general conditions. @Revelle1979 proposes the statistic $\beta$. This coefficient considers the worse split in different halves, i.e. it minimizes the average covariance by taking into account the lowest inter-item correlation ($\bar{\sigma_{ij}}$). It is thus a measure of the lowest possible reliability and therefore it will always be lower or equal to $\alpha$. It is estimated as follows:
 
 \begin{equation}
 (\#eq:beta)
@@ -64,7 +64,7 @@ Given that $\alpha$ is based upon untenable assumptions, there have been several
  \omega = \frac{ \sum\limits_{j=1}^k  \bigg(\sum\limits_{i=1}^p \lambda_{ij}\bigg)^2 } {\sum\limits_{j=1}^k  \bigg(\sum\limits_{i=1}^p \lambda_{ij}\bigg)^2 + \sum\limits_{i=1}^p e_i}
 \end{equation}
 
-Equation \@ref(eq:omegah) shows the formula to estimate $\omega_h$ which is also a proportion but in this case is the variance accounted by the higher order factor. Therefore, this is a more appropiate measure when having multidimensional scales. 
+Equation \@ref(eq:omegah) shows the formula to estimate $\omega_h$ which is also a proportion but in this case is the variance accounted by the higher order factor. Therefore, this is a more appropriate measure when having multidimensional scales. 
 
 \begin{equation}
 (\#eq:omegah)
@@ -117,27 +117,27 @@ One of the consequences of reliability is that it leads to an accurate ranking o
 
 ## Item-level reliability and weighting
 
-Classical test theory was concerned with overall reliability. Item response theory (IRT) move from the idea of a true score and look at the relationship of the indicators with an underlying trait (e.g. intelegence, depression, poverty) [@Harris1989]. IRT is a theory about the type of relationship that an indicator has with a latent variable. The simplest IRT specification proposes that a measure is undimensional (i.e. the variance of the indicators is accounted by for one trait) and that each item relates to different degrees of difficulty or severity of the construct. This is called a one-parameter IRT model. A more general IRT model also proposes that some indicators are better than others to differenciate the population. That is, that some deprivation indicators are associated with a higher likelihood of belonging to the poor group. This more general aspect is added via a second parameter called discrimination and leads to a two-parameter IRT model. This kind of model has been used by @Guio2016 and @Guio2017 for example. 
+Classical test theory was concerned with overall reliability. Item response theory (IRT) move from the idea of a true score and look at the relationship of the indicators with an underlying trait (e.g. intelligence, depression, poverty) [@Harris1989]. IRT is a theory about the type of relationship that an indicator has with a latent variable. The simplest IRT specification proposes that a measure is unidimensional (i.e. the variance of the indicators is accounted by for one trait) and that each item relates to different degrees of difficulty or severity of the construct. This is called a one-parameter IRT model. A more general IRT model also proposes that some indicators are better than others to differentiate the population. That is, that some deprivation indicators are associated with a higher likelihood of belonging to the poor group. This more general aspect is added via a second parameter called discrimination and leads to a two-parameter IRT model. This kind of model has been used by @Guio2016 and @Guio2017 for example. 
 
 \begin{equation}
 (\#eq:irt)
 P_i\theta = \frac{1} {1+e^{-1.7a_i(\theta-b_i)}}
 \end{equation}
 
-Equation \@ref(eq:irt), translated to poverty measurement, states that the probability of chosing a someone that is deprived in the indicator $i$ is given by the discrimination (a) and the severity(b) of the item. @Muthen2013 show how this models relates to a unidimensional factor model, equations 21 and 22. In a factor model (b) is just a threshold and (a) the factor loadings ($\lambda_{i}$). Therefore, the stronger the loadings, the higher its discrimination power, where $\psi$ is the variance of the latent variable. 
+Equation \@ref(eq:irt), translated to poverty measurement, states that the probability of choosing a someone that is deprived in the indicator $i$ is given by the discrimination (a) and the severity(b) of the item. @Muthen2013 show how this model relates to a unidimensional factor model, equations 21 and 22. In a factor model (b) is just a threshold and (a) the factor loadings ($\lambda_{i}$). Therefore, the stronger the loadings, the higher its discrimination power, where $\psi$ is the variance of the latent variable. 
 
 \begin{equation}
 (\#eq:irta)
  a_{i}=\lambda_{i}\sqrt{\psi} 
 \end{equation}
 
-The original IRT models assumed unidimensionality. However, this is no longer the case as it is possible to estimate multidimensional IRT model [@Reckase2009]. However, @Gibbons2007 have shown that the presence of a higher-order factor produces little bias in the estimates when having more dimensions. In theory, all multidimensional poverty models make such an assumption. In any case, the concepts remain the same and a multidimensional IRT model can be simply connected with multidimensional confirmatory factor model. 
+The original IRT models work under the assumption of unidimensional scales, i.e. one factor with several manifest variables that exclusively belonged to such factor. However, this is no longer the case as it is possible to estimate multidimensional IRT model [@Reckase2009]. However, @Gibbons2007 have shown that the presence of a higher-order factor produces little bias in the estimates when having more dimensions. In theory, all multidimensional poverty models make such an assumption. In any case, the concepts remain the same and a multidimensional IRT model can be simply connected with multidimensional confirmatory factor model. 
 
-Statistics such as $\beta$, $\alpha$, $\omega$ provide an summary of the overall reliability. The computation of $\omega$ heavily relies on the factor loadings. The lower the factor loadings the higher the error and the lower the overall reliability. Similarly, low $\lambda_{i}$ can be traslated as low item-level reliability values. The question is thus how low mean unreliable. @Guio2016 use the rule of $<.4$ standarised loadings as a measure of item-unreliability. @Najera2018 shows that indeed those values are more likely to result in overall unreliability and high population classification error.
+Statistics such as $\beta$, $\alpha$, $\omega$ provide an summary of the overall reliability. The computation of $\omega$ heavily relies on the factor loadings. The lower the factor loadings the higher the error and the lower the overall reliability. Similarly, low $\lambda_{i}$ can be translated as low item-level reliability values. The question is thus how low mean unreliable. @Guio2016 use the rule of $<.4$ standardised loadings as a measure of item-unreliability. @Najera2018 shows that indeed those values are more likely to result in overall unreliability and high population classification error.
 
-One of the most contested issues in poverty measurement revolves around weighting [@Decancq2013]. Measurement theory proposes that reliability lead to a self-weighting measure in that it guarantees good population classification [@Streiner2015]. Discrimination parameters have a crucial role upon population classification and item weighting. The square of the factor loadings equals the amount of variance in the indicator explained by the common factor (i.e. communality). Because the factor loadings capture the relationship of each indicator with the latent variable, they can be seen as the optimal weights of the model given the data. Therefore, a test of equality of loadings within dimensional can be used to assess whether using such kind of weighting is reasonable or not. @Najera2018 shows that very high reliability leads to a self-weighting index in that the population ranking is less sensible to the items used in a scale. Therefore, discussing the use of differential weights versus non-differential weights misses the point. The critical point is that differential weights, in that they are unkown, will always introduce more noise to the classification of the population. Whereas reliability is a necessary condition for good population orderings, weighting it is not so.
+One of the most contested issues in poverty measurement revolves around weighting [@Decancq2013]. Measurement theory proposes that reliability lead to a self-weighting measure in that it guarantees good population classification [@Streiner2015]. Discrimination parameters have a crucial role upon population classification and item weighting. The square of the factor loadings equals the amount of variance in the indicator explained by the common factor (i.e. communality). Because the factor loadings capture the relationship of each indicator with the latent variable, they can be seen as the optimal weights of the model given the data. Therefore, a test of equality of loadings within dimensional can be used to assess whether using such kind of weighting is reasonable or not. @Najera2018 shows that very high reliability leads to a self-weighting index in that the population ranking is less sensible to the items used in a scale. Therefore, discussing the use of differential weights versus non-differential weights misses the point. The critical point is that differential weights, in that they are unknown, will always introduce more noise to the classification of the population. Whereas reliability is a necessary condition for good population orderings, weighting it is not so.
 
-One of the key axioms in poverty research is the monotonicity axiom. It states that poverty *ceteris paribus* should decrease after an improvement in one's achievements [@Sen1976;@Alkire2015]. Measurement theory states something very similar in that low loadings reflect the fact that changes in the latent variable do not lead to changes in observed deprivation. @NajeraForthcoming ran a Monte Carlo experiment the particularities of this behaviour. He finds that item-level unreliability leads to a violation of the monotonicity axiom. His conclusion is that indicators that have weak discrimination $\lambda_ij<.4$ (standardised loadings) violate weak monotonicity and in some circumntances could violate strong monotonicity. Therefore, such indicators are more noise than signal to poverty measures. 
+One of the key axioms in poverty research is the monotonicity axiom. It states that poverty *ceteris paribus* should decrease after an improvement in one's achievements [@Sen1976;@Alkire2015]. Measurement theory states something very similar in that low loadings reflect the fact that changes in the latent variable do not lead to changes in observed deprivation. @NajeraForthcoming ran a Monte Carlo experiment the particularities of this behaviour. He finds that item-level unreliability leads to a violation of the monotonicity axiom. His conclusion is that indicators that have weak discrimination $\lambda_ij<.4$ (standardised loadings) violate weak monotonicity and in some circumstances could violate strong monotonicity. Therefore, such indicators are more noise than signal to poverty measures. 
 
 ## Estimation of Reliability
 
@@ -266,7 +266,7 @@ runModels(filefilter = "Rel_MD")
 
 ```
 
-To introduce the idea of reliability we will use the data set "Rel\_MD\_data\_1\_1.dat". This is simulated data of a higher-order multidimensional measure of poverty ($n=5000$). The measure has nine indiactors in total distributed evenly in three dimensions. 
+To introduce the idea of reliability we will use the data set "Rel\_MD\_data\_1\_1.dat". This is simulated data of a higher-order multidimensional measure of poverty ($n=5000$). The measure has nine indicators in total distributed evenly in three dimensions. 
 
 
 ```{r include=FALSE}
@@ -323,7 +323,7 @@ ggplot(RES_DEP, aes(x = ds, y = mean_resources)) + geom_point(size=4) +
 ```
 
 ```{r include=FALSE}
-jpeg("Rel_hist_ds.jpg", units="cm", width=10, height=10, res=300)
+jpeg("depscore.jpg", units="cm", width=10, height=10, res=300)
 ggplot(Rel_MD_1, aes(ds)) +
     geom_histogram() + theme_bw() + labs(x = "Deprivation score") + scale_x_continuous(breaks = seq(0, 9, by = 1))
 dev.off()
@@ -349,11 +349,11 @@ dep_prop
 
 ### Exploratory (non-model based) estimation of overall reliability {#Chapter-3-expoverel}
 
-ow that we have familiarised with the data ourselves we can proceed to check the reliability of this scale. Reliability concerns with the homogeneity of a scale and its capacity to produce consistent rankings of a population. We will start by estimating the overall reliability of our scale using the `psych` package [@Revelle2014]. This is a comprenhensive R-package to estimate different reliability statistics ($\alpha$, $\beta$, $\omega$ and $\omega_h$) under different changing conditions. The `psych` package can be used for exploratory and confirmatory settings for both unidimensional and multidimensional measures. This book focuses on confirmatory measurement models and to introduce the estimation of overall reliability we will rely on the simpliest way to estimate the homogeneity of a scale using the simulated data set. This will be further developed and the next section shows how `psych` interacts with another R-package `lavaan` to estimate $\omega$ and $\omega_h$ from a confirmatory factor model [@Rosseel2012]. 
+ow that we have familiarised with the data ourselves we can proceed to check the reliability of this scale. Reliability concerns with the homogeneity of a scale and its capacity to produce consistent rankings of a population. We will start by estimating the overall reliability of our scale using the `psych` package [@Revelle2014]. This is a comprehensive R-package to estimate different reliability statistics ($\alpha$, $\beta$, $\omega$ and $\omega_h$) under different changing conditions. The `psych` package can be used for exploratory and confirmatory settings for both unidimensional and multidimensional measures. This book focuses on confirmatory measurement models and to introduce the estimation of overall reliability we will rely on the simplest way to estimate the homogeneity of a scale using the simulated data set. This will be further developed, and the next section shows how `psych` interacts with another R-package `lavaan` to estimate $\omega$ and $\omega_h$ from a confirmatory factor model [@Rosseel2012]. 
 
-The `pysch` package permits estimtating $\alpha$ and $\omega$ using the same function (`omega`). The package has several options but we know that there are three dimensions and one higher order factor and these values match the defaults of the `omega` function. It is important to bear in mind that in this simple case the value of $\omega$ is approximated with an Exploratory Factor Analysis (EFA). Below is shown how to do it with a confirmatory model. 
+The `pysch` package permits estimating $\alpha$ and $\omega$ using the same function (`omega`). The package has several options, but we know that there are three dimensions and one higher order factor and these values match the defaults of the `omega` function. It is important to bear in mind that in this simple case the value of $\omega$ is approximated with an Exploratory Factor Analysis (EFA). Below is shown how to do it with a confirmatory model. 
 
-After aplying the `omega()` to our nine indicators, there will be different objects that store information with the results of the analysis. We will focus on the overall estimate of $\alpha$ and $\omega$ as here we are interested in knowing the homogeneity of our scale. We can appreciate below that both values are high ($\geq.8$) (See *\ref{}* for an explanation) and suggest that the scale is highly reliable. In this case, $\alpha<\omega$ indicating that this scale violates $\tau$ equivalence (equality of loadings). 
+After applying the `omega()` to our nine indicators, there will be different objects that store information with the results of the analysis. We will focus on the overall estimate of $\alpha$ and $\omega$ as here we are interested in knowing the homogeneity of our scale. We can appreciate below that both values are high ($\geq.8$) (See *ref* for an explanation) and suggest that the scale is highly reliable. In this case, $\alpha<\omega$ indicating that this scale violates $\tau$ equivalence (equality of loadings). 
 
 ```{r include=F}
 # install.packages("psych")
@@ -369,8 +369,8 @@ rel_uni_exp<-data.frame(omega_exp1=omega_exp1$omega.tot,
 rel_uni_exp
 ```
 
-Both $\alpha$ and $\omega$ are easily estimated with the `psych` package. However, the previous example was pretty straightforward in that all the indicators are well-behaved. Thus to gain a deeper understanding of reliability and populatioin classification we will check what happens when one has indicators that reduce reliability. This can be done by adding noise to our measure. We will generate two uncorrelated indicators and substitute x10 and x11 for the indicators x1 and x2. 
-Once the we have introduce some noise to our measure we will estimate a new deprivation score using the two new indicators and dropping x1 and x2. The result is shown below. Then we can apply `omega()` to the new matrix that includes V1 and v1 and excludes x1 and x2. Reliability has drop slitghly but enough to raise concerns as both $\omega$ and $\alpha$ are below the rules of thumb drawn from a Monte Carlo experiment. 
+Both $\alpha$ and $\omega$ are easily estimated with the `psych` package. However, the previous example was straightforward in that all the indicators are well-behaved. Thus, to gain a deeper understanding of reliability and population classification we will check what happens when one has indicators that reduce reliability. This can be done by adding noise to our measure. We will generate two uncorrelated indicators and substitute x10 and x11 for the indicators x1 and x2. 
+Once the we have introduced some noise to our measure we will estimate a new deprivation score using the two new indicators and dropping x1 and x2. The result is shown below. Then we can apply `omega()` to the new matrix that includes V1 and v1 and excludes x1 and x2. Reliability has drop slightly but enough to raise concerns as both $\omega$ and $\alpha$ are below the rules of thumb drawn from a Monte Carlo experiment. 
 
 ```{r echo=TRUE,  fig.keep='none'}
 #Computing deprivation score with uncorrelated items
@@ -407,7 +407,7 @@ We then can compare the omega values of each measure. The theory holds for this 
 t(omegas_exp)
 ```
 
-The second prediction of reliability theory is that the population orderings are consistent for high reliability values. One way to check this is by estimating the correlation among the different deprivation scores. Again, the theory holds for this simple exercise, the measure with higher $\omega$ are highly correlated. The correlation of the unreliable measure seems still high, however, when $\omega<.8$ we could expect to see a classification error $>5\%$ which might be very worring when put into perspective. If the poverty rate is $20\%$ and the classification error is $5\%$ it would mean that potentially a $25\%$ of the poor are mistakenly classified \citep{Najera2018}. 
+The second prediction of reliability theory is that the population orderings are consistent for high reliability values. One way to check this is by estimating the correlation among the different deprivation scores. Again, the theory holds for this simple exercise, the measure with higher $\omega$ are highly correlated. The correlation of the unreliable measure seems still high, however, when $\omega<.8$ we could expect to see a classification error $>5\%$ which might be very worrying when put into perspective. If the poverty rate is $20\%$ and the classification error is $5\%$ it would mean that potentially a $25\%$ of the poor are mistakenly classified [@Najera2018]. 
 
 ```{r echo=TRUE}
 Rel_MD_1$ds_r2<-rowSums(Rel_MD_1[,c(3:9)])
@@ -422,9 +422,9 @@ ds.cor
 
 ### Model-based estimation of overall reliability 
 
-The ideal workflow in poverty measurement leads to a specification of a model. Diffrent models suggest that poverty is multidimensional and hierarchical (See Section \@ref(Chapter-1-dimensions)). Therefore, the interest is in both estimates of reliability: overall and hierarchical omega ($\omega$ and $\omega_h$). Both can be estimated from an EFA using the R-package "psych". However, this book is an attempt to encourage poverty researchers to walk toward the production and assessment of theoretical models. To estimate reliability for a pre-especified model, it is necessary to use Confirmatory Factor Analysis (CFA). Given a pattern loading specification, a CFA will estimate the different parameters of the model. Section \@ref(Chapter-3-measuresrel) showed the formulas to estimate both $\omega$ and $\omega_h$. Item-factor loadings and the residuals of the model are the key parameters for the estimation of both reliability statistics (See equation \@ref(eq:omega)).
+The ideal workflow in poverty measurement leads to a specification of a model. Different models suggest that poverty is multidimensional and hierarchical (See Section \@ref(Chapter-1-dimensions)). Therefore, the interest is in both estimates of reliability: overall and hierarchical omega ($\omega$ and $\omega_h$). Both can be estimated from an EFA using the R-package "psych". However, this book is an attempt to encourage poverty researchers to walk toward the production and assessment of theoretical models. To estimate reliability for a pre-specified model, it is necessary to use Confirmatory Factor Analysis (CFA). Given a pattern loading specification, a CFA will estimate the different parameters of the model. Section \@ref(Chapter-3-measuresrel) showed the formulas to estimate both $\omega$ and $\omega_h$. Item-factor loadings and the residuals of the model are the key parameters for the estimation of both reliability statistics (See equation \@ref(eq:omega)).
 
-In the following we will show how in both Mplus and R is possible to estimate $\omega$ and $\omega_h$. We will start with R and for this purpose we need the "lavaan" package [@Rosseel2012]. This package comprises a series of functions to estimate different kinds of latent variable models such as measurement and analytic models like Structural Equation Models (SEM). Once the CFA model is fitted with the R-package `lavaan`, the function `omegaFromSem()` of the `psych` R-package can be used to estimate $\omega$ and $\omega_h$. However, we will show how this can be done by hand to gain insight of the differences between the two reliability statistics and to operationalise the process using the Mplus estimates. 
+In the following we will show how in both **Mplus** and **R** is possible to estimate $\omega$ and $\omega_h$. We will start with R and for this purpose we need the `lavaan` package [@Rosseel2012]. This package comprises a series of functions to estimate different kinds of latent variable models such as measurement and analytic models like Structural Equation Models (SEM). Once the CFA model is fitted with the R-package `lavaan`, the function `omegaFromSem()` of the `psych` R-package can be used to estimate $\omega$ and $\omega_h$. However, we will show how this can be done by hand to gain insight of the differences between the two reliability statistics and to operationalise the process using the **Mplus** estimates. 
 
 ```{r  echo=TRUE, message=FALSE, warning = FALSE}
 #Omega from Sem
@@ -444,7 +444,7 @@ MD_model <- ' h =~ +x1+x2+x3+x4+x5+x6+x7+x8+x9
 '
 ```
 
-To fit the CFA model we will use `sem` function which has been harmonised with the functions `cfa` and `lavaan`. The function requires specifying the measurement model (MD\_model), the data, the kind of variables we have (in this case categorical) and we will request standarised loadings with `std.lv=TRUE`. 
+To fit the CFA model we will use `sem` function which has been harmonised with the functions `cfa` and `lavaan`. The function requires specifying the measurement model (MD\_model), the data, the kind of variables we have (in this case categorical) and we will request standardised loadings with `std.lv=TRUE`. 
 
 ```{r  echo=TRUE, message=FALSE, warning = FALSE}
 fit <- sem(MD_model, data = Rel_MD_1, 
@@ -456,7 +456,7 @@ fit <- sem(MD_model, data = Rel_MD_1,
 #summary(fit, fit.measures=TRUE, rsquare=TRUE, standardized=TRUE)
 ```
 
-Both $\omega$ and $\omega_h$ can be manually calculated. There are two main paramaters one needs for their computation: factor loadings from the indicators to the overall factor ($\lambda_h$), to each dimension ($\lambda_j$) and the error. This can be easily extracted from the fit object as follows: 
+Both $\omega$ and $\omega_h$ can be manually calculated. There are two main parameters one needs for their computation: factor loadings from the indicators to the overall factor ($\lambda_h$), to each dimension ($\lambda_j$) and the error. This can be easily extracted from the fit object as follows: 
 
 ```{r  echo=TRUE, message=FALSE, warning = FALSE}
 lambdas<-as.data.frame(fit@Model@GLIST$lambda)
@@ -519,7 +519,7 @@ res <- mplusModeler(test, modelout = "rel_CFA_2.inp",
                     dataout="Rel_MD_data_1_1.dat", run = 1L)
 ```
 
-Once the model has been run, we can import the output using the function `readModels()`. We will explore the full output in the next chapter as for now we will focus in the estimation of $\omega$ and $\omega_h$. The factor loadings of the Bi-factor model are stored in a list (parameters). We request the standarised estimates as we did with `lavaan`. We also can request the error from the ``r2` object in the parameters list. Once we have the parameters we need we can proceed as above to estimate the reliability statistics. We see that we could replicate the results from `lavaan`. 
+Once the model has been run, we can import the output using the function `readModels()`. We will explore the full output in the next chapter as for now we will focus in the estimation of $\omega$ and $\omega_h$. The factor loadings of the Bi-factor model are stored in a list (parameters). We request the standardised estimates as we did with `lavaan`. We also can request the error from the ``r2` object in the parameters list. Once we have the parameters, we need we can proceed as above to estimate the reliability statistics. We see that we could replicate the results from `lavaan`. 
 
 ```{r  echo=TRUE, message=FALSE, warning = FALSE}
 REL_CFA_2<-readModels(filefilter ="rel_CFA_2")
@@ -542,7 +542,7 @@ omega_h
 
 ### Overall reliability and population orderings
 
-One of the predictions of measurement theory is that reliability leads to consistent population orderings, i.e. poor people will have high deprivation scores and not poor people will have low deprivation scores (see Table (\#tab:relentropy)). We ilustrated this point using the correlation between the different deprivation scores corresponding to diverse levels of overall reliabilities. We can follow up that example by looking at the values of the latent variable for the multidimensional reliable measure (Rel\_MD\_1). After fitting the CFA model we just can simply use the function `predict()` to obtain the Maximum Likelihood estimates of the latent variable. Then we can merge these values with our data set. The prediction will generate four estimates for the latent variables. The overall factor (h) and the values for the three dimensions.
+One of the predictions of measurement theory is that reliability leads to consistent population orderings, i.e. poor people will have high deprivation scores and not poor people will have low deprivation scores (see Table (\#tab:relentropy)). We illustrated this point using the correlation between the different deprivation scores corresponding to diverse levels of overall reliabilities. We can follow up that example by looking at the values of the latent variable for the multidimensional reliable measure (Rel\_MD\_1). After fitting the CFA model we just can simply use the function `predict()` to obtain the Maximum Likelihood estimates of the latent variable. Then we can merge these values with our data set. The prediction will generate four estimates for the latent variables. The overall factor (h) and the values for the three dimensions.
 
 ```{r  echo=TRUE, message=FALSE, warning = FALSE}
 factor_scores<-predict(fit)
@@ -550,7 +550,7 @@ Rel_MD_1<-cbind(Rel_MD_1,factor_scores)
 head(Rel_MD_1[,c(21:24)])
 ```
 
-To contrast the values of the reliable multidimensional measure with the values of an slitghly less reliable measure we will fit a new model. As in the previous example (Section \@ref(#Chapter-3-expoverel)), we will replace the first two indicators x1 and x2 by x10 and x11. Both load into the first factor (f1). The estimates are stored in a differen object (fit\_ur) and estimate the factor scores using the `predict()` function. Finally we inspect the values. 
+To contrast the values of the reliable multidimensional measure with the values of a slightly less reliable measure we will fit a new model. As in the previous example (Section \@ref(#Chapter-3-expoverel)), we will replace the first two indicators x1 and x2 by x10 and x11. Both load into the first factor (f1). The estimates are stored in a different object (fit\_ur) and estimate the factor scores using the `predict()` function. Finally, we inspect the values. 
 
 ```{r  echo=TRUE, message=FALSE, warning = FALSE}
 ## We first specify the model
@@ -576,9 +576,9 @@ Rel_MD_1<-cbind(Rel_MD_1,factor_scores_ur)
 head(Rel_MD_1[,c(25:28)])
 ```
 
-To assess the consistency of both multidimensional scales we will plot the latent factor values by the deprivation score. Figure~\@ref(fig:fsdesrel) shows that the factor scores are very similar within each deprivation group. For each deprivation score we find very different factor scores, indicating that the deprivation scores is a good measure to rank and split the population according to the severity of deprivation. In contrast, figure~\@ref{(fig:fsdesunrel) show that although there is relationship between the deprivation score and factor scores, this relationship is more noisy. Not only there is much more variability within each deprivation group but also there is some overlap. That means that if we use some cutoff to split the poor from the not poor based on a deprivation score, we will be more likely to confound both groups. In this case, the mixing of groups is not that dramatic as the scale is still somewhat reliable, but it could be very noisy for less reliable scales. 
+To assess the consistency of both multidimensional scales we will plot the latent factor values by the deprivation score. Figure~\@ref(fig:fsdesrel) shows that the factor scores are very similar within each deprivation group. For each deprivation score we find very different factor scores, indicating that the deprivation scores is a good measure to rank and split the population according to the severity of deprivation. In contrast, figure~\@ref{(fig:fsdesunrel) show that although there is relationship between the deprivation score and factor scores, this relationship is more noisy. Not only there is much more variability within each deprivation group but also there is some overlap. That means that if we use some cut off to split the poor from the not poor based on a deprivation score, we will be more likely to confound both groups. In this case, the mixing of groups is not that dramatic as the scale is still somewhat reliable, but it could be very noisy for less reliable scales. 
 
-```{r fsdesrel, echo=TRUE, message=F, fig.cap="Relationship between the deprivation score (x1-x9) and the latent variable score. We appreciate the narrowness of the boxplots, indicating good group separation."}
+```{r fsdesrel, echo=TRUE, message=F, fig.cap="Relationship between the deprivation score (x1-x9) and the latent variable score. We appreciate the narrowness of the box plots, indicating good group separation."}
 require(ggplot2)
 g <- ggplot(Rel_MD_1, aes(as.factor(ds), h))
 g + geom_boxplot(varwidth=T) + 
@@ -596,7 +596,7 @@ g + geom_boxplot(varwidth=T) +
 
 
 ```{r  echo=TRUE, message=FALSE, warning = FALSE, include=FALSE}
-jpeg("Rel_boxplot_dsfs.jpg", units="cm", width=10, height=10, res=300)
+jpeg("fsdesrel.jpg", units="cm", width=10, height=10, res=300)
 g <- ggplot(Rel_MD_1, aes(as.factor(ds), h))
 g + geom_boxplot(varwidth=T) + 
     labs(x="Deprivation score. Reliable",
@@ -604,12 +604,274 @@ g + geom_boxplot(varwidth=T) +
 dev.off()
 
 
-jpeg("Rel_boxplot_dsfs_ur.jpg", units="cm", width=10, height=10, res=300)
+jpeg("fsdesunrel.jpg", units="cm", width=10, height=10, res=300)
 g <- ggplot(Rel_MD_1, aes(as.factor(ds_ur), hur))
 g + geom_boxplot(varwidth=T) + 
     labs(x="Deprivation score. Unreliable",
          y="Factor score (Latent variable)") + theme_bw()
 dev.off()
 ```
+
+## Item-level reliability
+
+Overall reliability is an excellent summary of the quality of an index in that it tells the homogeneity of our scale and its capacity to produce consistent population rankings. In section *ref* we showed that including some uncorrelated items lead to a reduction of reliability and that this has negative implication for consistency across measurements. This section focuses on item reliability, i.e. how specific items contribute positively or negatively to reliability. 
+
+Section *ref* reviewed Item Response Theory (IRT), which is a theory of the properties of indicators by putting forward the concepts of discrimination and severity. The standard IRT modelling assumes that scales are unidimensional in that indicators are manifest of a latent trait. However, in parallel to the development of CFA, IRT modelling has incorporated multidimensional models. However, as long as a scale is homogeneous, the bias from a multidimensional IRT and the unidimensional one should not dramatically change our conclusions about the reliability of the items. 
+
+To illustrate IRT modelling, we will work with the same data set, which we know that results in a highly homogeneous scale. We will use the data "Rel\_MD\_1" and the R-package `ltm` which fits different kinds of IRT models. The `ltm()` function fits one, two and three-parameter IRT models. Below we fit a two-parameter IRT model simply by adding the `z1` option so we allow the model to have different slopes, i.e. Two-parameter IRT model. The output shows the difficulty and discrimination coefficients. The difficulty represents the severity of the deprivation on the latent trait. For example, item x1 is less severe than item x3. The second column `Dscrmn` displays the values of the discrimination parameters. All the items have values $>.9$ which is above the suggested threshold by @Guio2016 and @Najera2018.
+
+```{r, echo=TRUE, message=FALSE, warning = FALSE,}
+library(ltm)
+rel_irt<-ltm(Rel_MD_1[,c(1:9)] ~ z1)
+rel_irt
+```
+
+Before checking the estimation with Mplus, we will check what will happen if we include our unreliable items. Items x1 and x2 are replaced by items V1 and V2. As expected, the discrimination values are unacceptably low as well as the severity values which are ($\geq3$) standard deviations.
+
+```{r, message=FALSE, warning = FALSE,}
+head(Rel_MD_1[,c(3:11)])
+rel_irt_2<-ltm(Rel_MD_1[,c(3:11)] ~ z1)
+rel_irt_2
+```
+
+Similarly we can fit the model using items (x1-x9) in Mplus using the package "mplusAutomation" by creating an object with `mplusObject()`. 
+
+
+
+```{r, message=FALSE, warning = FALSE}
+test <- mplusObject(
+TITLE = "IRT model;",
+   VARIABLE = "
+     NAMES = x1-x9 resources educ_yr occupation hh_size class;
+     CATEGORICAL = x1-x9;
+     USEVARIABLES = x1-x9;",
+   ANALYSIS = "ESTIMATOR = ml;
+              PROCESS = 4;",
+
+MODEL = "h by x1* x2-x9;
+         h@1;")
+```
+
+Then the model is fitted using `mplusModeler()`. We will name our Mplus script as "rel\_IRT\_1.inp" and we will be using the same data as before ("Rel\_MD\_data\_1\_1.dat") and we request Mplus to run the model directly from the script with (`run`).
+
+```{r, results='hide', message=FALSE, warning = FALSE,}
+res <- mplusModeler(test, modelout = "rel_IRT_1.inp", 
+                    writeData = "never", hashfilename = FALSE, 
+                    dataout="Rel_MD_data_1_1.dat", run = 1L)
+```
+
+Now we read the result of our model with `readModels()`. 
+
+```{r, results='hide', message=FALSE, warning = FALSE,}
+REL_IRT_1<-readModels(filefilter ="rel_IRT_1")
+```
+
+The `readModels()` does an excellent job in extracting and ordering the Mplus output. It puts all the relevant result in lists. We can see that the Mplus estimates are very similar to those obtained from the `ltm` package. 
+
+```{r, message=FALSE, warning = FALSE,}
+rel_irt<-REL_IRT_1$parameters$irt.parameterization
+rel_irt<-rel_irt[1:18,]
+rel_irt<-data.frame(a=rel_irt$est[1:9],b=rel_irt$est[10:18])
+rel_irt
+```
+
+## Multidimensional item-reliability evaluation
+
+A multidimensional IRT model is just a CFA model with categorical indicators. One way to assess the item-level reliability is by looking at the loadings from a CFA model. We can fit a higher-order factor model (equivalent to the bi-factor model above) to assess the value of the loadings and and look at the $R^2$ values of each indicator (which is just $\lambda{hj}^2$). $R^2\leq.25$ are equivalent to $\lambda{hj}^2\leq.5$, which are often used as cut offs of unacceptably low loadings. We see that all these items are highly reliable not only with regard the higher order factor but also in terms of each dimension, measured by each factor loading.
+
+```{r, message=FALSE, warning = FALSE,}
+ MD_model <- ' f1  =~ x1 + x2 + x3
+              f2 =~ x4 + x5 + x6
+              f3   =~ x7 + x8 + x9
+                h =~ f1 + f2 + f3
+ '
+
+fit <- sem(MD_model, data = Rel_MD_1,
+           ordered=c("x1","x2","x3","x4","x5",
+                     "x6","x7","x8","x9"))
+inspect(fit,what="std")$lambda
+```
+
+### Item-reliability and monotonicity
+
+Low loadings are an indication that the indicator is not a manifest variable of the underlying construct. That is, that changes in poverty do not mirror changes in deprivation. Section~\ref{} suggested that there is a relationship between item-reliability and the monotonicity axiom. @NajeraForthcoming shows that indeed low loadings approximately $\leq.5$ lead to violations of the strong monotonicity axiom, i.e. a reduction in poverty does not reflect an improvement in the achievement matrix. Weak monotonicity is violated when an improvement in poverty results in an increase of deprivation, this would happen when the factor loadings are negative, for example. 
+
+We will fit a higher order model using again the unreliable items (x10 and x11) instead of x1 and x2. Of course, it is possible to use either the loadings of the $R^2$ values (these can be obtained with the `summary()` function.  We see again, as in the IRT analysis that both items have unacceptably low values. These items should be dropped from the scale as it inclusion introduces noise to our measure. That would imply dropping the first dimension in the absence of alternative indicators.
+
+
+```{r, message=FALSE}
+ MD_model <- ' f1  =~ x10 + x11 + x3
+              f2 =~ x4 + x5 + x6
+              f3   =~ x7 + x8 + x9
+                h =~ f1 + f2 + f3
+ '
+
+fit <- sem(MD_model, data = Rel_MD_1,
+           ordered=c("x10","x11","x3","x4","x5",
+                      "x6","x7","x8","x9"))
+inspect(fit,what="std")$lambda
+```
+
+## Real data example
+
+We will use the Mexican data set "Mex\_pobreza\_14.dat". This data set contains a subset of the deprivation indicators utilised to measure multidimensional poverty in Mexico. The official measure has two domains: income and social rights. The social rights domain has five dimensions: essential services, housing, food deprivation, social security and education. Some of this dimensions are measured with few indicators, like education and social security. This poses limitations to fit an identified model. Hence, we will use a reduced version of the model comprising three dimensions: essential services, housing and food deprivation. 
+
+The Mexican poverty data comes from a nationally representative complex survey. We will use the package "survey" [@Lumley2016]. This is a comprehensive R-package to analyse survey data. We strongly advice readers to check @Lumley2011 book on complex surveys to get a depth insight on complex sampling and the use of Lumley's excellent package. To produce design deprivation rates estimates for each of the 14 items we need to specify few things. First, we need to identify the sampling weights and the primary sampling units (PSU). The (`options()`) function is to prevent errors as sometimes there is one household per PSU. Once we have set up the sampling design we can estimate the deprivation rates with the `svymean()` function -we round the percentages for simplicity-. We can see than deprivation in the housing dimension items is rather low. Essential services present higher deprivation rates but electricity is very low. We see that the food deprivation items have the higher rates on average. 
+
+```{r, message=FALSE, warning = FALSE,}
+library(haven)
+Mex_D<-read_dta("pobreza_14.dta")
+
+cols <- c("icv_muros", "icv_techos", "icv_pisos", "icv_hac",
+          "isb_agua","isb_dren", "isb_luz", "isb_combus",
+          "ic_sbv", "ia_1ad", "ia_2ad", "ia_3ad", "ia_4ad", 
+          "ia_5ad",  "ia_6ad")
+
+library(survey)
+options(scipen=999, survey.lonely.psu="adjust")
+des <- svydesign(data=Mex_D, id=~1, CLUSTER=~psu, weights=~weight)
+propr <- data.frame(svymean(Mex_D[, cols],des,na.rm=T))
+propr <- round(propr*100,1)
+propr
+```
+
+Now the we are familiarised with the 14 deprivation indicators we can proceed to estimate the reliability statistics. We will fit the model in Mplus as we will incorporate the survey design in the estimation of the parameters -it is possible to do so with the `lavaan.survey()` too-. We first create our Mplus script (rel\_CFA\_mex.inp) to fit the bi-factor model. Following the theoretical model for this data, the model has three dimensions (housing (f1), essential services (f2) and food deprivation (f3)) and one higher-order factor (h). Once the model has been fitted we will store the output in the object called `REL\_CFA\_mex`.
+
+```{r, results='hide', message=FALSE, warning = FALSE,}
+test <- mplusObject(
+TITLE = "Bi-factor model CFA;",
+   VARIABLE = "
+     NAMES = proyecto folioviv foliohog icv_muros icv_techos 
+             icv_pisos icv_hac isb_agua isb_dren isb_luz isb_combus
+             ic_sbv ia_1ad ia_2ad ia_3ad ia_4ad ia_5ad ia_6ad
+             ia_7men ia_8men ia_9men ia_10men ia_11men ia_12men 
+             tv_dep radio_dep fridge_dep
+             washingmach_dep compu_dep inter_dep psu weight
+             rururb tot_integ durables educ_hh; 
+MISSING=.;
+     CATEGORICAL = icv_muros icv_techos icv_pisos icv_hac isb_agua
+                   isb_dren isb_luz isb_combus  ia_1ad 
+                   ia_2ad ia_3ad ia_4ad ia_5ad ia_6ad;
+     USEVARIABLES = icv_muros icv_techos icv_pisos icv_hac isb_agua
+                   isb_dren isb_luz isb_combus  ia_1ad 
+                   ia_2ad ia_3ad ia_4ad ia_5ad ia_6ad;
+
+WEIGHT=weight;
+cluster = psu;",
+
+   ANALYSIS = "TYPE = complex;
+
+ESTIMATOR = wlsmv;
+PROCESS = 4;",
+
+MODEL = "f1 by icv_muros icv_techos icv_pisos icv_hac;
+  f2 by isb_agua
+        isb_dren isb_luz isb_combus;
+  f3 by ia_1ad ia_2ad ia_3ad ia_4ad ia_5ad ia_6ad;
+  h  by icv_muros icv_techos icv_pisos icv_hac isb_agua
+        isb_dren isb_luz isb_combus ia_1ad ia_2ad 
+        ia_3ad ia_4ad ia_5ad ia_6ad;
+  F1 with F2@0;
+  F2 with F3@0;
+  F3 with F1@0;
+  h with f1@0;
+  h with f2@0;
+  h with f3@0;",
+
+OUTPUT = "std stdyx;")
+
+mplusModeler(test, modelout = "rel_CFA_mex.inp", 
+                    writeData = "never", hashfilename = FALSE, 
+                    dataout="Mex_pobreza_14.dat", run = 1L)
+REL_CFA_mex<-readModels("rel_CFA_mex.out")
+```
+
+We then can estimate the overall reliability statistics; both $\omega$ and $\omega_h$^[Prior the estimation of the reliability statistics is vital to inspect the fit of the model as a poor model will not be useful to estimate omega. We will discuss in the next chapter (Validity) the meaning of these statistics. At this point we will focus on the fact that a poor model fit invariably leads to poor estimates of reliability. There is no point in estimating reliability of a scale that makes no sense at all. To assess the fit of the model we look at four statistics: $\chi^2$, TLI, CFI and RMSEA. For this model the relative statistics of fit look fine and we have some certainties about the model we fit.]. The reliability of our measure is very high under both statistics and both are above the recommended thresholds [@Najera2018]. To estimate the reliability measures we will use the same approach we followed in the previous section. First, we will obtain the factor loadings (f's and h) and the errors for each indicator. Then we we will take the square of the sum of the lambdas (f1, f2, f3 and h) and the error sum. $\omega$ and $\omega_h$ then can be calculated using formulas from equations \@ref(eq:omega) and \@ref(eq:omegah}).
+
+The values of both $\omega$ and $\omega_h$ are high .97 and .81, respectively. These figures suggest that this multidimensional scale is homogeneous but has multidimensional features ($\omega_h<\omega$).
+
+
+```{r, message=FALSE, warning = FALSE,}
+lambdas<-REL_CFA_mex$parameters$std.standardized[1:28,1:3]
+error<-REL_CFA_mex$parameters$r2[6]
+
+lambda_2<-sum(lambdas[10:28,3])^2 + sum(lambdas[1:4,3])^2 + 
+          sum(lambdas[5:8,3])^2 + sum(lambdas[9:14,3])^2
+error <- sum(error)
+
+omega_t <- lambda_2 / (lambda_2+error)
+omega_h <- sum(lambdas[10:28,3])^2 / (lambda_2+error)
+
+omega_t
+omega_h
+```
+
+### Item-level reliability
+
+Once we have assessed the overall reliability of the Mexican index, we can assess item-reliability by fitting a higher-order factor model and checking the value of the factor loadings. We just simply need to rewrite our model (rel\_CFA\_mex2.inp) to represent a structure were the dimensions load into the higher order factor. This is simply done by specifying that h is measured by the three dimensions (f1, f2 and f3). 
+
+
+```{r, results='hide', message=FALSE, warning = FALSE,}
+test <- mplusObject(
+TITLE = "CFA higher order model CFA;",
+   VARIABLE = "
+     NAMES = proyecto folioviv foliohog icv_muros icv_techos 
+             icv_pisos icv_hac isb_agua isb_dren isb_luz isb_combus
+             ic_sbv ia_1ad ia_2ad ia_3ad ia_4ad ia_5ad ia_6ad
+             ia_7men ia_8men ia_9men ia_10men ia_11men ia_12men 
+             tv_dep radio_dep fridge_dep
+             washingmach_dep compu_dep inter_dep psu weight
+            rururb tot_integ; 
+MISSING=.;
+     CATEGORICAL = icv_muros icv_techos icv_pisos icv_hac isb_agua
+                   isb_dren isb_luz isb_combus  ia_1ad 
+                   ia_2ad ia_3ad ia_4ad ia_5ad ia_6ad;
+     USEVARIABLES = icv_muros icv_techos icv_pisos icv_hac isb_agua
+                   isb_dren isb_luz isb_combus  ia_1ad 
+                   ia_2ad ia_3ad ia_4ad ia_5ad ia_6ad;
+
+WEIGHT=weight;
+cluster = psu;",
+
+   ANALYSIS = "TYPE = complex;
+
+ESTIMATOR = wlsmv;
+PROCESS = 4;",
+
+MODEL = "f1 by icv_muros icv_techos icv_pisos icv_hac;
+  f2 by isb_agua
+        isb_dren isb_luz isb_combus;
+  f3 by ia_1ad ia_2ad ia_3ad ia_4ad ia_5ad ia_6ad;
+  h by f1 f2 f3;",
+
+OUTPUT = "std stdyx;")
+
+mplusModeler(test, modelout = "rel_CFA_mex2.inp", 
+                    writeData = "never", hashfilename = FALSE, 
+                    dataout="Mex_pobreza_14.dat", run = 1L)
+```
+
+Once the model has been fitted we can request the standardised factor loadings and inspect its values using the `readModels()`. To facilitate our interpretation we can plot the standardised loadings (Figure \@ref(fig:lamdamex). We see that all the indicators have very high loadings and above the suggested threshold ($\lambda_ij>.5$). That means that these indicators discriminate well and are reliable manifests of each dimension. We see, nonetheless, that the indicators of the housing dimension tend to have low values. This could be an indication that these indicators are losing discriminatory power due to changes in living standards.
+
+```{r, results='hide', message=FALSE, warning = FALSE,}
+REL_CFA_mex2<-readModels("rel_CFA_mex2.out")
+modelParams<- REL_CFA_mex2$parameters$std.standardized[1:14,]
+modelParams <- subset(modelParams, select=c("paramHeader", "param", "est", "se"))
+```
+
+```{r lamdamex, echo=TRUE, message=F, fig.cap="This plot shows the standardised values of the loadings for the 14 items."}
+library(ggplot2)
+limits <- aes(ymax = est + se, ymin=est - se)
+ ggplot(modelParams, aes(x=param, y=est)) + geom_pointrange(limits) +scale_x_discrete("") +
+   geom_hline(yintercept=0, color="grey50") + theme_bw() +ylab("Std Loading") + coord_flip()
+```
+
+```{r, include=FALSE}
+jpeg(filename = "Loadings_CFAMex.jpg", units="cm", width=10, height=10, res=300)
+ ggplot(modelParams, aes(x=param, y=est)) + geom_pointrange(limits) +scale_x_discrete("") +
+   geom_hline(yintercept=0, color="grey50") + theme_bw() +ylab("Std Loading") + coord_flip()
+dev.off()
+```
+
 
 
