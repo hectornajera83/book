@@ -1,7 +1,7 @@
 
 ---
 title: "Multidimensional poverty measurement: A statistical approach with applications"
-author: "Héctor Nájera and others"
+author: "Héctor Nájera with help from other academics collaborating in this project "
 documentclass: book
 output: html_document
 fignos-cleveref: True
