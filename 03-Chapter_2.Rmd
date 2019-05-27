@@ -10,14 +10,15 @@ Chapter 1 outlined some of the tasks involved in the development of multidimensi
 
 Figure \@ref(fig:realwf) illustrates the strategy often followed by researchers to produce a poverty index. Data often precedes the measurement (data ara given). Therefore, researchers have little influence upon the data collection process and thus they are constrained and have to adapt the existent information on deprivation to their poverty definition -or in the worst cases, they have to adapt the definition to the data-. A series of assumptions are raised with regard the number and type of dimensions, the indicators (including cut offs to identify deprivation) and weighting (see [Chapter 1](#Chapter-1). Ideally, these assumptions should be assessed using a framework but in practice researchers avoid this stage or they conduct a series of ad hoc sensitivity analyses. The limitation is that these kinds of analyses have no hypothesis and researchers are more likely to confirm their beliefs due to the lack of a clear testable strategy. Confirmation biases, therefore, are more likely to remain and basically researchers jump from their theoretical measure to the aggregation procedure. 
 
-```{r realwf, echo = FALSE, message=FALSE, fig.align='center', fig.asp = .60, fig.cap="The workflow researchers often implement in multidimensional poverty measurement.", fig.pos='H'}
-knitr::include_graphics("real_workflow.png")
+
+```{r realwf, echo=FALSE, message=FALSE, fig.cap=c("The workflow researchers often implement in multidimensional poverty measurement."), message=FALSE}
+knitr::include_graphics('real_workflow.png')
 ```
 
 Scientific measurement aims to incorporate a framework to falsify researcher's assumptions. Figure \@ref(fig:idealwf) shows the strategy that researchers could employ to reduce confirmation biases and measurement error. A theory of the concept of poverty should guide the development of a survey questionnaire and data collection. Researchers then could further specify the structure of their poverty measure based on the theory-driven data generation process. Once the theoretical measure is defined, assumptions need to be identified and make explicit so that can be falsified using a sound statistical framework. The results can be used as an input to redefine the measure in an iterative process. Once the measure is proven to be robust (using a definition of what a good measure is derived from a measurement framework), researchers could move onto aggregation and the identification of the poor and not poor groups. 
 
-```{r idealwf, echo = FALSE, message=FALSE, fig.align='center', fig.asp = .60, fig.cap="Ideal work flow in multidimensional poverty measurement.", fig.pos='H'}
-knitr::include_graphics("ideal_workflow1.png")
+```{r idealwf, echo = FALSE, message=FALSE, fig.align='center', fig.cap="Ideal workflow in multidimensional poverty measurement", fig.pos='H'}
+knitr::include_graphics("ideal_workflow.png")
 ```
 
 One possible and useful way to advance in the empirical assessment of poverty indices consist in detecting the assumptions involved in the production of an index and translate them into a falsifiable framework. That is, raising questions about all researcher's assumptions and propose a method to answer whether researcher's ideas hold given the data. 
@@ -93,7 +94,7 @@ Poverty &#8594; Dimensions &#8594; Sub-dimensions &#8594; outcome measures.
 
 This model specification is one way to statistically capture the way in which multidimensional poverty measurement is conducted in the contemporary literature. Researchers propose a series of dimensions and classify their proposed indicators accordingly. The crucial aspect is that this is just an idea -informed from some theory or data- about how poverty can be better captured under a multidimensional definition. That is, the proposal is just an invalidated model that demands scrutiny. When put in terms of equation \@ref(eq:model1) and equation \@ref(eq:model2) researchers move from theoretical speculation toward empirical falsification. 
 
-## Blueprints and poverty measurement models
+## Blueprints and poverty measurement models {#Chapter-2-blueprint}
 
 Models are just the blueprints of poverty indices that summarise how a scale can be constructed. Putting theoretical proposals to measure poverty in terms of a diagram helps a lot to visualise and contrast the diverse proposals to measure poverty. The advantage of measurement theory is that everything can be put in terms of a blueprint. Multidimensional models can be easily presented as a diagram, which is just a graphical representation of a model. Another way to think about this, is to see the different blueprints in poverty measurement are just the different ways in which researcher sample from $\mathscr J$ and $\mathscr X$. They lead to diverse structures, i.e. models. 
 
