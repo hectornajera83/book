@@ -38,23 +38,23 @@ This concept of poverty is useful because it is simple and is not in tension wit
 
 There is another aspect that is very useful in @Townsend1979's definition. One of the difficulties in poverty measurement is that many measures confound outcomes with predictors of poverty, so that sometimes predictors like unemployment or disability are included with deprivation. This, of course, adds error because we are not interested in estimating poverty but in measuring it. If we would have data on deprivation we would, of course, only have one option- fitting a predictive model, like in the case of small-area estimation (@Rao2015). In Townsend's theory low command of the following five resources is the main cause of multiple forms of deprivation [@Townsend1979, p. 55]:
 
-1. Cash income 
+**1. Cash income** 
 a) Earned
 b) Unearned
 c) Social security
 
-2. Capital assets:
+**2. Capital assets**
 a) House occupied by family
 b) Assets and savings
 
-3. Value of employment and benefits in kind
+**3. Value of employment and benefits in kind**
 a) Employers' fringe benefits, subsidies and value of occupational insurance
 b) Occupation facilities
 
-4. Value of public social services in kind
+**4. Value of public social services in kind**
 a) Goverment subsidies and services, e.g. health, education and housing but excluding social security
 
-5. Private income in kind
+**5. Private income in kind**
 a) Home production
 b) Gifts
 c) Value of personal supporting services

@@ -194,7 +194,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.4" data-path="Chapter-5.html"><a href="Chapter-5.html#real-data-analysis-of-measurement-invariance"><i class="fa fa-check"></i><b>5.4</b> Real-data analysis of Measurement Invariance</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="scale-equating-and-linking.html"><a href="scale-equating-and-linking.html"><i class="fa fa-check"></i><b>6</b> Scale equating and linking</a><ul>
-<li class="chapter" data-level="6.1" data-path="scale-equating-and-linking.html"><a href="scale-equating-and-linking.html#intuition-to-scale-equation"><i class="fa fa-check"></i><b>6.1</b> Intuition to scale equation</a></li>
+<li class="chapter" data-level="6.1" data-path="scale-equating-and-linking.html"><a href="scale-equating-and-linking.html#intuition-to-scale-equating"><i class="fa fa-check"></i><b>6.1</b> Intuition to scale equating</a></li>
 <li class="chapter" data-level="6.2" data-path="scale-equating-and-linking.html"><a href="scale-equating-and-linking.html#theory-of-scale-equating"><i class="fa fa-check"></i><b>6.2</b> Theory of scale equating</a></li>
 <li class="chapter" data-level="6.3" data-path="scale-equating-and-linking.html"><a href="scale-equating-and-linking.html#example-with-simulated-data-in-r"><i class="fa fa-check"></i><b>6.3</b> Example with simulated data in R</a></li>
 <li class="chapter" data-level="6.4" data-path="scale-equating-and-linking.html"><a href="scale-equating-and-linking.html#real-data-example-2"><i class="fa fa-check"></i><b>6.4</b> Real-data example</a></li>
@@ -259,42 +259,22 @@ this definition is useful because it is simple and it can be debated more transp
 </blockquote>
 <p>This concept of poverty is useful because it is simple and is not in tension with many of the conceptual debates described above. The definition acknowledges that deprivation is multidimensional in that it refers to the unmet needs/functionings that are regarded as essential by society in a given point in time. But, the definition is also useful because it clearly links a cause (poverty) with a consequence (observed deprivation). This is key as from the perspective of philosophy of science permits connecting a construct (human invention) with a statistical framework that works with multivariate data and indirect approximations to a phenomenon.</p>
 <p>There is another aspect that is very useful in <span class="citation">Townsend (<a href="references.html#ref-Townsend1979" role="doc-biblioref">1979</a>)</span>’s definition. One of the difficulties in poverty measurement is that many measures confound outcomes with predictors of poverty, so that sometimes predictors like unemployment or disability are included with deprivation. This, of course, adds error because we are not interested in estimating poverty but in measuring it. If we would have data on deprivation we would, of course, only have one option- fitting a predictive model, like in the case of small-area estimation (<span class="citation">Rao &amp; Molina (<a href="references.html#ref-Rao2015" role="doc-biblioref">2015</a>)</span>). In Townsend’s theory low command of the following five resources is the main cause of multiple forms of deprivation <span class="citation">(Townsend, <a href="references.html#ref-Townsend1979" role="doc-biblioref">1979</a>, p. 55)</span>:</p>
-<ol style="list-style-type: decimal">
-<li>Cash income</li>
-</ol>
-<ol style="list-style-type: lower-alpha">
-<li>Earned</li>
-<li>Unearned</li>
-<li>Social security</li>
-</ol>
-<ol start="2" style="list-style-type: decimal">
-<li>Capital assets:</li>
-</ol>
-<ol style="list-style-type: lower-alpha">
-<li>House occupied by family</li>
-<li>Assets and savings</li>
-</ol>
-<ol start="3" style="list-style-type: decimal">
-<li>Value of employment and benefits in kind</li>
-</ol>
-<ol style="list-style-type: lower-alpha">
-<li>Employers’ fringe benefits, subsidies and value of occupational insurance</li>
-<li>Occupation facilities</li>
-</ol>
-<ol start="4" style="list-style-type: decimal">
-<li>Value of public social services in kind</li>
-</ol>
-<ol style="list-style-type: lower-alpha">
-<li>Goverment subsidies and services, e.g. health, education and housing but excluding social security</li>
-</ol>
-<ol start="5" style="list-style-type: decimal">
-<li>Private income in kind</li>
-</ol>
-<ol style="list-style-type: lower-alpha">
-<li>Home production</li>
-<li>Gifts</li>
-<li>Value of personal supporting services</li>
-</ol>
+<p><strong>1. Cash income</strong>
+a) Earned
+b) Unearned
+c) Social security</p>
+<p><strong>2. Capital assets</strong>
+a) House occupied by family
+b) Assets and savings</p>
+<p><strong>3. Value of employment and benefits in kind</strong>
+a) Employers’ fringe benefits, subsidies and value of occupational insurance
+b) Occupation facilities</p>
+<p><strong>4. Value of public social services in kind</strong>
+a) Goverment subsidies and services, e.g. health, education and housing but excluding social security</p>
+<p><strong>5. Private income in kind</strong>
+a) Home production
+b) Gifts
+c) Value of personal supporting services</p>
 <p>This is a UK-centred definition of resources and not all these resources might matter in all countries. For example, <span class="citation">Boltvinik &amp; Hernández-Láos (<a href="references.html#ref-Boltvinik2001" role="doc-biblioref">2001</a>)</span> proposes time as a resource and in most UBN-based measures services are included as a dimension of poverty. This, for instance, is not in contention with Townsend’s definition, in fact, the UBN measures look at deprivation (effective access) of services -low command of this type of resource- results in deprivation.</p>
 <p>It is also important to note, the similarities between Townsend’s definition and the <span class="citation">Canberra-Group (<a href="references.html#ref-Canberra-Group2012" role="doc-biblioref">2012</a>)</span> definition of income. The overlap is high. This sometimes confuses people as they think that <span class="citation">Townsend (<a href="references.html#ref-Townsend1979" role="doc-biblioref">1979</a>)</span> proposed that poverty is the low command of <em>income</em> overtime. This is incorrect, the problem is that in most surveys our best proxy of resources is <em>income</em> often measured using the <span class="citation">Canberra-Group (<a href="references.html#ref-Canberra-Group2012" role="doc-biblioref">2012</a>)</span> convention. This the reason why the Poverty and Social Exclusion (PSE) or other approaches that combine resources of deprivation -like CONEVAL in Mexico- actually intersect income and deprivation.</p>
 <p>So far we have discussed some of the elements needed to define and measure poverty, but we have discussed very little what happens once the substantive aspects of poverty have been established. This begs the following question: How the poor are correctly identified using available data? This is the question of this book: What criteria and principles lead to falsify the contents and identification of a poverty scale? To better frame the question is appropriate to review the challenges involved in poverty measurement.</p>
