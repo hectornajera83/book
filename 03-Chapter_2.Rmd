@@ -1,4 +1,4 @@
-# Poverty and measurement theory: A statistical framework
+# Poverty and measurement theory: A statistical framework {#Chapter-2}
 
 **Abstract**
 
@@ -37,6 +37,7 @@ One of the often-overlooked features in poverty measurement is that fact that re
 This is just a statistical model throughout which poverty is identified and can compactly be written as:
 
 \begin{equation}
+(\#eq:mainmodel)
 \mathscr F = \{\mathscr X, F_{\theta} : \theta \in \Theta\}
 \end{equation}
 
