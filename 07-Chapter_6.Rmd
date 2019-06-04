@@ -15,9 +15,9 @@ Scale or test equating is the answer from measurement theory to the problem of w
 
 Educational testing has been the field at the forefront of scale equating. Admissions to universities often depend on the score of a test. But what if this test favours some students? and What if different versions of the tests are implemented? This poses a challenge for the admissions' office for two students might have different scores but just because the tests had different difficulties, i.e. one was easier than other. 
 
-How does this problem translate to poverty measurement? There are two good examples to see this happening to our scales. According to @Townsend1979 poverty is relative across time and space. The *space* to identify the dimensions and indicators of poverty in the early 20th Century would look very different from the *space* of things and activities necessary to live with dignity in the 21st Century. For example, overcrowding and access to electricity were very good indicators of poverty in London but these days is no longer the case. That means that the two measure will have different deprivation indicators. So what does it mean that someone in the early 20th century had a deprivation score equal to 6 relative to someone that has a score equal to 3 today? Is it possible to compare how severely deprived they are? And how this might or might not impact the prevalence rate? 
+How does this problem translate to poverty measurement? There are two good examples to see this happening to our scales. According to @Townsend1979 poverty is relative across time and space. The *space* to identify the dimensions and indicators of poverty in the early 20th Century would look very different from the *space* of things and activities necessary to live with dignity in the 21st Century. For example, overcrowding and access to electricity were very good indicators of poverty in London but these days is no longer the case. That means that the two measure will have different deprivation indicators. So, what does it mean that someone in the early 20th century had a deprivation score equal to 6 relative to someone that has a score equal to 3 today? Is it possible to compare how severely deprived they are? And how this might or might not impact the prevalence rate? 
 
-This is a very crude example, but it helps to illustrate some of the challenges when comparing poverty overtime. However, in poverty research one common belief is that using the same indicators is sufficient to make valid comparisons across groups. Leaving aside the data collection and sampling issues associated with MI, we could think carefully about this assumption. Imagine that we use indicators of the early 20th to measure poverty today. Then we have two people with the same deprivation pattern- they lack electricity, cook with charcoal, and live in an overcrowded house. So they have the same deprivation scores. In the early 20th century it would not be very difficult to find such conditions in a small random sample. However, these days this situation would denote acute material deprivation. But these two people will have the same deprivation score, so without equating they would be equally deprived. How sensible is this conclusion? Well, not very. 
+This is a very crude example, but it helps to illustrate some of the challenges when comparing poverty overtime. However, in poverty research one common belief is that using the same indicators is sufficient to make valid comparisons across groups. Leaving aside the data collection and sampling issues associated with MI, we could think carefully about this assumption. Imagine that we use indicators of the early 20th to measure poverty today. Then we have two people with the same deprivation pattern- they lack electricity, cook with charcoal, and live in an overcrowded house. Hence, they have the same deprivation scores. In the early 20th century it would not be very difficult to find such conditions in a small random sample. However, these days this situation would denote acute material deprivation. But these two people will have the same deprivation score, so without equating they would be equally deprived. How sensible is this conclusion? Well, not very. 
 
 Scale equating aims at adjusting the differences in severity between tests and groups. The process of equating, given the response patterns, will notice that it is *more difficult* (as in Item Response Theory modelling) today being deprived of the items in question than 100 years ago. So, based on difficulty, the contemporary scale will be adjusted in terms of the early 20th Century's scale. If the equating process is successful, it should make sense and a score equal 3 today would mean something more severe in terms of a score equal 3 100 years ago, i.e. it will be higher. The inflation of today's score will be the result of equating and it will tell us a lot of useful information to adjust our conclusions about poverty and severity of deprivation. 
 
@@ -27,7 +27,7 @@ The second example focuses on the practical use of equating. Statistical offices
 knitr::include_graphics("Diagram_EQ_1.png")
 ```
 
-One crucial aspect of the example above is that if we have to tests with a common subset of items, then we can assess not only the effect of the updating of the scale but also we could link both measures and make them comparable across time points. We will see that for scale equating to work we need to identify as many **anchors** as we can, i.e. items that respect measurement invariance across tests. In this case we have seven potential candidates. In the following we introduce formally the concepts and methods to conduct scale equating. We will, of course, discuss some limitations of this approach as it might be sensible in all situations or desirable. 
+One crucial aspect of the example above is that if we have to tests with a common subset of items, then we can assess not only the effect of the updating of the scale but also, we could link both measures and make them comparable across time points. We will see that for scale equating to work we need to identify as many **anchors** as we can, i.e. items that respect measurement invariance across tests. In this case we have seven potential candidates. In the following we introduce formally the concepts and methods to conduct scale equating. We will, of course, discuss some limitations of this approach as it might be sensible in all situations or desirable. 
 
 ## Theory of scale equating 
 
@@ -95,7 +95,7 @@ True-score equating draws on the idea of a true score from Classical Test Theory
 
 ## Example of IRT equating with simulated data in R
 
-To introduce IRT equating we will use two simulated indices (**A** and **B**) that capture a the simpliest situation in equating and in poverty measurement. Both indices are comprised of 15 binary indicators ($n=5000$). The first 11 indicators are the same in that they are measurement invariance and have the same severities and discrimination values. The remaining four indicators have different severities. The indicators of index A are more severe than the indicators of index B. This is a situation in which two very similar indices are applied to the same population -with no changes in the underlying level of poverty- but one is more severe than another. So it is not possible to compare the observed deprivation scores directly. This could be also depict a situation where two similar countries with similar living standards are compared using similar indices. 
+To introduce IRT equating we will use two simulated indices (**A** and **B**) that capture a the simplest situation in equating and in poverty measurement. Both indices are comprised of 15 binary indicators ($n=5000$). The first 11 indicators are the same in that they are measurement invariance and have the same severities and discrimination values. The remaining four indicators have different severities. The indicators of index A are more severe than the indicators of index B. This is a situation in which two very similar indices are applied to the same population -with no changes in the underlying level of poverty- but one is more severe than another. So, it is not possible to compare the observed deprivation scores directly. This could be also depicting a situation where two similar countries with similar living standards are compared using similar indices. 
 
 ```{r message=FALSE, warning=TRUE, include=FALSE}
 test<-mplusObject(MONTECARLO = "NAMES=U1-U15; 
@@ -289,7 +289,7 @@ irtS<-lapply(irtS, function(x) {
 )
 ```
 
-The `irtS` list contains the paremets of indices A and B. We will rename them to facilitate the specification using the excellent `SNSequate` package [@Gonzalez2014]. We need to tell `SNSequate` the dataframes containing the IRT-parameters of each test and also which items are the *anchors* -common items-. 
+The `irtS` list contains the parameters of indices A and B. We will rename them to facilitate the specification using the excellent `SNSequate` package [@Gonzalez2014]. We need to tell `SNSequate` the dataframes containing the IRT-parameters of each test and which items are the *anchors* -common items-. 
 
 
 ```{r message=FALSE, warning=FALSE}
@@ -313,7 +313,7 @@ Sl_a<-eqconst$StockLord[1]
 Sl_b<-eqconst$StockLord[2] 
 ```
 
-The next step is to apply the contants to the IRT coefficients. What we need to do is to rescale the irt-parameters of test A -because we are equating test A with B- using the two constants as follows: 
+The next step is to apply the contents to the IRT coefficients. What we need to do is to rescale the irt-parameters of test A -because we are equating test A with B- using the two constants as follows: 
 
 ```{r message=FALSE, warning=FALSE}
 irtS[[1]]$a<-irtS[[1]]$a/Sl_a
@@ -321,7 +321,7 @@ irtS[[1]]$b<-Sl_a*(irtS[[1]]$b)+Sl_b
 irtS[[1]]
 ```
 
-Now we have equivalent IRT-parameters so the latent scores can be fully compared. Section XX described two types of equating: observed and true. We will impliement both below. For the true scale equating we simply say the names of the objects with the IRT-parameters, the method and we will use the following defaults for the scalling parameters $A=1$ and $B=0$. We also specify the common items. We store the results on the `true-eqscale` object. For the observed equating we need to specify the `theta_points`, i.e. the standarised values of the latent poverty level. Then we apply the function changing the method and adding the theta points. We store the output on the `obs_eqscale` object. 
+Now we have equivalent IRT-parameters so the latent scores can be fully compared. Section XX described two types of equating: observed and true. We will implement both below. For the true scale equating we simply say the names of the objects with the IRT-parameters, the method and we will use the following defaults for the scaling parameters $A=1$ and $B=0$. We also specify the common items. We store the results on the `true-eqscale` object. For the observed equating we need to specify the `theta_points`, i.e. the standardised values of the latent poverty level. Then we apply the function changing the method and adding the theta points. We store the output on the `obs_eqscale` object. 
 
 ```{r message=FALSE, warning=FALSE}
 theta_points=c(-5,-4,-3,-2,-1,0,1,2,3,4,5)
@@ -332,7 +332,7 @@ obs_eqscale<-irt.eq(15, irtS[[1]], irtS[[2]], theta_points, method="OS", common=
 
 ```
 
-We now do some manipulations to the `true_mean` object to extract the equated scores of form A in terms of B (`true_eqscale$tau_y`)  and the latent values of poverty for each equated score (`true_eqscale$theta_equivalent`). We create a simple table to compare the equated score A in terms of B. We observed that the values of A in terms of B tend to be higher. Why is that? Remeber that A had more severe indicators. That means that being deprived under test B was less severe. The number of deprivations in test A and B do not reflect the same severity levels, the latent severity under test A requires a higher observed deprivation score.  
+We now do some manipulations to the `true_mean` object to extract the equated scores of form A in terms of B (`true_eqscale$tau_y`)  and the latent values of poverty for each equated score (`true_eqscale$theta_equivalent`). We create a simple table to compare the equated score A in terms of B. We observed that the values of A in terms of B tend to be higher. Why is that? Remember that A had more severe indicators. That means that being deprived under test B was less severe. The number of deprivations in test A and B do not reflect the same severity levels, the latent severity under test A requires a higher observed deprivation score.  
 
 Sometimes is tricky to interpret these findings are there are double negatives. One way to think about this is by thinking in terms of an extreme situation. Imagine that test A is way more severe than test B, for example, test A uses indicators like having dirt floor, lacking electricity, unsafe source of water, walls made from cardboard to identify deprivation relative to B that uses indicators like floor without tiles, cant' afford electricity, clean water connected to the property, lacking walls made from cement or bricks. For the same living standards, a score of 4 in test A denotes a more extreme situation than a score equal to 4 in test B. Thus, the same severity of A in terms of B should be way higher. In the current example we have something similar but less dramatic. 
 
@@ -349,7 +349,7 @@ obs_mean<-data.frame(Score.AintermsofB=obs_eqscale$e_Y_x, obs_mean=c(0:15))
 obs_mean
 ```
 
-To see these findings from a different perspective, we will plot the results (See Figure \@ref(fig:eqfig1). The first plot, uses a 45 degree line to denote a situation where scores A and B are the same, i.e. a score of 3 measures the same underlying level of poverty. The pink line is the score A in terms of B. We see that the pink line is almmost always below the 45 degree line. This means that the rescaled score A is always higher than B. For the same severity, someone assessed using index A has a higher observed deprivation score. 
+To see these findings from a different perspective, we will plot the results (See Figure \@ref(fig:eqfig1). The first plot uses a 45 degree line to denote a situation where scores A and B are the same, i.e. a score of 3 measures the same underlying level of poverty. The pink line is the score A in terms of B. We see that the pink line is almost always below the 45-degree line. This means that the rescaled score A is always higher than B. For the same severity, someone assessed using index A has a higher observed deprivation score. 
 
 
 
@@ -363,7 +363,9 @@ dev.off()
 
 
 ```{r eqfig1, echo=TRUE, message=F, fig.cap="Comparison of the rescaled index A -in terms of B- with the index B."}
-knitr::include_graphics("EQ_plot1.jpg")
+ggplot(true_mean,aes(Score.AintermsofB,ScoreB)) + geom_line(size=2, color="pink") +  xlab("Measure A (scaled in B-terms)") + ylab("Measure B") + theme_bw() +  geom_abline(intercept = 0, slope = 1) +
+  scale_y_continuous( limits = c(-.1,15), expand = c(0,0), breaks = seq(1, 15, 1) ) + 
+  scale_x_continuous( limits = c(-.1,15), expand = c(0,0), breaks = seq(1, 15, 1)) 
 ```
 
 
