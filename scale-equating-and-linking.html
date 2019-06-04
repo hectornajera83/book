@@ -305,6 +305,139 @@ b_{yj} =  Ab_{xj} + B
 </div>
 <div id="example-of-irt-equating-with-simulated-data-in-r" class="section level2">
 <h2><span class="header-section-number">6.3</span> Example of IRT equating with simulated data in R</h2>
+<p>To introduce IRT equating we will use two simulated indices (<strong>A</strong> and <strong>B</strong>) that capture a the simpliest situation in equating and in poverty measurement. Both indices are comprised of 15 binary indicators (<span class="math inline">\(n=5000\)</span>). The first 11 indicators are the same in that they are measurement invariance and have the same severities and discrimination values. The remaining four indicators have different severities. The indicators of index A are more severe than the indicators of index B. This is a situation in which two very similar indices are applied to the same population -with no changes in the underlying level of poverty- but one is more severe than another. So it is not possible to compare the observed deprivation scores directly. This could be also depict a situation where two similar countries with similar living standards are compared using similar indices.</p>
+<p>The data corresponding to index A is stored on the <code>EQ_IRT_1_1.dat</code> file and the data corresponding to index B is on the file <code>EQ_IRT_2_1.dat</code>. To familiarise ourselves with the data we will have a look at the files:</p>
+<pre class="sourceCode r"><code class="sourceCode r">A&lt;-<span class="kw">read.table</span>(<span class="st">&quot;EQ_IRT_1_1.dat&quot;</span>)
+B&lt;-<span class="kw">read.table</span>(<span class="st">&quot;EQ_IRT_2_1.dat&quot;</span>)</code></pre>
+<p>We now tabulate the deprivation rates for each one of the 15 indicators so that we can appreciate the similarities and differences between the two samples. We see that there are just small variations in the first 11 items and larger variations for the remaining four. This is the expected behaviour given that we said that the latent levels of poverty are the same between samples A and B.</p>
+<pre class="sourceCode r"><code class="sourceCode r">dep_propA&lt;-<span class="kw">unlist</span>(<span class="kw">lapply</span>(A, <span class="cf">function</span>(x) <span class="kw">mean</span>(x)))
+dep_propA&lt;-<span class="kw">round</span>(dep_propA[<span class="dv">1</span><span class="op">:</span><span class="dv">15</span>]<span class="op">*</span><span class="dv">100</span>,<span class="dv">0</span>)
+dep_propA</code></pre>
+<pre><code>##  V1  V2  V3  V4  V5  V6  V7  V8  V9 V10 V11 V12 V13 V14 V15 
+##  12  28  17  17  25  31  37  15  17  10  22  20  16  13  10</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">dep_propB&lt;-<span class="kw">unlist</span>(<span class="kw">lapply</span>(B, <span class="cf">function</span>(x) <span class="kw">mean</span>(x)))
+dep_propB&lt;-<span class="kw">round</span>(dep_propB[<span class="dv">1</span><span class="op">:</span><span class="dv">15</span>]<span class="op">*</span><span class="dv">100</span>,<span class="dv">0</span>)
+dep_propB</code></pre>
+<pre><code>##  V1  V2  V3  V4  V5  V6  V7  V8  V9 V10 V11 V12 V13 V14 V15 
+##  12  29  17  17  28  32  37  17  17  11  21  28  24  20  19</code></pre>
+<p>The first step in IRT-test equating consist in fitting and IRT model for each one of the two indices. If we think this carefully, this just a more formal way to compare the measurement properties of index A and B. That is, whether the indicators discriminate well between the poor and the not poor and what latent level of severity of poverty each indicator is capturing.</p>
+<p>The models will be fitted on <strong>Mplus</strong> via <strong>R</strong> using the <code>mplusAutomation()</code> function <span class="citation">(Hallquist &amp; Wiley, <a href="references.html#ref-Hallquist2018" role="doc-biblioref">2018</a>)</span>. We will write a more complex function because we will like to offer readers to run simulations to check the properties of equating, this is why we left and <code>i</code> in the commands.</p>
+<p>Here we fit the IRT model for both indices. We will create one script for each index (<code>EQ_IRT_1_1.inp</code> for index A for example):</p>
+<pre class="sourceCode r"><code class="sourceCode r">test&lt;-<span class="kw">mplusObject</span>(<span class="dt">VARIABLE =</span> <span class="st">&quot;NAMES=V1-V15; </span>
+<span class="st">                  USEVARIABLES=V1-V15; </span>
+<span class="st">                  CATEGORICAL = V1-V15;&quot;</span>, 
+                  <span class="dt">MODEL=</span> <span class="st">&quot;f by V1-V15*;</span>
+<span class="st">                                  f@1;&quot;</span>)
+
+<span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">2</span>){
+  <span class="kw">mplusModeler</span>(test, <span class="dt">modelout=</span><span class="kw">paste</span>(<span class="st">&quot;EQ_IRT_&quot;</span>,i,<span class="st">&quot;_1&quot;</span>,<span class="st">&quot;.inp&quot;</span>,<span class="dt">sep=</span><span class="st">&quot;&quot;</span>),  <span class="dt">writeData =</span> <span class="st">&quot;never&quot;</span>,
+               <span class="dt">hashfilename =</span> <span class="ot">FALSE</span>)
+}</code></pre>
+<p>Now we request <code>mplusAutomation()</code> to run both models on <strong>Mplus</strong> for us as follows:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">2</span>){
+<span class="kw">runModels</span>(<span class="kw">paste</span>(<span class="st">&quot;EQ_IRT_&quot;</span>,i,<span class="st">&quot;_1&quot;</span>,<span class="st">&quot;.inp&quot;</span>,<span class="dt">sep=</span><span class="st">&quot;&quot;</span>))
+}</code></pre>
+<p>Finally we read the models using the <code>readModels()</code> function. We will store the files in the objects <code>irt_1</code> and <code>irt_2</code> and then we will put them in a list so that we can put them in the correct format for the equating (i.e. the irt parameters <em>a, b and c</em> of each item need to be in columns). So, using <code>lapply()</code> we can put them in the correct format and store them on the <code>irtS</code> list.</p>
+<pre class="sourceCode r"><code class="sourceCode r">irt_<span class="dv">1</span>&lt;-<span class="kw">readModels</span>(<span class="dt">filefilter =</span><span class="st">&quot;EQ_IRT_1&quot;</span>)</code></pre>
+<pre><code>## Reading model:  C:/Proyectos Investigacion/PM Book/eq_irt_1_1.out</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">irt_<span class="dv">2</span>&lt;-<span class="kw">readModels</span>(<span class="dt">filefilter =</span><span class="st">&quot;EQ_IRT_2&quot;</span>)</code></pre>
+<pre><code>## Reading model:  C:/Proyectos Investigacion/PM Book/eq_irt_2_1.out</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">irtS&lt;-<span class="kw">list</span>(irt_<span class="dv">1</span>,irt_<span class="dv">2</span>)
+
+
+irtS&lt;-<span class="kw">lapply</span>(irtS, <span class="cf">function</span>(x) {
+  x&lt;-x<span class="op">$</span>parameters<span class="op">$</span>irt.parameterization
+  x&lt;-x[<span class="dv">1</span><span class="op">:</span><span class="dv">30</span>,]
+  x&lt;-<span class="kw">data.frame</span>(<span class="dt">a=</span>x<span class="op">$</span>est[<span class="dv">1</span><span class="op">:</span><span class="dv">15</span>],<span class="dt">b=</span>x<span class="op">$</span>est[<span class="dv">16</span><span class="op">:</span><span class="dv">30</span>],<span class="dt">c=</span><span class="dv">0</span>)
+  x
+}
+)</code></pre>
+<p>The <code>irtS</code> list contains the paremets of indices A and B. We will rename them to facilitate the specification using the excellent <code>SNSequate</code> package <span class="citation">(González &amp; others, <a href="references.html#ref-Gonzalez2014" role="doc-biblioref">2014</a>)</span>. We need to tell <code>SNSequate</code> the dataframes containing the IRT-parameters of each test and also which items are the <em>anchors</em> -common items-.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(SNSequate)
+parm.a&lt;-irtS[[<span class="dv">1</span>]]
+parm.b&lt;-irtS[[<span class="dv">2</span>]]
+comitems&lt;-(<span class="dv">1</span><span class="op">:</span><span class="dv">11</span>)
+parm &lt;-<span class="st"> </span><span class="kw">cbind</span>(parm.a, parm.b)</code></pre>
+<p>The key function to conduct IRT-equating is <code>irt.link()</code>, this function uses the parameters, takes into account the common items and considers which kind of IRT we want to use, in this case a two-parameter model. In this case we will use 1.7 for the constant D, as it is common practice.</p>
+<pre class="sourceCode r"><code class="sourceCode r">eqconst&lt;-<span class="kw">irt.link</span>(parm, comitems, <span class="dt">model =</span> <span class="st">&quot;2PL&quot;</span>, <span class="dt">icc =</span> <span class="st">&quot;logistic&quot;</span>, <span class="dt">D =</span> <span class="fl">1.7</span>)</code></pre>
+<p>The object <code>eqconst</code> contains the estimated constants for equating: a and b. It will estimate these constants using different methods (mean-mean, StockLord, Haebara). For this example, we will use the constants from the StockLord method. We simply extract the constants as follows:</p>
+<pre class="sourceCode r"><code class="sourceCode r">Sl_a&lt;-eqconst<span class="op">$</span>StockLord[<span class="dv">1</span>]  
+Sl_b&lt;-eqconst<span class="op">$</span>StockLord[<span class="dv">2</span>] </code></pre>
+<p>The next step is to apply the contants to the IRT coefficients. What we need to do is to rescale the irt-parameters of test A -because we are equating test A with B- using the two constants as follows:</p>
+<pre class="sourceCode r"><code class="sourceCode r">irtS[[<span class="dv">1</span>]]<span class="op">$</span>a&lt;-irtS[[<span class="dv">1</span>]]<span class="op">$</span>a<span class="op">/</span>Sl_a
+irtS[[<span class="dv">1</span>]]<span class="op">$</span>b&lt;-Sl_a<span class="op">*</span>(irtS[[<span class="dv">1</span>]]<span class="op">$</span>b)<span class="op">+</span>Sl_b
+irtS[[<span class="dv">1</span>]]</code></pre>
+<pre><code>##            a         b c
+## 1  0.4647126 2.8741830 0
+## 2  0.5514052 1.2661333 0
+## 3  0.5231797 2.0746222 0
+## 4  0.5584616 1.9625249 0
+## 5  1.2036157 0.9030572 0
+## 6  1.1723661 0.6768787 0
+## 7  1.0766010 0.4883967 0
+## 8  0.9395057 1.5419123 0
+## 9  0.7217662 1.6371454 0
+## 10 0.6068481 2.5527715 0
+## 11 1.6461512 0.9199214 0
+## 12 1.6149015 1.0320187 0
+## 13 1.3538157 1.2611732 0
+## 14 1.4193392 1.4040228 0
+## 15 1.1219634 1.7125382 0</code></pre>
+<p>Now we have equivalent IRT-parameters so the latent scores can be fully compared. Section XX described two types of equating: observed and true. We will impliement both below. For the true scale equating we simply say the names of the objects with the IRT-parameters, the method and we will use the following defaults for the scalling parameters <span class="math inline">\(A=1\)</span> and <span class="math inline">\(B=0\)</span>. We also specify the common items. We store the results on the <code>true-eqscale</code> object. For the observed equating we need to specify the <code>theta_points</code>, i.e. the standarised values of the latent poverty level. Then we apply the function changing the method and adding the theta points. We store the output on the <code>obs_eqscale</code> object.</p>
+<pre class="sourceCode r"><code class="sourceCode r">theta_points=<span class="kw">c</span>(<span class="op">-</span><span class="dv">5</span>,<span class="op">-</span><span class="dv">4</span>,<span class="op">-</span><span class="dv">3</span>,<span class="op">-</span><span class="dv">2</span>,<span class="op">-</span><span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>)
+
+true_eqscale&lt;-<span class="kw">irt.eq</span>(<span class="dv">15</span>, irtS[[<span class="dv">1</span>]], irtS[[<span class="dv">2</span>]], <span class="dt">method=</span><span class="st">&quot;TS&quot;</span>, <span class="dt">A=</span><span class="dv">1</span>, <span class="dt">B=</span><span class="dv">0</span>, <span class="dt">common=</span>comitems)
+obs_eqscale&lt;-<span class="kw">irt.eq</span>(<span class="dv">15</span>, irtS[[<span class="dv">1</span>]], irtS[[<span class="dv">2</span>]], theta_points, <span class="dt">method=</span><span class="st">&quot;OS&quot;</span>, <span class="dt">common=</span>comitems,
+                                             <span class="dt">A=</span><span class="dv">1</span>, <span class="dt">B=</span><span class="dv">0</span>)</code></pre>
+<p>We now do some manipulations to the <code>true_mean</code> object to extract the equated scores of form A in terms of B (<code>true_eqscale$tau_y</code>) and the latent values of poverty for each equated score (<code>true_eqscale$theta_equivalent</code>). We create a simple table to compare the equated score A in terms of B. We observed that the values of A in terms of B tend to be higher. Why is that? Remeber that A had more severe indicators. That means that being deprived under test B was less severe. The number of deprivations in test A and B do not reflect the same severity levels, the latent severity under test A requires a higher observed deprivation score.</p>
+<p>Sometimes is tricky to interpret these findings are there are double negatives. One way to think about this is by thinking in terms of an extreme situation. Imagine that test A is way more severe than test B, for example, test A uses indicators like having dirt floor, lacking electricity, unsafe source of water, walls made from cardboard to identify deprivation relative to B that uses indicators like floor without tiles, cant’ afford electricity, clean water connected to the property, lacking walls made from cement or bricks. For the same living standards, a score of 4 in test A denotes a more extreme situation than a score equal to 4 in test B. Thus, the same severity of A in terms of B should be way higher. In the current example we have something similar but less dramatic.</p>
+<pre class="sourceCode r"><code class="sourceCode r">true_mean&lt;-<span class="kw">data.frame</span>(<span class="dt">Score.AintermsofB=</span>true_eqscale<span class="op">$</span>tau_y, <span class="dt">Latent=</span>true_eqscale<span class="op">$</span>theta_equivalent)
+true_mean<span class="op">$</span>ScoreB&lt;-<span class="dv">0</span><span class="op">:</span><span class="dv">15</span>
+true_mean</code></pre>
+<pre><code>##    Score.AintermsofB     Latent ScoreB
+## 1           0.000000         NA      0
+## 2           1.188709 -0.4247446      1
+## 3           2.421778  0.1052714      2
+## 4           3.669205  0.4208060      3
+## 5           4.881500  0.6582886      4
+## 6           6.031033  0.8596392      5
+## 7           7.106226  1.0445579      6
+## 8           8.105683  1.2252625      7
+## 9           9.034292  1.4114606      8
+## 10          9.901703  1.6130816      9
+## 11         10.722464  1.8430339     10
+## 12         11.516009  2.1214140     11
+## 13         12.305498  2.4841349     12
+## 14         13.113282  3.0055632     13
+## 15         13.958555  3.8932022     14
+## 16         15.000000         NA     15</code></pre>
+<p>Now we will do the same extraction process for the observed score. We extract the values of the A score in terms of B (<code>obs_eqscale$e_Y_x</code>). We find that we get similar results. The observed score of A in terms of B is higher than the score of index B.</p>
+<pre class="sourceCode r"><code class="sourceCode r">obs_mean&lt;-<span class="kw">data.frame</span>(<span class="dt">Score.AintermsofB=</span>obs_eqscale<span class="op">$</span>e_Y_x, <span class="dt">obs_mean=</span><span class="kw">c</span>(<span class="dv">0</span><span class="op">:</span><span class="dv">15</span>))
+obs_mean</code></pre>
+<pre><code>##    Score.AintermsofB obs_mean
+## 1         0.03504469        0
+## 2         1.21786830        1
+## 3         2.42744874        2
+## 4         3.65481175        3
+## 5         4.77906519        4
+## 6         5.87427729        5
+## 7         6.98382632        6
+## 8         8.04186994        7
+## 9         9.02268088        8
+## 10        9.96813153        9
+## 11       10.87083780       10
+## 12       11.69546817       11
+## 13       12.46321205       12
+## 14       13.30906666       13
+## 15       14.19724649       14
+## 16       15.12263638       15</code></pre>
+<p>To see these findings from a different perspective, we will plot the results. The first plot, uses a 45 degree line to denote a situation where scores A and B are the same, i.e. a score of 3 measures the same underlying level of poverty. The pink line is the score A in terms of B. We see that the pink line is almmost always below the 45 degree line. This means that the rescaled score A is always higher than B. For the same severity, someone assessed using index A has a higher observed deprivation score.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(ggplot2)
+
+<span class="kw">ggplot</span>(true_mean,<span class="kw">aes</span>(Score.AintermsofB,ScoreB)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_line</span>(<span class="dt">size=</span><span class="dv">2</span>, <span class="dt">color=</span><span class="st">&quot;pink&quot;</span>) <span class="op">+</span><span class="st">  </span><span class="kw">xlab</span>(<span class="st">&quot;Measure A (scaled in B-terms)&quot;</span>) <span class="op">+</span><span class="st"> </span><span class="kw">ylab</span>(<span class="st">&quot;Measure B&quot;</span>) <span class="op">+</span><span class="st"> </span><span class="kw">theme_bw</span>() <span class="op">+</span><span class="st">  </span><span class="kw">geom_abline</span>(<span class="dt">intercept =</span> <span class="dv">0</span>, <span class="dt">slope =</span> <span class="dv">1</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">scale_y_continuous</span>( <span class="dt">limits =</span> <span class="kw">c</span>(<span class="op">-</span>.<span class="dv">1</span>,<span class="dv">15</span>), <span class="dt">expand =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">0</span>), <span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="dv">1</span>, <span class="dv">15</span>, <span class="dv">1</span>) ) <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">scale_x_continuous</span>( <span class="dt">limits =</span> <span class="kw">c</span>(<span class="op">-</span>.<span class="dv">1</span>,<span class="dv">15</span>), <span class="dt">expand =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">0</span>), <span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="dv">1</span>, <span class="dv">15</span>, <span class="dv">1</span>)) </code></pre>
+<p><img src="PM_Book_files/figure-html/unnamed-chunk-100-1.png" width="672" /></p>
 </div>
 <div id="real-data-example-2" class="section level2">
 <h2><span class="header-section-number">6.4</span> Real-data example</h2>
@@ -342,7 +475,7 @@ gitbook.start({
 "all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
-"theme": "white",
+"theme": "readable",
 "family": "sans",
 "size": 2
 },

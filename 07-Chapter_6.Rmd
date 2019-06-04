@@ -95,9 +95,290 @@ True-score equating draws on the idea of a true score from Classical Test Theory
 
 ## Example of IRT equating with simulated data in R
 
+To introduce IRT equating we will use two simulated indices (**A** and **B**) that capture a the simpliest situation in equating and in poverty measurement. Both indices are comprised of 15 binary indicators ($n=5000$). The first 11 indicators are the same in that they are measurement invariance and have the same severities and discrimination values. The remaining four indicators have different severities. The indicators of index A are more severe than the indicators of index B. This is a situation in which two very similar indices are applied to the same population -with no changes in the underlying level of poverty- but one is more severe than another. So it is not possible to compare the observed deprivation scores directly. This could be also depict a situation where two similar countries with similar living standards are compared using similar indices. 
+
+```{r message=FALSE, warning=TRUE, include=FALSE}
+test<-mplusObject(MONTECARLO = "NAMES=U1-U15; 
+                  GENERATE = U1-U15(1);
+                  CATEGORICAL = U1-U15;
+                  GENCLASSES = c(2);
+                  CLASSES = c(2);
+                  NOBS = 5000;
+                  SEED = 3454367;
+                  NREP = 1;
+                  SAVE = EQ_IRT_1_*.dat;
+                  REPSAVE = all;", 
+                  MODELPOPULATION ="%OVERALL%
+                  
+                  [c#1*2];
+                  
+                  f by u1@.9
+                  u2@.9
+                  u3@.9
+                  u4@.9
+                  u5@2.1
+                  u6@1.9
+                  u7@1.7
+                  u8@1.5
+                  u9@1.3
+                  u10@1.1
+                  u11@2.9
+                  u12@2.7
+                  u13@2.5
+                  u14@2.3
+                  u15@2.1;
+                  
+                  
+                  
+                  f@1;
+                  
+                  [u1$1@2.254]
+                  [u2$1@1.125]
+                  [u3$1@1.848]
+                  [u4$1@1.867]
+                  [u5$1@1.867]
+                  [u6$1@1.234]
+                  [u7$1@0.822]
+                  [u8$1@2.368]
+                  [u9$1@2.029]
+                  [u10$1@2.689 ]
+                  [u11$1@ 2.571]
+                  [u12$1@2.75]
+                  [u13$1@3.00]
+                  [u14$1@3.25]
+                  [u15$1@3.5];",
+                  ANALYSIS = 
+                    "TYPE = MIXTURE;
+                  ALGORITHM=INTEGRATION;
+                  PROCESS=8;")
+
+for(i in 1:1){
+  mplusModeler(test, modelout=paste("EQ_IRT_T1_DECREASE",i,".inp",sep=""),  writeData = "never",
+               hashfilename = FALSE)
+}
+```
+
+```{r message=FALSE, warning=TRUE, include=FALSE}
+test<-mplusObject(MONTECARLO = "NAMES=U1-U15; 
+                  GENERATE = U1-U15(1);
+                  CATEGORICAL = U1-U15;
+                  GENCLASSES = c(2);
+                  CLASSES = c(2);
+                  NOBS = 5000;
+                  SEED = 345444;
+                  NREP = 1;
+                  SAVE = EQ_IRT_2_*.dat;
+                  REPSAVE = all;", 
+                  MODELPOPULATION ="%OVERALL%
+                  
+                  [c#1*2];
+                  
+                  f by u1@.84
+                  u2@.84
+                  u3@.84
+                  u4@.84
+                  u5@2.51
+                  u6@1.96
+                  u7@1.75
+                  u8@1.55
+                  u9@1.3
+                  u10@1.6
+                  u11@2.9
+                  u12@2.8
+                  u13@2.6
+                  u14@2.5
+                  u15@2.5;
+                  
+                  
+                  
+                  f@1;
+                  
+                   [u1$1@2.2]
+                  [u2$1@1.1]
+                  [u3$1@1.8]
+                  [u4$1@1.8]
+                  [u5$1@1.8]
+                  [u6$1@1.2]
+                  [u7$1@0.8]
+                  [u8$1@2.3]
+                  [u9$1@2.0]
+                  [u10$1@2.9 ]
+                  [u11$1@ 2.7]
+                  [u12$1@2.0]
+                  [u13$1@2.2]
+                  [u14$1@2.5]
+                  [u15$1@2.7];",
+                  ANALYSIS = 
+                    "TYPE = MIXTURE;
+                  ALGORITHM=INTEGRATION;
+                  PROCESS=8;")
+
+for(i in 1:1){
+  mplusModeler(test, modelout=paste("EQ_IRT_T2_DECREASE",i,".inp",sep=""),  writeData = "never",
+               hashfilename = FALSE)
+}
+
+```
 
 
+```{r message=FALSE, warning=FALSE, results="hide", include=FALSE}
+runModels(filefilter = "EQ_IRT_T")
+```
 
+The data corresponding to index A is stored on the `EQ_IRT_1_1.dat` file and the data corresponding to index B is on the file `EQ_IRT_2_1.dat`. To familiarise ourselves with the data we will have a look at the files:
+
+```{r}
+A<-read.table("EQ_IRT_1_1.dat")
+B<-read.table("EQ_IRT_2_1.dat")
+```
+
+We now tabulate the deprivation rates for each one of the 15 indicators so that we can appreciate the similarities and differences between the two samples. We see that there are just small variations in the first 11 items and larger variations for the remaining four. This is the expected behaviour given that we said that the latent levels of poverty are the same between samples A and B. 
+
+```{r}
+dep_propA<-unlist(lapply(A, function(x) mean(x)))
+dep_propA<-round(dep_propA[1:15]*100,0)
+dep_propA
+
+dep_propB<-unlist(lapply(B, function(x) mean(x)))
+dep_propB<-round(dep_propB[1:15]*100,0)
+dep_propB
+```
+
+The first step in IRT-test equating consist in fitting and IRT model for each one of the two indices. If we think this carefully, this just a more formal way to compare the measurement properties of index A and B. That is, whether the indicators discriminate well between the poor and the not poor and what latent level of severity of poverty each indicator is capturing. 
+
+The models will be fitted on **Mplus** via **R** using the `mplusAutomation()` function [@Hallquist2018]. We will write a more complex function because we will like to offer readers to run simulations to check the properties of equating, this is why we left and `i` in the commands. 
+
+Here we fit the IRT model for both indices. We will create one script for each index (`EQ_IRT_1_1.inp` for index A for example): 
+
+```{r message=FALSE, warning=FALSE, results="hide"}
+test<-mplusObject(VARIABLE = "NAMES=V1-V15; 
+                  USEVARIABLES=V1-V15; 
+                  CATEGORICAL = V1-V15;", 
+                  MODEL= "f by V1-V15*;
+                                  f@1;")
+
+for(i in 1:2){
+  mplusModeler(test, modelout=paste("EQ_IRT_",i,"_1",".inp",sep=""),  writeData = "never",
+               hashfilename = FALSE)
+}
+```
+
+Now we request  `mplusAutomation()` to run both models on **Mplus** for us as follows: 
+
+```{r message=FALSE, warning=FALSE, results="hide"}
+for(i in 1:2){
+runModels(paste("EQ_IRT_",i,"_1",".inp",sep=""))
+}
+```
+
+Finally we read the models using the `readModels()` function. We will store the files in the objects `irt_1` and `irt_2` and then we will put them in a list so that we can put them in the correct format for the equating (i.e. the irt parameters *a, b and c* of each item need to be in columns). So, using `lapply()` we can put them in the correct format and store them on the `irtS` list. 
+
+```{r}
+irt_1<-readModels(filefilter ="EQ_IRT_1")
+irt_2<-readModels(filefilter ="EQ_IRT_2")
+
+irtS<-list(irt_1,irt_2)
+
+
+irtS<-lapply(irtS, function(x) {
+  x<-x$parameters$irt.parameterization
+  x<-x[1:30,]
+  x<-data.frame(a=x$est[1:15],b=x$est[16:30],c=0)
+  x
+}
+)
+```
+
+The `irtS` list contains the paremets of indices A and B. We will rename them to facilitate the specification using the excellent `SNSequate` package [@Gonzalez2014]. We need to tell `SNSequate` the dataframes containing the IRT-parameters of each test and also which items are the *anchors* -common items-. 
+
+
+```{r message=FALSE, warning=FALSE}
+library(SNSequate)
+parm.a<-irtS[[1]]
+parm.b<-irtS[[2]]
+comitems<-(1:11)
+parm <- cbind(parm.a, parm.b)
+```
+
+The key function to conduct IRT-equating is `irt.link()`, this function uses the parameters, takes into account the common items and considers which kind of IRT we want to use, in this case a two-parameter model. In this case we will use 1.7 for the constant D, as it is common practice. 
+
+```{r message=FALSE, warning=FALSE}
+eqconst<-irt.link(parm, comitems, model = "2PL", icc = "logistic", D = 1.7)
+```
+
+The object `eqconst` contains the estimated constants for equating: a and b. It will estimate these constants using different methods (mean-mean, StockLord, Haebara). For this example, we will use the constants from the StockLord method. We simply extract the constants as follows: 
+
+```{r}
+Sl_a<-eqconst$StockLord[1]  
+Sl_b<-eqconst$StockLord[2] 
+```
+
+The next step is to apply the contants to the IRT coefficients. What we need to do is to rescale the irt-parameters of test A -because we are equating test A with B- using the two constants as follows: 
+
+```{r message=FALSE, warning=FALSE}
+irtS[[1]]$a<-irtS[[1]]$a/Sl_a
+irtS[[1]]$b<-Sl_a*(irtS[[1]]$b)+Sl_b
+irtS[[1]]
+```
+
+Now we have equivalent IRT-parameters so the latent scores can be fully compared. Section XX described two types of equating: observed and true. We will impliement both below. For the true scale equating we simply say the names of the objects with the IRT-parameters, the method and we will use the following defaults for the scalling parameters $A=1$ and $B=0$. We also specify the common items. We store the results on the `true-eqscale` object. For the observed equating we need to specify the `theta_points`, i.e. the standarised values of the latent poverty level. Then we apply the function changing the method and adding the theta points. We store the output on the `obs_eqscale` object. 
+
+```{r message=FALSE, warning=FALSE}
+theta_points=c(-5,-4,-3,-2,-1,0,1,2,3,4,5)
+
+true_eqscale<-irt.eq(15, irtS[[1]], irtS[[2]], method="TS", A=1, B=0, common=comitems)
+obs_eqscale<-irt.eq(15, irtS[[1]], irtS[[2]], theta_points, method="OS", common=comitems,
+                                             A=1, B=0)
+
+```
+
+We now do some manipulations to the `true_mean` object to extract the equated scores of form A in terms of B (`true_eqscale$tau_y`)  and the latent values of poverty for each equated score (`true_eqscale$theta_equivalent`). We create a simple table to compare the equated score A in terms of B. We observed that the values of A in terms of B tend to be higher. Why is that? Remeber that A had more severe indicators. That means that being deprived under test B was less severe. The number of deprivations in test A and B do not reflect the same severity levels, the latent severity under test A requires a higher observed deprivation score.  
+
+Sometimes is tricky to interpret these findings are there are double negatives. One way to think about this is by thinking in terms of an extreme situation. Imagine that test A is way more severe than test B, for example, test A uses indicators like having dirt floor, lacking electricity, unsafe source of water, walls made from cardboard to identify deprivation relative to B that uses indicators like floor without tiles, cant' afford electricity, clean water connected to the property, lacking walls made from cement or bricks. For the same living standards, a score of 4 in test A denotes a more extreme situation than a score equal to 4 in test B. Thus, the same severity of A in terms of B should be way higher. In the current example we have something similar but less dramatic. 
+
+```{r message=FALSE, warning=FALSE}
+true_mean<-data.frame(Score.AintermsofB=true_eqscale$tau_y, Latent=true_eqscale$theta_equivalent)
+true_mean$ScoreB<-0:15
+true_mean
+```
+
+Now we will do the same extraction process for the observed score. We extract the values of the A score in terms of B (`obs_eqscale$e_Y_x`). We find that we get similar results. The observed score of A in terms of B is higher than the score of index B. 
+
+```{r message=FALSE, warning=FALSE}
+obs_mean<-data.frame(Score.AintermsofB=obs_eqscale$e_Y_x, obs_mean=c(0:15))
+obs_mean
+```
+
+To see these findings from a different perspective, we will plot the results. The first plot, uses a 45 degree line to denote a situation where scores A and B are the same, i.e. a score of 3 measures the same underlying level of poverty. The pink line is the score A in terms of B. We see that the pink line is almmost always below the 45 degree line. This means that the rescaled score A is always higher than B. For the same severity, someone assessed using index A has a higher observed deprivation score. 
+
+```{r message=FALSE, warning=FALSE}
+library(ggplot2)
+
+ggplot(true_mean,aes(Score.AintermsofB,ScoreB)) + geom_line(size=2, color="pink") +  xlab("Measure A (scaled in B-terms)") + ylab("Measure B") + theme_bw() +  geom_abline(intercept = 0, slope = 1) +
+  scale_y_continuous( limits = c(-.1,15), expand = c(0,0), breaks = seq(1, 15, 1) ) + 
+  scale_x_continuous( limits = c(-.1,15), expand = c(0,0), breaks = seq(1, 15, 1)) 
+```
+
+```{r message=FALSE, warning=FALSE, results="hide", include=FALSE}
+jpeg("EQ_plot1.jpg", units="cm", width=10, height=10, res=300)
+ggplot(true_mean,aes(Score.AintermsofB,ScoreB)) + geom_line(size=2, color="pink") +  xlab("Measure A (scaled in B-terms)") + ylab("Measure B") + theme_bw() +  geom_abline(intercept = 0, slope = 1) +
+  scale_y_continuous( limits = c(-.1,15), expand = c(0,0), breaks = seq(1, 15, 1) ) + 
+  scale_x_continuous( limits = c(-.1,15), expand = c(0,0), breaks = seq(1, 15, 1)) 
+dev.off()
+```
+
+
+```{r message=FALSE, warning=FALSE, results="hide", include=FALSE}
+library(reshape2)
+
+mm<-melt(true_mean, id="Latent")
+
+ggplot(mm,aes(x=Latent,y=value, group=variable, colour=variable)) + geom_line( size=2) + 
+  xlab("Latent Poverty") + ylab("Scales") + theme_bw() 
+
+```
 
 
 ## Real-data example
+
+
