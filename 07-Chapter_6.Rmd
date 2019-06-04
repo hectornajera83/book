@@ -349,15 +349,9 @@ obs_mean<-data.frame(Score.AintermsofB=obs_eqscale$e_Y_x, obs_mean=c(0:15))
 obs_mean
 ```
 
-To see these findings from a different perspective, we will plot the results. The first plot, uses a 45 degree line to denote a situation where scores A and B are the same, i.e. a score of 3 measures the same underlying level of poverty. The pink line is the score A in terms of B. We see that the pink line is almmost always below the 45 degree line. This means that the rescaled score A is always higher than B. For the same severity, someone assessed using index A has a higher observed deprivation score. 
+To see these findings from a different perspective, we will plot the results (See Figure \@ref(fig:eqfig1). The first plot, uses a 45 degree line to denote a situation where scores A and B are the same, i.e. a score of 3 measures the same underlying level of poverty. The pink line is the score A in terms of B. We see that the pink line is almmost always below the 45 degree line. This means that the rescaled score A is always higher than B. For the same severity, someone assessed using index A has a higher observed deprivation score. 
 
-```{r message=FALSE, warning=FALSE}
-library(ggplot2)
 
-ggplot(true_mean,aes(Score.AintermsofB,ScoreB)) + geom_line(size=2, color="pink") +  xlab("Measure A (scaled in B-terms)") + ylab("Measure B") + theme_bw() +  geom_abline(intercept = 0, slope = 1) +
-  scale_y_continuous( limits = c(-.1,15), expand = c(0,0), breaks = seq(1, 15, 1) ) + 
-  scale_x_continuous( limits = c(-.1,15), expand = c(0,0), breaks = seq(1, 15, 1)) 
-```
 
 ```{r message=FALSE, warning=FALSE, results="hide", include=FALSE}
 jpeg("EQ_plot1.jpg", units="cm", width=10, height=10, res=300)
@@ -366,6 +360,12 @@ ggplot(true_mean,aes(Score.AintermsofB,ScoreB)) + geom_line(size=2, color="pink"
   scale_x_continuous( limits = c(-.1,15), expand = c(0,0), breaks = seq(1, 15, 1)) 
 dev.off()
 ```
+
+
+```{r eqfig1, echo=TRUE, message=F, fig.cap="Comparison of the rescaled index A -in terms of B- with the index B."}
+knitr::include_graphics("EQ_plot1.jpg")
+```
+
 
 
 ```{r message=FALSE, warning=FALSE, results="hide", include=FALSE}

@@ -431,13 +431,14 @@ obs_mean</code></pre>
 ## 14       13.30906666       13
 ## 15       14.19724649       14
 ## 16       15.12263638       15</code></pre>
-<p>To see these findings from a different perspective, we will plot the results. The first plot, uses a 45 degree line to denote a situation where scores A and B are the same, i.e. a score of 3 measures the same underlying level of poverty. The pink line is the score A in terms of B. We see that the pink line is almmost always below the 45 degree line. This means that the rescaled score A is always higher than B. For the same severity, someone assessed using index A has a higher observed deprivation score.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(ggplot2)
-
-<span class="kw">ggplot</span>(true_mean,<span class="kw">aes</span>(Score.AintermsofB,ScoreB)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_line</span>(<span class="dt">size=</span><span class="dv">2</span>, <span class="dt">color=</span><span class="st">&quot;pink&quot;</span>) <span class="op">+</span><span class="st">  </span><span class="kw">xlab</span>(<span class="st">&quot;Measure A (scaled in B-terms)&quot;</span>) <span class="op">+</span><span class="st"> </span><span class="kw">ylab</span>(<span class="st">&quot;Measure B&quot;</span>) <span class="op">+</span><span class="st"> </span><span class="kw">theme_bw</span>() <span class="op">+</span><span class="st">  </span><span class="kw">geom_abline</span>(<span class="dt">intercept =</span> <span class="dv">0</span>, <span class="dt">slope =</span> <span class="dv">1</span>) <span class="op">+</span>
-<span class="st">  </span><span class="kw">scale_y_continuous</span>( <span class="dt">limits =</span> <span class="kw">c</span>(<span class="op">-</span>.<span class="dv">1</span>,<span class="dv">15</span>), <span class="dt">expand =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">0</span>), <span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="dv">1</span>, <span class="dv">15</span>, <span class="dv">1</span>) ) <span class="op">+</span><span class="st"> </span>
-<span class="st">  </span><span class="kw">scale_x_continuous</span>( <span class="dt">limits =</span> <span class="kw">c</span>(<span class="op">-</span>.<span class="dv">1</span>,<span class="dv">15</span>), <span class="dt">expand =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">0</span>), <span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="dv">1</span>, <span class="dv">15</span>, <span class="dv">1</span>)) </code></pre>
-<p><img src="PM_Book_files/figure-html/unnamed-chunk-100-1.png" width="672" /></p>
+<p>To see these findings from a different perspective, we will plot the results (See Figure <a href="scale-equating-and-linking.html#fig:eqfig1">6.2</a>. The first plot, uses a 45 degree line to denote a situation where scores A and B are the same, i.e. a score of 3 measures the same underlying level of poverty. The pink line is the score A in terms of B. We see that the pink line is almmost always below the 45 degree line. This means that the rescaled score A is always higher than B. For the same severity, someone assessed using index A has a higher observed deprivation score.</p>
+<pre class="sourceCode r"><code class="sourceCode r">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&quot;EQ_plot1.jpg&quot;</span>)</code></pre>
+<div class="figure"><span id="fig:eqfig1"></span>
+<img src="EQ_plot1.jpg" alt="Comparison of the rescaled index A -in terms of B- with the index B." width="590" />
+<p class="caption">
+Figure 6.2: Comparison of the rescaled index A -in terms of B- with the index B.
+</p>
+</div>
 </div>
 <div id="real-data-example-2" class="section level2">
 <h2><span class="header-section-number">6.4</span> Real-data example</h2>
