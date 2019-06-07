@@ -29,7 +29,7 @@ knitr::include_graphics("Diagram_EQ_1.png")
 
 One crucial aspect of the example above is that if we have to tests with a common subset of items, then we can assess not only the effect of the updating of the scale but also, we could link both measures and make them comparable across time points. We will see that for scale equating to work we need to identify as many **anchors** as we can, i.e. items that respect measurement invariance across tests. In this case we have seven potential candidates. In the following we introduce formally the concepts and methods to conduct scale equating. We will, of course, discuss some limitations of this approach as it might be sensible in all situations or desirable. 
 
-## Theory of scale equating 
+## Theory of scale equating [#Theoryequating]
 
 ### Workflow in scale equating
 
@@ -92,8 +92,31 @@ Observed-score equating is based on the actual marginal score distributions (i.e
 
 True-score equating draws on the idea of a true score from Classical Test Theory (CTT). The whole idea is that people with the same level of latent poverty $\theta_j$ should have an equivalent true score, regardless the differences between tests. First, a latent poverty level ($\theta_j$, where $j=1$) is associated with a true score via the Newton-Rapson method. Then the true score of the A index is mapped into the index B using the same latent poverty level ($\theta_j$, where $j=2$). This procedure is often applied for each integer of the deprivation score. 
 
+## Data and designs in test equating
 
-## Example of IRT equating with simulated data in R
+One of the major challenges in equating is disentageling the differences in severity between tests from the differences in latent poverty levels across the populations subject to the measurement. Equating aims to correct differences in severity across test so we need a design that help us to assess the extent to which we are comparing populations with similar levels of latent poverty. 
+
+The simplest design is applying, for example, two different indices to the same population. So we can the latent values of poverty measured by each scale. However, this is not very useful because we often want to compare different populations or time points. One common solution to this problem is to use an **anchor** scale, i.e. the scores of the common items between populations. This will tell us the difference in latent poverty levels between two populations. It is essential that this **anchor** scales reflects the severity of the whole test. Below we briefly describe the different designs. We, however, note that only the last two designs are likely to make sanse in poverty research and we will focus on these two. 
+
+### Single group design
+
+This design uses a unique population. We could implement two scales A and B. If we measure each person in the sample using both forms we could easily equate the tests as we are measuring the same levels of latent poverty. 
+
+### Equivalent groups design
+
+Instead of applying the two measures to the population, equivalent groups design applies one scale to a random -representative- sample of the population and the second scale to a different sample. 
+
+### Non Equivalent Groups with Anchor test Design
+
+The simplest case of the Non Equivalent Groups with Anchor test Design (NEAT) consist in having two popualtions -sampled independently-. Poverty is measured using different scales (A and B) but there is a common **anchor** sub-index that is included in both A and B. In practice, we will have two countries with different indices but with a subset of common items. As we discussed in Section \@ref(Theoryequating), it is not enough to use the same items but to make certain that the items respect measurement invariance. Another example of a NEAT design is when we have two measures in two different time points with common items in $t1$ and $t2$. Our real data example uses data from the UK Family Resources Survey (FRS) to illustrate how the child deprivation index can be equated despite four indicators were dropped from the original measure. In this version of the book we will focus on this kind of design. 
+
+
+### Non Equivalent Groups with Covariates Design
+
+The Non Equivalent Groups with Covariates Design (NEC) is an alternative to the NEAT design when there are no **anchors** and we have some ancilliary data. A vector of auxiliary data $Z$ is used to adjust the differences across different indices. This variant is uselful inasmuch as we have a good set of predictos of poverty as we will be adjusting differences in latent poverty. One of the most recent developments in equating is Bayesian Nonparametric Equating (BPN), which also allows for the inclusion of covariates [@Gonzalez2017]. 
+
+
+## Example of IRT equating (NEAT design) with simulated data in R
 
 To introduce IRT equating we will use two simulated indices (**A** and **B**) that capture a the simplest situation in equating and in poverty measurement. Both indices are comprised of 15 binary indicators ($n=5000$). The first 11 indicators are the same in that they are measurement invariance and have the same severities and discrimination values. The remaining four indicators have different severities. The indicators of index A are more severe than the indicators of index B. This is a situation in which two very similar indices are applied to the same population -with no changes in the underlying level of poverty- but one is more severe than another. So, it is not possible to compare the observed deprivation scores directly. This could be also depicting a situation where two similar countries with similar living standards are compared using similar indices. 
 
@@ -368,8 +391,6 @@ ggplot(true_mean,aes(Score.AintermsofB,ScoreB)) + geom_line(size=2, color="pink"
   scale_x_continuous( limits = c(-.1,15), expand = c(0,0), breaks = seq(1, 15, 1)) 
 ```
 
-
-
 ```{r message=FALSE, warning=FALSE, results="hide", include=FALSE}
 library(reshape2)
 
@@ -382,5 +403,450 @@ ggplot(mm,aes(x=Latent,y=value, group=variable, colour=variable)) + geom_line( s
 
 
 ## Real-data example
+
+For our example we will use data from the UK Family Resources Survey (FRS). This survey collects data on consensual material deprivation, drawing upon the Poverty and Social Exclusion (PSE) approach, and it is used to estimate the UK child deprivation index. 
+
+### Step 1: Finding the anchors. MI Analysis
+
+First we need to find the achors -invariant common items- across years. For this we will use the alligment method in **Mplus** to find the items that fulfill approximate MI. *Warning: This analysis will take quite some time to run. On my computer, it took 5 minutes.*. We already have conducted a MI analysis for the FRS data (See Chapter \@ref(Chapter-5)). We strongly recommend read that chapter before this one but in case you have skipped the analysis, we will run the model again. 
+
+To run the analysis we create the following `MIFRS_analysis.inp` file stored on the `test` object. The use variables command has the 17 items that are included across all years. So that we know from this subset which items could be used as **anchors**. Because the dimensionality of this scale is unkown, but we know that it is highly reliable, we will assume that a large part of the variance is accounted by for the higher order factor. We have 10 years, so we tell Mplus to use 10 classes to conduct the MI analysis across time points.  
+
+```{r eval=FALSE}
+library(MplusAutomation)
+
+test<-mplusObject(
+  TITLE = "MI Analysis FRS data;",
+  VARIABLE = "
+  Names are 
+     gross4 FRSYear dep_ADDDEC dep_ADDEPLES dep_ADDHOL dep_ADDINS dep_ADDMEL
+     dep_ADDMON dep_ADDSHOE dep_ADEPFUR dep_AF1 dep_AFDEP2 dep_HOUSHE1
+     dep_CDELPLY dep_CDEPBED dep_CDEPCEL dep_CDEPEQP dep_CDEPHOL dep_CDEPLES
+     dep_CDEPSUM dep_CDEPTEA dep_CDEPTRP dep_CPLAY dep_CDEPACT dep_CDEPVEG
+     dep_CDPCOAT dep_ADBTBL id;
+  Missing are all (-9999) ; 
+
+usevariables = dep_ADDDEC  dep_ADDHOL dep_ADDINS
+      dep_ADDMON  dep_ADEPFUR dep_AF1 dep_AFDEP2 dep_HOUSHE1
+     dep_CDELPLY dep_CDEPBED dep_CDEPCEL dep_CDEPEQP dep_CDEPHOL dep_CDEPLES 
+     dep_CDEPTEA dep_CDEPTRP dep_CPLAY;
+
+categorical = dep_ADDDEC  dep_ADDHOL dep_ADDINS
+      dep_ADDMON  dep_ADEPFUR dep_AF1 dep_AFDEP2 dep_HOUSHE1
+     dep_CDELPLY dep_CDEPBED dep_CDEPCEL dep_CDEPEQP dep_CDEPHOL dep_CDEPLES 
+     dep_CDEPTEA dep_CDEPTRP dep_CPLAY;
+
+classes = c(10);
+knownclass = c(FRSYear = 1 2 3 4 5 6 7 8 9 10);
+
+weight=gross4;
+
+cluster=id;",
+
+ANALYSIS = "type = mixture complex;
+          estimator = ml;
+          alignment = fixed;
+          ALGORITHM=INTEGRATION;
+          Process=8;",
+
+MODEL = "
+          %overall%
+          f by dep_ADDDEC  dep_ADDHOL dep_ADDINS
+      dep_ADDMON  dep_ADEPFUR dep_AF1 dep_AFDEP2 dep_HOUSHE1
+     dep_CDELPLY dep_CDEPBED dep_CDEPCEL dep_CDEPEQP dep_CDEPHOL dep_CDEPLES 
+     dep_CDEPTEA dep_CDEPTRP dep_CPLAY;",
+OUTPUT = "tech1 tech8 align;",
+
+PLOT = "type = plot2;")
+     
+     
+res <- mplusModeler(test, modelout = "MIFRS_analysis.inp", 
+                    writeData = "never", 
+                    hashfilename = FALSE, 
+                    dataout="FRS_mplusprep.dat", run = 1L)     
+```
+
+The output of the MI analysis is not properly read in R. So we will simply open the `MIFRS_analysis.out` file and paste the summary of the MI analysis. In rows we have the Intercepts and the loadings of each item. The number corresponds to the FRS year variable in order. In brackets we have the parameters that are non-invariant for a given year. For example, the intercept of the first item is non-invariant in the first year but invariante for the rest. The second item's threshold is invariant across all years. We see that this scale fulfills approximate measurement invariance. We appreciate that there is a subset of items that can be used as common items in that they have partial or full scalar invariance. These items are: *1,3,5,6,7,9,10,11,16 and 17*. 
+
+```
+APPROXIMATE MEASUREMENT INVARIANCE (NONINVARIANCE) FOR GROUPS
+
+ Intercepts/Thresholds
+   DEP_ADDD$1  (1) 2 3 4 5 6 7 8 9 10
+   DEP_ADDH$1  1 2 3 4 5 6 7 8 9 10
+   DEP_ADDI$1  1 2 3 4 5 6 7 8 9 10
+   DEP_ADDM$1  (1) (2) (3) (4) 5 6 7 8 9 (10)
+   DEP_ADEP$1  1 2 3 4 5 6 7 8 9 10
+   DEP_AF1$1   1 2 3 4 5 6 7 8 9 10
+   DEP_AFDE$1  1 2 3 4 5 6 7 8 9 10
+   DEP_HOUS$1  (1) (2) 3 4 5 6 7 8 9 10
+   DEP_CDEL$1  (1) (2) (3) (4) (5) 6 7 8 9 10
+   DEP_CDEP$1  1 2 3 4 5 6 7 8 9 10
+   DEP_CDEP$1  1 2 3 4 5 6 7 8 9 10
+   DEP_CDEP$1  1 2 3 4 5 6 7 8 (9) 10
+   DEP_CDEP$1  (1) 2 3 4 5 6 7 8 9 10
+   DEP_CDEP$1  1 2 3 4 5 6 7 8 9 (10)
+   DEP_CDEP$1  1 2 3 4 5 6 7 8 9 10
+   DEP_CDEP$1  1 2 3 4 5 6 7 8 9 10
+   DEP_CPLA$1  1 2 3 4 5 6 7 8 9 10
+
+ Loadings for F
+   DEP_ADDD    (1) 2 3 4 5 6 7 8 9 10
+   DEP_ADDH    (1) (2) (3) (4) 5 6 7 8 9 10
+   DEP_ADDI    1 2 3 4 5 6 7 8 9 10
+   DEP_ADDM    1 2 3 4 5 (6) 7 8 9 (10)
+   DEP_ADEP    1 2 3 4 5 6 7 8 9 10
+   DEP_AF1     1 2 3 4 5 6 7 8 9 10
+   DEP_AFDE    1 2 3 4 5 6 7 8 9 10
+   DEP_HOUS    1 2 (3) (4) 5 6 7 8 9 10
+   DEP_CDEL    1 2 3 4 5 6 7 8 9 10
+   DEP_CDEP    1 2 3 4 5 6 7 8 9 10
+   DEP_CDEP    1 2 3 4 5 6 7 8 9 10
+   DEP_CDEP    1 2 3 4 5 6 7 8 (9) 10
+   DEP_CDEP    1 2 3 4 5 6 7 8 9 10
+   DEP_CDEP    (1) 2 3 4 5 6 7 8 9 10
+   DEP_CDEP    1 2 3 4 5 6 7 (8) (9) 10
+   DEP_CDEP    1 2 3 4 5 6 7 8 9 10
+   DEP_CPLA    1 2 3 4 5 6 7 8 9 10
+```
+
+### Step 2: Extract IRT parameters for each of 10 indices 
+
+Now we need the IRT parameters of the 21 items of each index. Yes, we need the full scale but remember that we have 10 **anchors**. We could use the `MplusAutomation` package to estimate the 10 models. First we need to create an iterative syntax that will run the same 2-parameter IRT for the first 7 years -they have the same items-. Then we will do the same for years 8, 9 and 10. We will save both files. The first file looks as follows: 
+
+
+```
+[[init]]
+iterators = i;
+i = 1:7;
+filename = FRS_IRT_[[i]].inp;
+
+outputDirectory = "C:../PM Book";
+
+[[/init]]
+DATA : FILE = FRS_mplusprep[[i]].dat;
+
+Variable:
+  Names are 
+     gross4 FRSYear dep_ADDDEC dep_ADDEPLES dep_ADDHOL dep_ADDINS dep_ADDMEL
+     dep_ADDMON dep_ADDSHOE dep_ADEPFUR dep_AF1 dep_AFDEP2 dep_HOUSHE1
+     dep_CDELPLY dep_CDEPBED dep_CDEPCEL dep_CDEPEQP dep_CDEPHOL dep_CDEPLES
+     dep_CDEPSUM dep_CDEPTEA dep_CDEPTRP dep_CPLAY dep_CDEPACT dep_CDEPVEG
+     dep_CDPCOAT dep_ADBTBL id;
+  Missing are all (-9999) ; 
+
+usevariables = dep_ADDDEC  dep_ADDHOL dep_ADDINS
+      dep_ADDMON  dep_ADEPFUR dep_AF1 dep_AFDEP2 dep_HOUSHE1
+     dep_CDELPLY dep_CDEPBED dep_CDEPCEL dep_CDEPEQP dep_CDEPHOL dep_CDEPLES 
+     dep_CDEPTEA dep_CDEPTRP dep_CPLAY dep_CDEPSUM dep_ADDEPLES dep_ADDMEL dep_ADDSHOE;
+
+categorical = dep_ADDDEC  dep_ADDHOL dep_ADDINS
+      dep_ADDMON  dep_ADEPFUR dep_AF1 dep_AFDEP2 dep_HOUSHE1
+     dep_CDELPLY dep_CDEPBED dep_CDEPCEL dep_CDEPEQP dep_CDEPHOL dep_CDEPLES 
+     dep_CDEPTEA dep_CDEPTRP dep_CPLAY dep_CDEPSUM dep_ADDEPLES dep_ADDMEL dep_ADDSHOE;
+
+weight=gross4;
+
+cluster=id;
+
+
+Analysis:  type = complex;
+          estimator = ml;
+          ALGORITHM=INTEGRATION;
+          Process=8;
+
+model:
+
+          f by dep_ADDDEC*  dep_ADDHOL dep_ADDINS
+      dep_ADDMON  dep_ADEPFUR dep_AF1 dep_AFDEP2 dep_HOUSHE1
+     dep_CDELPLY dep_CDEPBED dep_CDEPCEL dep_CDEPEQP dep_CDEPHOL dep_CDEPLES 
+     dep_CDEPTEA dep_CDEPTRP dep_CPLAY dep_CDEPSUM dep_ADDEPLES dep_ADDMEL dep_ADDSHOE;
+     f@1;
+
+
+  output:
+  		tech1 tech8;
+
+  plot:
+          type = plot2;
+```
+
+
+The second file, for models 8, 9 and 10, looks like: 
+
+```
+[[init]]
+iterators = i;
+i = 8:10;
+filename = FRS_IRT_[[i]].inp;
+
+outputDirectory = "C:../PM Book";
+
+[[/init]]
+DATA : FILE = FRS_mplusprep[[i]].dat;
+
+Variable:
+  Names are 
+     gross4 FRSYear dep_ADDDEC dep_ADDEPLES dep_ADDHOL dep_ADDINS dep_ADDMEL
+     dep_ADDMON dep_ADDSHOE dep_ADEPFUR dep_AF1 dep_AFDEP2 dep_HOUSHE1
+     dep_CDELPLY dep_CDEPBED dep_CDEPCEL dep_CDEPEQP dep_CDEPHOL dep_CDEPLES
+     dep_CDEPSUM dep_CDEPTEA dep_CDEPTRP dep_CPLAY dep_CDEPACT dep_CDEPVEG
+     dep_CDPCOAT dep_ADBTBL id;
+  Missing are all (-9999) ; 
+
+usevariables = dep_ADDDEC  dep_ADDHOL dep_ADDINS
+      dep_ADDMON  dep_ADEPFUR dep_AF1 dep_AFDEP2 dep_HOUSHE1
+     dep_CDELPLY dep_CDEPBED dep_CDEPCEL dep_CDEPEQP dep_CDEPHOL dep_CDEPLES 
+      dep_CDEPTEA dep_CDEPTRP dep_CPLAY dep_CDEPACT dep_CDEPVEG
+     dep_CDPCOAT dep_ADBTBL;
+
+categorical = dep_ADDDEC  dep_ADDHOL dep_ADDINS
+      dep_ADDMON  dep_ADEPFUR dep_AF1 dep_AFDEP2 dep_HOUSHE1
+     dep_CDELPLY dep_CDEPBED dep_CDEPCEL dep_CDEPEQP dep_CDEPHOL dep_CDEPLES 
+     dep_CDEPTEA dep_CDEPTRP dep_CPLAY dep_CDEPACT dep_CDEPVEG
+     dep_CDPCOAT dep_ADBTBL;
+
+weight=gross4;
+
+cluster=id;
+
+subpopulation = FRSYear==8;
+
+Analysis:  type = complex;
+          estimator = ml;
+          ALGORITHM=INTEGRATION;
+          Process=8;
+
+model:
+
+          f by dep_ADDDEC*  dep_ADDHOL dep_ADDINS
+      dep_ADDMON  dep_ADEPFUR dep_AF1 dep_AFDEP2 dep_HOUSHE1
+     dep_CDELPLY dep_CDEPBED dep_CDEPCEL dep_CDEPEQP dep_CDEPHOL dep_CDEPLES 
+     dep_CDEPTEA dep_CDEPTRP dep_CPLAY dep_CDEPACT dep_CDEPVEG
+     dep_CDPCOAT dep_ADBTBL;
+     f@1;
+
+
+  output:
+  		tech1 tech8;
+
+  plot:
+          type = plot2;
+```
+We create the `*.inp` files witih the `createModels` function using the `Mplusautomation` package:
+
+```{r warning=FALSE, message=FALSE, results='hide'}
+createModels("FRS_IRT_models1to7.txt")
+createModels("FRS_IRT_models8to10.txt")
+```
+
+Running the 10 2-parameter IRT models (Be patient because it will take few minutes to run all the models). We will put all the parameters on the list `MI_coefs`. 
+
+```{r warning=FALSE, message=FALSE, eval=FALSE}
+runModels(filefilter = "FRS_IRT_")
+```
+
+```{r warning=FALSE, message=FALSE, results = 'hide'}
+MI_coefs<-readModels(filefilter ="frs_irt")
+
+MI_coefs<-lapply(MI_coefs, function(x) {
+  x<-x$parameters$irt.parameterization
+  x<-x[1:42,]
+  x<-data.frame(a=x$est[1:21],b=x$est[22:42],c=0)
+  x
+}
+)
+```
+
+### Step 3: Estimating the constants for equating
+
+We will create a list with the parameters and use the first year as reference (*2013/2014*). So we will constracting pairs of years were the last available year will remain fixed.
+
+```{r warning=FALSE, message=FALSE,}
+MI_coefs<-list(MI_coefs[[1]],MI_coefs[[3]],MI_coefs[[4]],MI_coefs[[5]],MI_coefs[[6]],MI_coefs[[7]],MI_coefs[[8]],MI_coefs[[9]],MI_coefs[[10]],MI_coefs[[2]])
+
+parm_2<-cbind(MI_coefs[[1]], MI_coefs[[10]])
+parm_3<-cbind(MI_coefs[[2]], MI_coefs[[10]])
+parm_4<-cbind(MI_coefs[[3]], MI_coefs[[10]])
+parm_5<-cbind(MI_coefs[[4]], MI_coefs[[10]])
+parm_6<-cbind(MI_coefs[[5]], MI_coefs[[10]])
+parm_7<-cbind(MI_coefs[[6]], MI_coefs[[10]])
+parm_8<-cbind(MI_coefs[[7]], MI_coefs[[10]])
+parm_9<-cbind(MI_coefs[[8]], MI_coefs[[10]])
+parm_10<-cbind(MI_coefs[[9]], MI_coefs[[10]])
+
+parm<-list(parm_2,parm_3,parm_4,parm_5,parm_6,parm_7,parm_8,parm_9,parm_10)
+comitems<- c(1,3,5,6,7,9,10,11,16,17)
+```
+
+We now use the function `irt.link()` from the package `SNSequate` to find the equating parameters "a" and "b" using 2013/3014 as reference year, i.e. all the deprivation scores will be in terms of  2013/2014. 
+
+```{r}
+eqconst<-lapply(1:9, function(i) irt.link(parm[[i]], comitems, model = "2PL", icc = "logistic", D = 1.7))
+```
+
+Once we have found the parameters we can extract them. For this example we will use the Haebara estimates for this example. Yet, you could check by yourself that there are very minimal using other methods. 
+
+```{r}
+H<-do.call("rbind", lapply(eqconst, "[[", 4))
+H<-split(H, seq(nrow(H)))
+```
+
+### Step 4: Applying the constants and obtaning equated scores
+
+We need then to apply the constants to each IRT-coefs dataset 
+
+```{r}
+FRSIRT <- MI_coefs[2:10]
+
+parm.x<-lapply(1:9, function(i) {
+  FRSIRT[[i]]$a<-FRSIRT[[i]]$a/H[[i]][1]
+  FRSIRT[[i]]$b<-H[[i]][1]*(FRSIRT[[i]]$b)+H[[i]][2]
+  FRSIRT[[i]]
+} )
+```
+
+```{r}
+theta_points=c(-5,-4,-3,-2,-1,0,1,2,3,4,5)
+
+param_x<-lapply(parm.x[1:9], function(x) list(a=x$a,b=x$b,c=x$c))
+param_y<-lapply(1:9, function(x) list(a=MI_coefs[[1]]$a,b=MI_coefs[[1]]$b,c=MI_coefs[[1]]$c))
+
+true_eqscale<-lapply(1:9, function(i) irt.eq(21, param_x[[i]], param_y[[i]], method="TS", A=1, B=0, common=comitems))
+
+obs_eqscale<-lapply(1:9, function(i) irt.eq(21, param_x[[i]], param_y[[i]], theta_points, method="OS", common=comitems,
+                                             A=1, B=0))
+```
+
+Observed score equating. We observe that despite the changes to the child deprivation score, the scale is very stable across years. There are minor differences across years when we round the numbers. We appreciate, however, that the years 2007-2011 show substative differences relative to 2013/2014. Particularly, among the severely deprived population. For the same latent severity of poverty, a deprivation scroe equal to 8 in 2009/2010 is equal to a score of 9 in 2013/2014.  
+
+```{r}
+obs_mean<-lapply(obs_eqscale, function(x) data.frame(score.xiny=x$e_Y_x))
+obs_mean<-as.data.frame(obs_mean)
+names(obs_mean)<-c("2004/2005","2005/2006","2006/2007","2007/2008","2008/2009","2009/2010","2010/2011","2011/2012",
+                   "2012/2013")
+obs_mean$Reference<-0:21
+round(obs_mean,0)
+```
+
+Plotting the results. See plot \@Ref(fig:frsobseq)
+
+```{r frsobseq, echo=TRUE, message=F, fig.cap="Comparison of the rescaled indices. Reference year: 2013/2014"}
+library(reshape2)
+mm<-melt(obs_mean, id="Reference")
+
+ggplot(mm,aes(x=Reference,y=value, group=variable, colour=variable)) + geom_line(aes(linetype=variable), size=2) +
+  xlab("2013") + ylab("Rescaled") + theme_bw() +    scale_y_continuous( limits = c(-1.5,8),  breaks = seq(-2, 8, 1) ) + 
+  geom_abline(slope=1, intercept=0) + theme(legend.position="bottom") +
+  scale_x_continuous( limits = c(-1.5,8), breaks = seq(-2, 8, 1))
+```
+
+```{r message=FALSE, warning=FALSE, results="hide", include=FALSE}
+jpeg("frsobseq.jpg", units="cm", width=10, height=10, res=300)
+ggplot(mm,aes(x=Reference,y=value, group=variable, colour=variable)) + geom_line(aes(linetype=variable), size=2) +
+  xlab("2004") + ylab("Rescaled") + theme_bw() +    scale_y_continuous( limits = c(-1.5,8),  breaks = seq(-2, 8, 1) ) + 
+  geom_abline(slope=1, intercept=0) + theme(legend.position="bottom") +
+  scale_x_continuous( limits = c(-1.5,8), breaks = seq(-2, 8, 1))
+dev.off()
+```
+
+
+### Finding equated poverty lines
+
+Now that we have put deprivation scores in terms of the reference year, we can estimate poverty using adjusted poverty lines. This will help us to assess how poverty changes when we used a fixed poverty line relative to when we use a equated one. The adjusted poverty line transforms the value of reference, lets say 3, into an adjusted value, i.e. what is 3 in a given year in terms of 2013/2014. To asses this, first we will paste the adjusted deprivation scores by year. So we will creata the `mm` data frame. 
+
+```{r}
+library(reshape2)
+
+mm$FRSYear[mm$variable=="2004/2005"]<-1
+mm$FRSYear[mm$variable=="2005/2006"]<-2
+mm$FRSYear[mm$variable=="2006/2007"]<-3
+mm$FRSYear[mm$variable=="2007/2008"]<-4
+mm$FRSYear[mm$variable=="2008/2009"]<-5
+mm$FRSYear[mm$variable=="2009/2010"]<-6
+mm$FRSYear[mm$variable=="2010/2011"]<-7
+mm$FRSYear[mm$variable=="2011/2012"]<-8
+mm$FRSYear[mm$variable=="2012/2013"]<-9
+mm$FRSYear[mm$variable=="2013/2014"]<-10
+mm$ds_uw<-mm$Reference
+```
+
+Now we can merge the `mm` data with the `FRS_mplusprep.dta` file. We will crate a deprivation score considering the 21 indicators for each year (remember that in 2012 the indicators changed). We will call this deprivation score `ds_uw`(unweighted). Then we marge the `mm` data with the `FRS_mplusprep.dta` data and assign the `ds_uw` to the 2013/3014 data (as it is not present in the mm file).
+
+```{r}
+library(haven)
+
+D<-read_dta("FRS_mplusprep.dta")
+
+if(D$FRSYear<=7) {
+  D$ds_uw<-rowSums(D[,c(3:23)],na.rm=TRUE)
+} else {
+  rowSums(D[,c(3,5,6,8,10,11:19,21:27)],na.rm=TRUE)
+}
+
+D<-merge(D,mm,by=c("FRSYear","ds_uw"),all.x=T)
+D$value[D$FRSYear==10]<-D$ds_uw
+```
+
+The next step is to create a column to identify who is poor and who is not based on the unadjusted and adjusted poverty line. We will use $3$ as the value of the poverty line in this example -See Chapter XX for a discussion of the poverty line-. To get the adjusted poverty lines we need to get the rows for each year that are equal to (unadjusted 3). 
+
+```{r messages=F, warning=FALSE}
+D2<-subset(D,D$ds_uw==3)
+lines<-ddply(D2,.(FRSYear), summarise, mean=mean(value))
+lines
+```
+
+Now all we have to do is to merge the files and identify poverty using the thresholds equal to 3 for both the adjusted and the unadjusted poverty line. 
+
+```{r}
+D<-merge(D,lines,by="FRSYear")
+D$mean<-round(D$mean)
+D$mean[D$FRSYear==10]<-3
+
+D$poor_uw<-ifelse(D$ds_uw>=3,1,0)
+D$poor_w<-ifelse(D$ds_uw>=D$mean,1,0)
+```
+
+We will do a simple calculation of the prevalence rate for each year using both poverty lines. We will simply consider the survey weights in this occasion. The function `svyby` will give us both the point estimate and the standard errors. We will produce the bands of the confidence intervals (95\%) for the plots below. 
+
+```{r}
+library(survey)
+
+des<-svydesign(id=~1, weights=~gross4, data=D)
+
+pov_uadj<-svyby(~poor_uw, ~FRSYear, des, svymean)
+pov_adj<-svyby(~poor_w, ~FRSYear, des, svymean)
+pov_adj<-merge(pov_adj,pov_uadj,by="FRSYear")
+pov_adj<-pov_adj[,c(2:ncol(pov_adj))]*100
+pov_adj$ci_wu<-pov_adj$poor_w+1.96*(pov_adj$se.x)
+pov_adj$ci_wl<-pov_adj$poor_w-1.96*(pov_adj$se.x)
+pov_adj$ci_uwu<-pov_adj$poor_uw+1.96*(pov_adj$se.y)
+pov_adj$ci_uwl<-pov_adj$poor_uw-1.96*(pov_adj$se.y)
+
+
+pov_adj$year<-c("2004/2005","2005/2006","2006/2007","2007/2008","2008/2009","2009/2010","2010/2011","2011/2012",
+                   "2012/2013","2013/2014")
+```
+
+After we produce the relevant calculations we can plot the evolution of child poverty with confidence intervals (95\%) using both lines using `ggplot2`. The adjusted poverty line indicates that prior the economic crisis there was a drop in child poverty and that it has decreased after 2011/2012. The unadjusted measure shows very low variability and see that the change to the set of indicator does not seem to impact the prevalence rate (yet, it does so in terms of severity). 
+
+```{r eqchildpov, echo=TRUE, message=F, fig.cap="Evolution of the child poverty in the UK. 2004-2014. Adjusted ppoverty lines. Reference year: 2013/2014"}
+p1<-ggplot(pov_adj,aes(y=poor_w, x=year, group=1))  + geom_line(aes(color="green")) + geom_ribbon(aes(ymin=ci_wu, ymax=ci_wl), fill="green", alpha=.4) + ylab("% Child poverty") + 
+    scale_y_continuous( limits = c(20,40),  breaks = seq(20, 40, 5) ) + theme_bw()
+  
+p2<-p1 + geom_line(aes(y=poor_uw, x=year, group=1, color="#F5A9A9")) + geom_ribbon(aes(ymin=ci_uwu, ymax=ci_uwl), fill="#F5A9A9", alpha=.4) + theme_bw() + scale_color_discrete(name = "Poverty line", labels = c("Unadjusted", "Adjusted"))
+p2
+
+```
+
+```{r message=FALSE, warning=FALSE, results="hide", include=FALSE}
+jpeg("eqchildpov.jpg", units="cm", width=10, height=10, res=300)
+p1<-ggplot(pov_adj,aes(y=poor_w, x=year, group=1))  + geom_line(aes(color="green")) + geom_ribbon(aes(ymin=ci_wu, ymax=ci_wl), fill="green", alpha=.8) + ylab("% Child poverty") + 
+    scale_y_continuous( limits = c(20,40),  breaks = seq(20, 40, 5) ) + theme_bw()
+  
+p2<-p1 + geom_line(aes(y=poor_uw, x=year, group=1, color="blue")) + geom_ribbon(aes(ymin=ci_uwu, ymax=ci_uwl), fill="#2E9AFE", alpha=.8) + theme_bw() + scale_color_discrete(name = "Poverty line", labels = c("Unadjusted", "Adjusted"))
+p2
+dev.off()
+```
 
 
