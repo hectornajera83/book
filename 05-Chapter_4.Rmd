@@ -103,8 +103,8 @@ Several Monte Carlo studies have been conducted to assess the behaviour of these
 
   Index       Range values   Poor model fit rule
   ---------- -------------- ---------------------
-  $\chi^2$    p-values 1-0         $p<.05$
-  $RMSEA$     p-values 1-0         $p>.06$
+  $\chi^2$    p-values 1-0         $p>.05$
+  $RMSEA$     p-values 1-0         $p<.06$
   $CFI$          $1-0$             $<.95$
   $TLI$          $1-0$             $<.95$
 
@@ -355,12 +355,14 @@ TITLE = "
 HIgher order MIMIC;",
 VARIABLE="
 
-     NAMES = x1-x9 resources educ_yr occupation hh_members class;
+     NAMES = x1-x11 resources educ_yr occupation hh_members class;
      CATEGORICAL = x1-x9;
      USEVARIABLES = x1-x9 resources hh_members;",
+       DEFINE=
+  "resources = resources*.01;",
 ANALYSIS="
 ESTIMATOR = WLSMV;
-              PROCESS = 4;",
+PROCESS = 8;",
 MODEL= "
 f1 by x1-x3;
   f2 by x4-x6;
@@ -379,7 +381,7 @@ res <- mplusModeler(test, modelout = "val_sem_1.inp",
                     dataout="Rel_MD_data_1_1.dat", run = 1L)
 ```
 
-We extract the parameters of the MIMIC model using `{fitmeasures()` and then we check the estimates. We confirm that our estimates reproduce the `lavaan()` output.
+We extract the parameters of the MIMIC model using `fitmeasures()` and then we check the estimates. We confirm that our estimates reproduce the `lavaan()` output.
 
 
 ```{r}

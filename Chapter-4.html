@@ -340,12 +340,12 @@ The values of RMSEA, CFI and TLI need to be taken as an approximation.</caption>
 <tr class="odd">
 <td align="left"><span class="math inline">\(\chi^2\)</span></td>
 <td align="center">p-values 1-0</td>
-<td align="center"><span class="math inline">\(p&lt;.05\)</span></td>
+<td align="center"><span class="math inline">\(p&gt;.05\)</span></td>
 </tr>
 <tr class="even">
 <td align="left"><span class="math inline">\(RMSEA\)</span></td>
 <td align="center">p-values 1-0</td>
-<td align="center"><span class="math inline">\(p&gt;.06\)</span></td>
+<td align="center"><span class="math inline">\(p&lt;.06\)</span></td>
 </tr>
 <tr class="odd">
 <td align="left"><span class="math inline">\(CFI\)</span></td>
@@ -611,12 +611,14 @@ slope[<span class="dv">13</span>,]</code></pre>
 <span class="st">HIgher order MIMIC;&quot;</span>,
 <span class="dt">VARIABLE=</span><span class="st">&quot;</span>
 
-<span class="st">     NAMES = x1-x9 resources educ_yr occupation hh_members class;</span>
+<span class="st">     NAMES = x1-x11 resources educ_yr occupation hh_members class;</span>
 <span class="st">     CATEGORICAL = x1-x9;</span>
 <span class="st">     USEVARIABLES = x1-x9 resources hh_members;&quot;</span>,
+       <span class="dt">DEFINE=</span>
+  <span class="st">&quot;resources = resources*.01;&quot;</span>,
 <span class="dt">ANALYSIS=</span><span class="st">&quot;</span>
 <span class="st">ESTIMATOR = WLSMV;</span>
-<span class="st">              PROCESS = 4;&quot;</span>,
+<span class="st">PROCESS = 8;&quot;</span>,
 <span class="dt">MODEL=</span> <span class="st">&quot;</span>
 <span class="st">f1 by x1-x3;</span>
 <span class="st">  f2 by x4-x6;</span>
@@ -636,18 +638,18 @@ res &lt;-<span class="st"> </span><span class="kw">mplusModeler</span>(test, <sp
 <pre><code>## Wrote model to: val_sem_1.inp</code></pre>
 <pre><code>## Wrote data to: Rel_MD_data_1_1.dat</code></pre>
 <pre><code>## No action taken as writeData = &#39;never&#39;</code></pre>
-<p>We extract the parameters of the MIMIC model using <code>{fitmeasures()</code> and then we check the estimates. We confirm that our estimates reproduce the <code>lavaan()</code> output.</p>
+<p>We extract the parameters of the MIMIC model using <code>fitmeasures()</code> and then we check the estimates. We confirm that our estimates reproduce the <code>lavaan()</code> output.</p>
 <pre class="sourceCode r"><code class="sourceCode r">fitstats&lt;-<span class="kw">c</span>(<span class="dt">TLI=</span>res<span class="op">$</span>results<span class="op">$</span>summaries<span class="op">$</span>TLI,
             <span class="dt">CFI=</span>res<span class="op">$</span>results<span class="op">$</span>summaries<span class="op">$</span>CFI,
             <span class="dt">Chisq=</span>res<span class="op">$</span>results<span class="op">$</span>summaries<span class="op">$</span>ChiSqM_PValue,
             <span class="dt">RMSEA=</span>res<span class="op">$</span>results<span class="op">$</span>summaries<span class="op">$</span>RMSEA_Estimate)
 fitstats</code></pre>
 <pre><code>##    TLI    CFI  Chisq  RMSEA 
-## 0.9990 1.0000 0.0603 0.0090</code></pre>
+## 1.0000 1.0000 0.5462 0.0000</code></pre>
 <p>With some code we could request the estimate of the slope as we did with the <code>lavaan()</code> model. However, we will stress the importance of visualising our measurement models by looking at the standardised parameters on a diagram of our model. Figure (fig:valsem1) shows the standardised estimates of our model. We can see that resource predicts poverty -latent factor- (following Townsnend’s theory representation in this case) and this constitutes a validation of our measure.</p>
 <pre class="sourceCode r"><code class="sourceCode r">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&quot;val_sem_1.png&quot;</span>)</code></pre>
 <div class="figure"><span id="fig:valsem1"></span>
-<img src="val_sem_1.png" alt="This is a MIMIC model were a higher-order factor model loads into three dimensions and there is one path to examine criterion validity (resources and hh members)" width="2648" />
+<img src="val_sem_1.png" alt="This is a MIMIC model were a higher-order factor model loads into three dimensions and there is one path to examine criterion validity (resources and hh members)" width="3621" />
 <p class="caption">
 Figure 4.6: This is a MIMIC model were a higher-order factor model loads into three dimensions and there is one path to examine criterion validity (resources and hh members)
 </p>

@@ -346,7 +346,7 @@ We can appreciate below that both values are high ($\geq.8$) (See section \@ref(
 
 Both $\alpha$ and $\omega$ are easily estimated with the `psych` package. However, the previous example was straightforward in that all the indicators are well-behaved. Thus, to gain a deeper understanding of reliability and population classification we will check what happens when one has indicators that reduce reliability. This can be done by adding noise to our measure. We will generate two uncorrelated indicators and substitute x10 and x11 for the indicators x1 and x2. 
 
-Then we can apply `omega()` to the new matrix that includes V1 and v1 and excludes x1 and x2. Reliability has drop slightly but enough to raise concerns as both $\omega$ and $\alpha$ are below the rules of thumb drawn from a Monte Carlo experiment. 
+Then we can apply `omega()` to the new matrix that includes x10 and x11 and excludes x1 and x2. Reliability has drop slightly but enough to raise concerns as both $\omega$ and $\alpha$ are below the rules of thumb drawn from a Monte Carlo experiment. 
 
 ```{r echo=TRUE,  fig.keep='none'}
 omega_unr_exp<-omega(Rel_MD_1[,c(3:11)])
